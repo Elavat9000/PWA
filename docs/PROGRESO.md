@@ -1,8 +1,8 @@
 # DriveSmart — Beta 0.1
 
-- Fase 0: completada. Entorno Python 3.12, Git main y tres skills locales verificadas.
-- Fase 1: completada. Inicio, registro, login, logout, permisos y Admin. Cuatro pruebas correctas.
-- Fase 2: completada. Vehicle, CRUD en Admin, catálogo, filtros, detalle y seis demos sin duplicados.
+- Fase 0: completada y auditada. Entorno Python 3.12, Git main y tres skills locales verificadas.
+- Fase 1: completada y auditada. Inicio, registro, login, logout, permisos y Admin. Cuatro pruebas correctas.
+- Fase 2: completada y auditada. Vehicle, CRUD en Admin, catálogo, filtros, detalle y seis demos sin duplicados.
   Nueve pruebas Django correctas; Playwright convencional: 16 comprobaciones correctas.
 - Fase 3: solicitudes de renta, fuera de esta ejecución.
 - Fase 4: asistente y base de conocimiento, fuera de esta ejecución.
