@@ -1,0 +1,46 @@
+DriveSmart — Beta 0.1 / Windows PowerShell
+
+Ejecutar desde la raíz del proyecto. Requisito: Python 3.12.
+No es necesario activar scripts de PowerShell ni cambiar políticas de ejecución.
+
+1. Crear el entorno (si todavía no existe):
+   python --version
+   python -m venv .venv
+   Si hay varias versiones, usar la ruta completa del ejecutable Python 3.12.
+
+2. Instalar dependencias:
+   .venv\Scripts\python.exe -m pip install -r requirements.txt
+
+3. Variables:
+   Para uso local no se necesitan variables. .env.example es una referencia;
+   Django NO lee archivos .env automáticamente. Para establecerlas en PowerShell:
+   $env:DJANGO_DEBUG="1"
+   $env:DJANGO_ALLOWED_HOSTS="127.0.0.1,localhost"
+   $env:DJANGO_SECRET_KEY="sustituir-por-un-valor-aleatorio-personal"
+   Nunca guardar secretos en Git. Esta configuración es para desarrollo local.
+
+4. Migraciones:
+   .venv\Scripts\python.exe manage.py migrate
+
+5. Crear administrador (seguir las preguntas; no hay credenciales predeterminadas):
+   .venv\Scripts\python.exe manage.py createsuperuser
+
+6. Cargar demostración (puede repetirse sin duplicar ni modificar los existentes):
+   .venv\Scripts\python.exe manage.py load_demo
+
+7. Iniciar aplicación:
+   .venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
+   Inicio: http://127.0.0.1:8000/
+   Catálogo: http://127.0.0.1:8000/vehiculos/
+   Admin: http://127.0.0.1:8000/admin/
+   Detener con Ctrl+C. Imágenes cargadas se guardan en media/ (no versionada).
+
+8. Pruebas:
+   .venv\Scripts\python.exe manage.py check
+   .venv\Scripts\python.exe manage.py test
+   Las pruebas usan una base temporal y no eliminan los datos locales.
+   Navegador y herramientas de desarrollo opcionales: ver docs/QA.md.
+
+No se requiere Node, npm, Playwright ni skills para ejecutar DriveSmart.
+SQLite y las imágenes subidas son locales. Para conservarlas, respaldar db.sqlite3
+y media/. El servidor de desarrollo no debe utilizarse para producción.

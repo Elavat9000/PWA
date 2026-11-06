@@ -11,3 +11,6 @@ test-results/
 .DS_Store
 Thumbs.db
 *.tmp
+.playwright/
+staticfiles/
+.agents/skills/impeccable/scripts/bin/

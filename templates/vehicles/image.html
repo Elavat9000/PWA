@@ -1,0 +1,2 @@
+{% load static %}
+{% if vehicle.image %}<img src="{{ vehicle.image.url }}" alt="{{ vehicle }}" {% if lazy %}loading="lazy"{% endif %}>{% else %}<img src="{% static 'images/' %}{{ vehicle.category }}.svg" alt="Ilustración de {{ vehicle.get_category_display|lower }}; imagen de referencia" {% if lazy %}loading="lazy"{% endif %}>{% endif %}
