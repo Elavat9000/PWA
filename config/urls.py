@@ -29,6 +29,7 @@ urlpatterns = [
     path('cuentas/salir/', auth_views.LogoutView.as_view(), name='logout'),
     path('vehiculos/', include('vehicles.urls')),
     path('', include('rentals.urls')),
+    path('', include('assistant.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:

@@ -14,7 +14,7 @@ Abrir http://127.0.0.1:8000/ · Catálogo `/vehiculos/` · Administración `/adm
 
 Módulos: `config` (configuración), `core` (inicio), `accounts` (registro y pruebas
 de Auth), `vehicles` (modelo, catálogo, Admin y carga demo), `rentals` (solicitudes
-simuladas de renta), `templates`, `static` y `docs`.
+simuladas de renta), `assistant` (chat y conocimiento revisado), `templates`, `static` y `docs`.
 
 El comando `load_demo` crea seis vehículos sin duplicarlos y conserva las ediciones.
 Los precios y las características son datos de demostración, no una oferta comercial.
@@ -25,7 +25,16 @@ La fase 3 incorpora solicitudes simuladas de renta: entrar al detalle de un veh�
 elegir fechas, revisar el costo y confirmar. Consulta tus solicitudes en `/mis-rentas/`;
 su aprobación o rechazo se gestiona en Django Admin. No hay pagos.
 Ver [resultados de la fase 3](docs/FASE_3_RESULTADOS.md).
-El asistente y la PWA corresponden a fases posteriores.
+La fase 4 añade el botón Asistente DriveSmart a las páginas públicas. Responde con
+FAQ publicadas y vehículos reales; registra las preguntas desconocidas para revisión
+en Django Admin. Cargar sus ocho FAQ sin sobrescribir ediciones:
+
+```powershell
+.venv\Scripts\python.exe manage.py load_faq
+```
+
+No necesita APIs, claves ni modelos de IA. Ver [resultados de fase 4](docs/FASE_4_RESULTADOS.md).
+La PWA corresponde a la fase 5, todavía pendiente.
 
 Repositorio local en `main`. No se ha creado remoto ni publicado contenido.
 Antes de publicar, revisar `git status` y crear un repositorio privado con autorización.

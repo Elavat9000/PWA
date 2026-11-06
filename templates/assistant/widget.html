@@ -1,0 +1,26 @@
+<button class="assistant-launcher" id="assistant-launcher" type="button"
+        aria-haspopup="dialog" aria-controls="assistant-panel">
+    Asistente DriveSmart
+</button>
+<dialog class="assistant-panel" id="assistant-panel" aria-labelledby="assistant-heading"
+        data-endpoint="{% url 'assistant_chat' %}">
+    <header class="assistant-header">
+        <h2 id="assistant-heading">Asistente DriveSmart</h2>
+        <button class="assistant-close" type="button" aria-label="Cerrar asistente">Cerrar</button>
+    </header>
+    <div class="assistant-conversation" id="assistant-conversation" role="log"
+         aria-live="polite" aria-relevant="additions text" aria-label="Conversación con el asistente">
+        <p class="assistant-message">Hola. Puedo explicar cómo usar DriveSmart y buscar vehículos del catálogo. Si no conozco la respuesta, registraré tu pregunta para revisión.</p>
+    </div>
+    <form class="assistant-form" id="assistant-form">
+        {% csrf_token %}
+        <label for="assistant-message">Tu pregunta</label>
+        <textarea id="assistant-message" name="message" rows="2" minlength="2" maxlength="400"
+                  placeholder="Por ejemplo: busco una camioneta para 5 personas" required></textarea>
+        <div class="assistant-form-bottom">
+            <p id="assistant-progress" role="status" aria-live="polite"></p>
+            <button class="button compact" type="submit">Enviar</button>
+        </div>
+        <small>Máximo 400 caracteres. Evita incluir contraseñas o datos sensibles.</small>
+    </form>
+</dialog>

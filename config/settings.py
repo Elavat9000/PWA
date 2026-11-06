@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'accounts',
     'vehicles',
     'rentals',
+    'assistant',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
