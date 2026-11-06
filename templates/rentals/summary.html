@@ -1,0 +1,7 @@
+<dl class="vehicle-specs">
+    <div><dt>Inicio</dt><dd>{{ rental.start_date|date:'d/m/Y' }}</dd></div>
+    <div><dt>Devolución</dt><dd>{{ rental.end_date|date:'d/m/Y' }}</dd></div>
+    <div><dt>Días facturables</dt><dd>{{ rental.days }}</dd></div>
+    <div><dt>Precio diario al solicitar</dt><dd>${{ rental.daily_price|floatformat:2 }} MXN</dd></div>
+</dl>
+<p class="price">${{ rental.total_cost|floatformat:2 }} <small>MXN en total</small></p>

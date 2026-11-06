@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Mis rentas · DriveSmart{% endblock %}
+{% block content %}
+<section class="wrap rental-list">
+    <h1>Mis rentas.</h1>
+    <p class="lead">Consulta el estado de tus solicitudes simuladas.</p>
+    {% for rental in rentals %}
+        <article class="rental-item">
+            <div class="rental-item-heading">
+                <h2><a href="{% url 'vehicle_detail' rental.vehicle_id %}">{{ rental.vehicle }}</a></h2>
+                <span class="badge inline">{{ rental.get_status_display }}</span>
+            </div>
+            <p class="muted">Solicitud #{{ rental.pk }}</p>
+            {% include 'rentals/summary.html' %}
+        </article>
+    {% empty %}
+        <div class="empty">
+            <h2>Aún no tienes solicitudes.</h2>
+            <p>Encuentra un vehículo y elige las fechas de tu próximo viaje.</p>
+            <a class="button" href="{% url 'vehicle_list' %}">Explorar vehículos</a>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

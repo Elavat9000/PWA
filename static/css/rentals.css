@@ -1,0 +1,63 @@
+.rental-form {
+    width:min(620px,90%);
+}
+
+.rental-form h1 {
+    margin-top:28px;
+}
+
+.rental-form h1,.rental-list h1 {
+    overflow-wrap:anywhere;
+}
+
+.rental-form input {
+    min-width:0;
+}
+
+.rental-notice {
+    padding:16px;
+    background:var(--line);
+    color:var(--ink);
+    border-radius:5px;
+}
+
+.rental-list {
+    max-width:900px;
+    padding:50px 0;
+}
+
+.rental-list h1 {
+    font-size:44px;
+    letter-spacing:-.03em;
+}
+
+.rental-item {
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+    overflow-wrap:anywhere;
+}
+
+.rental-item-heading {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.rental-item-heading h2 {
+    margin:0;
+}
+
+.rental-form .vehicle-specs dd,.rental-list .vehicle-specs dd {
+    overflow-wrap:anywhere;
+}
+
+@media(max-width:620px) {
+    .rental-list h1 {
+        font-size:36px;
+    }
+    .rental-form .price,.rental-list .price {
+        font-size:26px;
+    }
+}

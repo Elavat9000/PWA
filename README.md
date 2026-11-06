@@ -13,14 +13,19 @@ Consulta [INSTRUCTIONS.txt](INSTRUCTIONS.txt) para instalar y ejecutar en Window
 Abrir http://127.0.0.1:8000/ · Catálogo `/vehiculos/` · Administración `/admin/`.
 
 Módulos: `config` (configuración), `core` (inicio), `accounts` (registro y pruebas
-de Auth), `vehicles` (modelo, catálogo, Admin y carga demo), `templates`, `static` y `docs`.
+de Auth), `vehicles` (modelo, catálogo, Admin y carga demo), `rentals` (solicitudes
+simuladas de renta), `templates`, `static` y `docs`.
 
 El comando `load_demo` crea seis vehículos sin duplicarlos y conserva las ediciones.
 Los precios y las características son datos de demostración, no una oferta comercial.
 Las ilustraciones se incluyen localmente; ver [licencia de recursos](docs/IMAGENES.md).
 
 Ver [progreso](docs/PROGRESO.md), [QA](docs/QA.md) y [entorno](docs/ENTORNO.md).
-Las solicitudes de renta, el asistente y la PWA corresponden a fases posteriores.
+La fase 3 incorpora solicitudes simuladas de renta: entrar al detalle de un vehículo,
+elegir fechas, revisar el costo y confirmar. Consulta tus solicitudes en `/mis-rentas/`;
+su aprobación o rechazo se gestiona en Django Admin. No hay pagos.
+Ver [resultados de la fase 3](docs/FASE_3_RESULTADOS.md).
+El asistente y la PWA corresponden a fases posteriores.
 
 Repositorio local en `main`. No se ha creado remoto ni publicado contenido.
 Antes de publicar, revisar `git status` y crear un repositorio privado con autorización.

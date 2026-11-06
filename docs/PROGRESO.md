@@ -4,7 +4,9 @@
 - Fase 1: completada y auditada. Inicio, registro, login, logout, permisos y Admin. Cuatro pruebas correctas.
 - Fase 2: completada y auditada. Vehicle, CRUD en Admin, catálogo, filtros, detalle y seis demos sin duplicados.
   Nueve pruebas Django correctas; Playwright convencional: 16 comprobaciones correctas.
-- Fase 3: solicitudes de renta, fuera de esta ejecución.
+- Fase 3: completada y verificada. Solicitudes simuladas, cálculo en Python, Mis rentas,
+  disponibilidad y aprobación/rechazo en Admin. 33 pruebas Django y 1 prueba de navegador
+  con 15 grupos de comprobaciones correctos. Ver [resultados](FASE_3_RESULTADOS.md).
 - Fase 4: asistente y base de conocimiento, fuera de esta ejecución.
 - Fase 5: PWA y entrega final, fuera de esta ejecución.
 
