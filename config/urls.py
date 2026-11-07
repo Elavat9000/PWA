@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import home
+from core.views import home, manifest, service_worker, offline
 from accounts.views import signup
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -24,6 +24,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name='home'),
+    path('manifest.webmanifest', manifest, name='pwa_manifest'),
+    path('service-worker.js', service_worker, name='pwa_service_worker'),
+    path('offline/', offline, name='pwa_offline'),
     path('cuentas/registro/', signup, name='signup'),
     path('cuentas/entrar/', auth_views.LoginView.as_view(), name='login'),
     path('cuentas/salir/', auth_views.LogoutView.as_view(), name='logout'),

@@ -34,7 +34,22 @@ en Django Admin. Cargar sus ocho FAQ sin sobrescribir ediciones:
 ```
 
 No necesita APIs, claves ni modelos de IA. Ver [resultados de fase 4](docs/FASE_4_RESULTADOS.md).
-La PWA corresponde a la fase 5, todavía pendiente.
+La fase 5 incorpora una PWA mínima: manifiesto, iconos y aviso estático sin conexión.
+Vehículos, rentas y asistente requieren acceso al servidor. No se cachean datos privados.
+Las instrucciones actualizadas permiten instalar la entrega desde cero en Windows.
+Ver [arquitectura y escalabilidad](docs/ARQUITECTURA_Y_ESCALABILIDAD.md)
+y [resultados de la entrega](docs/FASE_5_RESULTADOS.md).
+
+Para generar el ZIP limpio (no requiere Git ni skills):
+
+```powershell
+.venv\Scripts\python.exe scripts/package_beta.py
+```
+
+`DriveSmart_Beta.zip` contiene una carpeta DriveSmart con código, migraciones,
+templates, estáticos, imágenes, documentación e instrucciones. Excluye bases de datos,
+entornos, .env, media personal, dependencias de desarrollo instaladas y resultados de QA.
+Las pruebas de navegador son opcionales; la instalación normal solo requiere Python.
 
 Repositorio local en `main`. No se ha creado remoto ni publicado contenido.
 Antes de publicar, revisar `git status` y crear un repositorio privado con autorización.

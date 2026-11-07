@@ -10,7 +10,9 @@
 - Fase 4: completada y verificada. Asistente textual local, catálogo por ORM,
   preguntas pendientes y respuestas publicadas por Admin. 65 pruebas Django y 2 de navegador
   correctas. Ver [resultados](FASE_4_RESULTADOS.md).
-- Fase 5: PWA y entrega final, fuera de esta ejecución.
+- Fase 5: completada y verificada. PWA mínima sin datos privados en caché y entrega ZIP
+  reproducida en entorno aislado. 73 pruebas Django y 3 de navegador correctas.
+  Ver [resultados de entrega](FASE_5_RESULTADOS.md).
 
 Fecha objetivo: 10 de noviembre de 2026, 10:00, America/Mexico_City.
 
