@@ -1,3 +1,3 @@
 {% extends 'base.html' %}
 {% block title %}Crear cuenta · DriveSmart{% endblock %}
-{% block content %}<section class="auth"><p class="eyebrow">TU VIAJE COMIENZA AQUÍ</p><h1>Crea tu cuenta.</h1><p>Únete a DriveSmart y explora nuevas posibilidades.</p><form method="post">{% csrf_token %}{{ form.as_p }}<button class="button">Crear cuenta</button></form><p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Iniciar sesión</a></p></section>{% endblock %}
+{% block content %}<section class="auth"><h1>Crea tu cuenta.</h1><p>Únete a DriveSmart y explora nuevas posibilidades.</p><form method="post">{% csrf_token %}{{ form.as_p }}<button class="button">Crear cuenta</button></form><p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Iniciar sesión</a></p></section>{% endblock %}

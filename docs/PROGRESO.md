@@ -22,3 +22,13 @@ Impeccable se ejecutó sin hooks ni Live. Playwright Interactive quedó instalad
 se usó Playwright convencional para conservar las protecciones del entorno.
 Code Simplification revisó únicamente código terminado después de las pruebas.
 No se ha creado repositorio remoto ni ejecutado push.
+
+## Mejora visual — 8 de noviembre de 2026
+
+Completada: portada con vehículos reales del catálogo y tres pasos, tarjetas compartidas,
+formularios y rentas con jerarquía unificada, chat adaptable y tokens CSS centralizados.
+Se conservaron la paleta, Auth, Admin, modelos, cálculos y motor del asistente.
+73 pruebas Django y 4 pruebas opcionales de navegador aprobadas; capturas a 1440, 768,
+390 y 320 px. Caché PWA v2, con la misma política de privacidad y aviso offline.
+ZIP visual independiente; el ZIP de fase 5 permanece intacto. Sin remoto ni push.
+Ver [informe y evidencias](MEJORA_VISUAL.md).

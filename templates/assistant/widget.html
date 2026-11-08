@@ -1,11 +1,11 @@
 <button class="assistant-launcher" id="assistant-launcher" type="button"
         aria-haspopup="dialog" aria-controls="assistant-panel">
-    Asistente DriveSmart
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8l-6 3v-3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M7 9h10M7 13h6"/></svg><span class="assistant-launcher-label">Asistente DriveSmart</span>
 </button>
 <dialog class="assistant-panel" id="assistant-panel" aria-labelledby="assistant-heading"
         data-endpoint="{% url 'assistant_chat' %}">
     <header class="assistant-header">
-        <h2 id="assistant-heading">Asistente DriveSmart</h2>
+        <div><h2 id="assistant-heading">Asistente DriveSmart</h2><p>Ayuda con el catálogo y tus solicitudes</p></div>
         <button class="assistant-close" type="button" aria-label="Cerrar asistente">Cerrar</button>
     </header>
     <div class="assistant-conversation" id="assistant-conversation" role="log"

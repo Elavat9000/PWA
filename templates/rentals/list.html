@@ -8,7 +8,7 @@
         <article class="rental-item">
             <div class="rental-item-heading">
                 <h2><a href="{% url 'vehicle_detail' rental.vehicle_id %}">{{ rental.vehicle }}</a></h2>
-                <span class="badge inline">{{ rental.get_status_display }}</span>
+                <span class="badge inline status-{{ rental.status|lower }}">{{ rental.get_status_display }}</span>
             </div>
             <p class="muted">Solicitud #{{ rental.pk }}</p>
             {% include 'rentals/summary.html' %}

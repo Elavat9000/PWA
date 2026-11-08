@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<section class="hero wrap"><div><p class="eyebrow">EL CAMINO ES TUYO</p><h1>Más libertad.<br>Más kilómetros.<br><em>Más tú.</em></h1><p class="lead">Encuentra el vehículo que va contigo. Explora DriveSmart y empieza a imaginar tu próxima escapada.</p><div class="actions"><a class="button" href="{% url 'vehicle_list' %}">Explorar vehículos <span aria-hidden="true">↗</span></a><a href="{% url 'signup' %}">Crear mi cuenta →</a></div><p class="muted">Una plataforma sencilla, pensada para moverte.</p></div><div class="road-art" role="img" aria-label="Ilustración de una carretera entre montañas"><span class="sun"></span><span class="mountain"></span><span class="road"></span><div class="art-caption">TU PRÓXIMA HISTORIA<br><strong>empieza aquí.</strong></div></div></section>
-<section class="features wrap" aria-label="Ventajas"><article><span>01 / EXPLORA</span><h2>Elige a tu ritmo</h2><p>Conoce las características de cada vehículo antes de decidir.</p></article><article><span>02 / COMPARA</span><h2>Todo a la vista</h2><p>Precios diarios y especificaciones claras, en un solo lugar.</p></article><article><span>03 / DESCUBRE</span><h2>Un camino para ti</h2><p>De la ciudad a la carretera, encuentra tu próximo compañero.</p></article></section>
+<section class="hero wrap">
+    <div class="hero-copy">
+        <h1>Más libertad.<br>Más kilómetros.<br><em>Más tú.</em></h1>
+        <p class="lead">Encuentra el vehículo que va contigo. Compara sus características, elige tus fechas y envía una solicitud de renta.</p>
+        <div class="actions"><a class="button" href="{% url 'vehicle_list' %}">Explorar vehículos</a><a href="{% url 'signup' %}">Crear mi cuenta</a></div>
+        <p class="muted">Catálogo de demostración · Solicitudes simuladas, sin pagos.</p>
+    </div>
+    <figure class="hero-vehicle"><img src="{% static 'images/sedan.svg' %}" width="720" height="400" alt="Ilustración de referencia de un sedán"><figcaption>Tu próximo camino empieza con una buena elección.<span>Ilustración de referencia</span></figcaption></figure>
+</section>
+<section class="wrap featured" aria-labelledby="featured-heading">
+    <div class="section-heading"><div><h2 id="featured-heading">Encuentra tu próximo compañero.</h2><p>Una primera mirada a nuestro catálogo de demostración.</p></div><a href="{% url 'vehicle_list' %}">Ver todos los vehículos</a></div>
+    <div class="vehicle-grid">{% for vehicle in featured_vehicles %}{% include 'vehicles/card.html' %}{% empty %}<p>El catálogo estará disponible cuando se añadan vehículos.</p>{% endfor %}</div>
+</section>
+<section class="wrap steps" aria-labelledby="steps-heading">
+    <h2 id="steps-heading">Del catálogo a tu solicitud.</h2>
+    <ol class="features"><li><h3>Explorar</h3><p>Compara vehículos, características y precios por día.</p></li><li><h3>Seleccionar fechas</h3><p>Elige inicio y devolución. Revisa los días y el total calculado.</p></li><li><h3>Solicitar renta</h3><p>Confirma tu solicitud y consulta su estado en Mis rentas. Sujeta a aprobación.</p></li></ol>
+</section>
 {% endblock %}

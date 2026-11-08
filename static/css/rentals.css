@@ -1,63 +1,69 @@
 .rental-form {
-    width:min(620px,90%);
+    width: min(660px, calc(100% - 40px));
 }
 
 .rental-form h1 {
-    margin-top:28px;
+    margin-top: var(--space-5);
 }
 
-.rental-form h1,.rental-list h1 {
-    overflow-wrap:anywhere;
-}
-
-.rental-form input {
-    min-width:0;
+.rental-form h2 {
+    font-size: 24px;
 }
 
 .rental-notice {
-    padding:16px;
-    background:var(--line);
-    color:var(--ink);
-    border-radius:5px;
+    padding: var(--space-4);
+    background: var(--soft);
+    color: var(--ink);
+    border-radius: var(--control-radius);
+    font-size: 14px;
 }
 
 .rental-list {
-    max-width:900px;
-    padding:50px 0;
+    max-width: 900px;
+    padding-block: var(--space-7) var(--space-8);
 }
 
 .rental-list h1 {
-    font-size:44px;
-    letter-spacing:-.03em;
+    font-size: clamp(36px, 4.5vw, 48px);
 }
 
 .rental-item {
-    padding:28px 0;
-    border-bottom:1px solid var(--line);
-    overflow-wrap:anywhere;
+    padding: var(--space-5);
+    margin-block: var(--space-5);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow-wrap: anywhere;
 }
 
 .rental-item-heading {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
 }
 
 .rental-item-heading h2 {
-    margin:0;
+    margin: 0;
+    font-size: 24px;
 }
 
-.rental-form .vehicle-specs dd,.rental-list .vehicle-specs dd {
-    overflow-wrap:anywhere;
+.rental-item > .muted {
+    margin-top: var(--space-2);
 }
 
-@media(max-width:620px) {
-    .rental-list h1 {
-        font-size:36px;
+.rental-item .price {
+    margin-bottom: 0;
+}
+
+@media (max-width: 639px) {
+    .rental-form .price, .rental-list .price {
+        font-size: 28px;
     }
-    .rental-form .price,.rental-list .price {
-        font-size:26px;
+
+    .rental-item {
+        padding: var(--space-4);
     }
+
 }

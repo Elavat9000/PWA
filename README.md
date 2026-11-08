@@ -53,3 +53,17 @@ Las pruebas de navegador son opcionales; la instalación normal solo requiere Py
 
 Repositorio local en `main`. No se ha creado remoto ni publicado contenido.
 Antes de publicar, revisar `git status` y crear un repositorio privado con autorización.
+
+La revisión visual posterior a fase 5 conserva la identidad verde y crema y unifica
+las pantallas públicas. Ver [mejora visual y verificaciones](docs/MEJORA_VISUAL.md).
+Para generar esta entrega sin sobrescribir la anterior:
+
+```powershell
+.venv\Scripts\python.exe scripts/package_beta.py --output DriveSmart_Beta_Visual.zip
+```
+
+QA visual opcional, con Playwright instalado como se explica en INSTRUCTIONS.txt:
+
+```powershell
+.venv\Scripts\python.exe manage.py test core.visual_browser_tests --verbosity 2
+```

@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.http import FileResponse
+from vehicles.models import Vehicle
 
 
 def home(request):
-    return render(request, 'core/home.html')
+    return render(request, 'core/home.html', {'featured_vehicles': Vehicle.objects.order_by('pk')[:3]})
 
 # Create your views here.
 

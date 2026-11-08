@@ -1,3 +1,3 @@
 {% extends 'base.html' %}
 {% block title %}Iniciar sesión · DriveSmart{% endblock %}
-{% block content %}<section class="auth"><p class="eyebrow">BIENVENIDO DE NUEVO</p><h1>Retoma el camino.</h1><p>Inicia sesión en tu cuenta DriveSmart.</p><form method="post">{% csrf_token %}{{ form.as_p }}{% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}<button class="button">Iniciar sesión</button></form><p>¿Aún no tienes cuenta? <a href="{% url 'signup' %}">Crear cuenta</a></p></section>{% endblock %}
+{% block content %}<section class="auth"><h1>Retoma el camino.</h1><p>Inicia sesión en tu cuenta DriveSmart.</p><form method="post">{% csrf_token %}{{ form.as_p }}{% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}<button class="button">Iniciar sesión</button></form><p>¿Aún no tienes cuenta? <a href="{% url 'signup' %}">Crear cuenta</a></p></section>{% endblock %}
