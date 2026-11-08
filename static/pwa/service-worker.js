@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'drivesmart-public-';
-const CACHE_NAME = `${CACHE_PREFIX}v2`;
+const CACHE_NAME = `${CACHE_PREFIX}v9`;
 const PUBLIC_ASSETS = [
     '/offline/',
     '/static/css/site.css',

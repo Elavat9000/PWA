@@ -173,8 +173,21 @@ def vehicle_reply(question):
     return {'reply': reply, 'vehicles': results, 'source': 'vehicles'}
 
 
-def answer_question(question, user=None):
+def answer_question(question, user=None, context=None):
     """Único punto de entrada para las vistas; no genera respuestas ni cambia rentas."""
+    from .conversation import contextual_reply
+
+    memory = context if isinstance(context, dict) else {}
+    sensitive = plain_text(question)
+    if (re.search(r'\b(?:contrasena|password|clave|token|numero de tarjeta|numero de licencia|telefono|correo)\s*(?:es|:|=)\s*\S+', sensitive)
+            or re.search(r'\b\d{10,19}\b|[\w.+-]+@[\w.-]+\.[a-z]{2,}', sensitive)):
+        memory.clear()
+        return {'reply': 'Evita compartir contraseñas, documentos o datos de contacto. No registraré ese mensaje. Reformula tu consulta sin datos personales.',
+                'vehicles': [], 'source': 'privacy'}
+    inventory = contextual_reply(question, memory)
+    if inventory is not None:
+        return inventory
+    memory.clear()
     inventory = vehicle_reply(question)
     if inventory is not None:
         return inventory

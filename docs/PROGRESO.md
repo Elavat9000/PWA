@@ -32,3 +32,15 @@ Se conservaron la paleta, Auth, Admin, modelos, cálculos y motor del asistente.
 390 y 320 px. Caché PWA v2, con la misma política de privacidad y aviso offline.
 ZIP visual independiente; el ZIP de fase 5 permanece intacto. Sin remoto ni push.
 Ver [informe y evidencias](MEJORA_VISUAL.md).
+
+## Chat 2.0 — 8 de noviembre de 2026
+
+Mejora exclusiva del asistente existente: contexto breve por sesión, búsquedas
+combinadas, seguimiento, fechas con disponibilidad real, comparación y estimaciones
+Decimal. Reinicio explícito, tarjetas compactas y sugerencias dentro del widget.
+Se conservan el aprendizaje administrado, CSRF y las reglas de no caché privada.
+No se modifican modelos ni funcionalidades externas al chat. Service Worker v9,
+sin ampliar la lista de recursos permitidos. 124/124 pruebas Django aprobadas,
+incluidas las 88 anteriores; integración Playwright adicional 1/1 con 15 comprobaciones.
+Bases temporales y evidencias externas; sin cambios en la SQLite de uso ni ZIP.
+Ver [resultados, ejemplos y limitaciones](CHAT_2_0_RESULTADOS.md).

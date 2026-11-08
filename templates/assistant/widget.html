@@ -1,22 +1,23 @@
 <button class="assistant-launcher" id="assistant-launcher" type="button"
-        aria-haspopup="dialog" aria-controls="assistant-panel">
+        title="Asistente DriveSmart" aria-haspopup="dialog" aria-controls="assistant-panel">
     <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8l-6 3v-3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M7 9h10M7 13h6"/></svg><span class="assistant-launcher-label">Asistente DriveSmart</span>
 </button>
 <dialog class="assistant-panel" id="assistant-panel" aria-labelledby="assistant-heading"
         data-endpoint="{% url 'assistant_chat' %}">
     <header class="assistant-header">
-        <div><h2 id="assistant-heading">Asistente DriveSmart</h2><p>Ayuda con el catálogo y tus solicitudes</p></div>
+        <div><h2 id="assistant-heading">Asistente DriveSmart</h2><p>Vehículos, fechas y estimaciones</p></div>
         <button class="assistant-close" type="button" aria-label="Cerrar asistente">Cerrar</button>
     </header>
+    <div class="assistant-toolbar"><span>Contexto breve · sin crear rentas</span><button id="assistant-reset" type="button">Nueva conversación</button></div>
     <div class="assistant-conversation" id="assistant-conversation" role="log"
          aria-live="polite" aria-relevant="additions text" aria-label="Conversación con el asistente">
-        <p class="assistant-message">Hola. Puedo explicar cómo usar DriveSmart y buscar vehículos del catálogo. Si no conozco la respuesta, registraré tu pregunta para revisión.</p>
+        <p class="assistant-message">Hola. Puedo buscar y comparar vehículos, consultar fechas y estimar costos. Recordaré tus filtros durante esta sesión. Si no conozco la respuesta, registraré tu pregunta para revisión.</p>
     </div>
     <form class="assistant-form" id="assistant-form">
         {% csrf_token %}
         <label for="assistant-message">Tu pregunta</label>
         <textarea id="assistant-message" name="message" rows="2" minlength="2" maxlength="400"
-                  placeholder="Por ejemplo: busco una camioneta para 5 personas" required></textarea>
+                  placeholder="Ejemplo: SUV para 5 personas" required></textarea>
         <div class="assistant-form-bottom">
             <p id="assistant-progress" role="status" aria-live="polite"></p>
             <button class="button compact" type="submit">Enviar</button>
