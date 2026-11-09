@@ -151,9 +151,10 @@ políticas de Windows. La aplicación no requiere Node ni Playwright para ejecut
 
 El manifiesto permite instalar la aplicación en navegadores compatibles. Al entrar
 con conexión, la PWA descarga una copia pública del catálogo completo y sus fotos.
-Cuando aparece **Catálogo listo sin conexión**, puede consultarse el catálogo y sus
-fichas incluso sin haber abierto cada vehículo antes. **Actualizar catálogo guardado**
-permite renovar la copia; las descargas automáticas reutilizan la copia durante 30 minutos.
+La descarga y actualización ocurren en segundo plano, sin avisos técnicos ni controles
+de mantenimiento para el cliente. Después de completarse, pueden consultarse el catálogo
+y sus fichas sin haber abierto cada vehículo antes. La copia se reutiliza por 30 minutos
+y se renueva al recuperar la conexión.
 
 Sin red, inicio y catálogo muestran esa copia, con fecha de guardado y precios
 históricos identificados. **Verificar fechas en línea** informa que se necesita

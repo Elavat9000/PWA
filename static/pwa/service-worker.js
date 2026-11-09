@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'drivesmart-public-';
-const CACHE_NAME = `${CACHE_PREFIX}v10`;
+const CACHE_NAME = `${CACHE_PREFIX}v11`;
 const CATALOG_PREFIX = 'drivesmart-catalog-v10-';
 const CATALOG_URL = '/catalogo-sin-conexion/';
 const PUBLIC_ASSETS = [

@@ -133,7 +133,7 @@ El service worker puede guardar una copia pública aislada del catálogo complet
 sus fotografías. No guarda el HTML normal de usuarios conectados. Las cuentas,
 rentas, chat y comprobación de disponibilidad requieren conexión al servidor.
 Tras actualizar esta función, ejecutar collectstatic, recargar la web app y comprobar
-la descarga hasta que aparezca "Catálogo listo sin conexión". No se modifica la
+la descarga en segundo plano y el acceso offline. No hay avisos técnicos para el cliente. No se modifica la
 instalación online automáticamente desde las pruebas locales.
 
 ## 6. Cargar contenido demo después de aprobar las pruebas

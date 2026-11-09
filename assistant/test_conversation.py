@@ -258,7 +258,7 @@ class ConversationTests(TestCase):
     def test_pwa_only_cache_version_changed(self):
         from django.conf import settings
         source = (settings.BASE_DIR / 'static/pwa/service-worker.js').read_text(encoding='utf-8')
-        self.assertIn('v10', source)
+        self.assertIn('v11', source)
         self.assertNotIn('/asistente/consultar/', source.split('];', 1)[0])
         js = (settings.BASE_DIR / 'static/js/assistant.js').read_text(encoding='utf-8')
         self.assertNotIn('innerHTML', js)

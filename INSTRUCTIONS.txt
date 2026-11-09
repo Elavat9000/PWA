@@ -105,15 +105,15 @@ Python 3.12 · Django 5.2 LTS · SQLite
 7. PWA
    Abrir primero el sitio con el servidor disponible para registrar el worker.
    Chrome/Edge pueden ofrecer instalar la aplicación desde su menú.
-   Esperar el mensaje "Catálogo listo sin conexión": se descarga todo el catálogo
-   público y sus fotos, sin necesidad de visitar cada ficha antes.
+   La descarga del catálogo público y sus fotos ocurre en segundo plano, sin avisos
+   de mantenimiento para el cliente. Dejar que termine antes de probar Offline.
    Simular Offline desde DevTools > Network y abrir /vehiculos/ para consultar la copia.
    Desconectar Wi-Fi no interrumpe necesariamente el acceso a localhost.
    La copia tiene fecha de guardado y precios históricos. Usar "Verificar fechas
    en línea" para comprobar precios actuales, fechas deseadas y disponibilidad.
    Sin conexión, ese botón explica que necesitas internet; no crea solicitudes.
    Los filtros del catálogo en línea no se aplican en esta copia y se indica claramente.
-   Usar "Actualizar catálogo guardado" con conexión para renovar la copia.
+   La copia se renueva en segundo plano al recuperar conexión.
    La descarga automática se reutiliza durante 30 minutos. Si una actualización
    falla, se conserva la última copia completa. Requiere espacio en el navegador;
    si se borran sus datos, es necesario descargar de nuevo.
@@ -152,8 +152,8 @@ Python 3.12 · Django 5.2 LTS · SQLite
      que existan static/catalog/ y media/. No borrar imágenes propias.
    - Datos del chat pendientes: se revisan y publican desde Admin > Base de conocimiento.
      No se aprueban respuestas ni políticas comerciales automáticamente.
-   - Catálogo sin conexión vacío: abrir con internet y esperar "Catálogo listo sin
-     conexión". Si falla, comprobar las fotos, espacio del navegador y volver a actualizar.
+   - Catálogo sin conexión vacío: abrir con internet y dejar completar la descarga.
+     Si falla, comprobar las fotos y el espacio del navegador y volver a abrir con red.
    - Cuentas, rentas y chat sin conexión: esas funciones necesitan el servidor.
    - Si pip no puede descargar: comprobar conexión, proxy o certificados del equipo;
      no desactivar TLS ni las protecciones del sistema.

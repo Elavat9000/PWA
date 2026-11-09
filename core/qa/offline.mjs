@@ -17,7 +17,13 @@ try {
     await page.locator('#id_username').fill('PRIVATE_OFFLINE_MARKER');
     await page.locator('#id_password').fill(password);
     await page.locator('.auth form button').click();
-    await page.locator('.pwa-status').getByText(/Catálogo listo sin conexión/).waitFor({ timeout: 45000 });
+    await page.waitForFunction(async () => {
+        for (const name of await caches.keys()) {
+            if (name.startsWith('drivesmart-catalog-') && await (await caches.open(name)).match('/catalogo-sin-conexion/')) return true;
+        }
+        return false;
+    }, null, { timeout: 45000 });
+    assert.equal(await page.locator('.pwa-status').count(), 0);
     checks.push('Descarga completa desde una sesión autenticada');
     await page.screenshot({ path: resolve(output, 'catalogo-listo.png') });
     const inspect = async () => page.evaluate(async () => {
@@ -37,6 +43,7 @@ try {
     assert.ok(cached.every(r => !r.text.includes('PRIVATE_OFFLINE_MARKER') && !r.text.includes('csrfmiddlewaretoken')));
     checks.push('Seis fotos y catálogo público; sin usuario, CSRF ni páginas privadas');
     await context.setOffline(true);
+    await page.locator('.pwa-status').getByText(/Sin conexión/).waitFor();
     await page.goto(base + '/');
     assert.equal(await page.locator('[data-offline-vehicle]').count(), 6);
     await page.getByText(/Estás sin conexión/).waitFor();
@@ -84,10 +91,19 @@ try {
     await context.setOffline(false);
     await page.goto(base + '/vehiculos/');
     assert.equal(await page.locator('.vehicle-card').count(), 6);
-    await page.getByRole('button', { name: 'Actualizar catálogo guardado' }).click();
-    await page.waitForFunction(() => !document.querySelector('.pwa-status button').disabled);
+    assert.equal(await page.locator('.pwa-status').count(), 0);
+    await page.evaluate(() => new Promise(resolve => {
+        function receive(event) {
+            if (event.data?.type === 'PUBLIC_CATALOG_STATUS') {
+                navigator.serviceWorker.removeEventListener('message', receive);
+                resolve();
+            }
+        }
+        navigator.serviceWorker.addEventListener('message', receive);
+        navigator.serviceWorker.controller.postMessage({ type: 'SYNC_PUBLIC_CATALOG', force: true });
+    }));
     assert.equal((await inspect()).filter(r => r.path === '/catalogo-sin-conexion/').length, 1);
-    checks.push('Reconexión, actualización explícita y sustitución de la copia anterior');
+    checks.push('Reconexión sin avisos técnicos y actualización en segundo plano');
     await context.setOffline(true);
     await page.goto(base + '/vehiculos/');
     await page.setViewportSize({ width: 390, height: 844 });

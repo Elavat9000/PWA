@@ -90,3 +90,8 @@ de uso. Sin migraciones pendientes. README, instrucciones, arquitectura y entreg
 actualizados. Capturas públicas offline en docs/images y evidencia técnica en TEMP.
 Implementado localmente; no se ha publicado en PythonAnywhere ni hecho push.
 Ver [alcance y comprobaciones](PWA_CATALOGO_OFFLINE.md).
+
+Ajuste posterior solicitado: descarga y actualización silenciosas, sin aviso de
+copia lista, fecha ni botones de mantenimiento en la navegación con conexión.
+El aviso aparece solo al perder la conexión y desaparece al recuperarla. Worker v11;
+se conserva el formato de la copia pública existente para no invalidarla innecesariamente.

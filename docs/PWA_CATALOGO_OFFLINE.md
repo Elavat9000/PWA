@@ -6,16 +6,16 @@ verificación en línea. Implementación local; aún no publicada en el hosting.
 
 ## Qué verá el usuario
 
-1. Entrar con conexión y esperar **Catálogo listo sin conexión**. Se descargan todos
-   los registros del catálogo y sus fotos, no solo los vehículos visitados.
+1. Entrar con conexión. Se descargan todos los registros del catálogo y sus fotos
+   en segundo plano, sin notificar al cliente ni mostrar controles técnicos.
 2. Sin conexión, abrir inicio, catálogo o una ficha. Se muestra la copia pública,
    con su fecha y precios identificados como guardados.
 3. **Ver características** muestra descripción y estado al guardar; una ficha que
    no estaba en esa copia solicita conexión en lugar de inventar un vehículo.
 4. **Verificar fechas en línea** explica la necesidad de internet sin crear ni
    encolar solicitudes. Con red conduce al formulario existente y sus validaciones.
-5. Al reconectar puede renovarse con **Actualizar catálogo guardado**. La descarga
-   automática reutiliza la copia por 30 minutos; la actualización explícita la renueva.
+5. Al reconectar se renueva en segundo plano. Las descargas automáticas reutilizan
+   la copia por 30 minutos. El aviso de conexión desaparece al volver a estar en línea.
 
 Los parámetros de filtros en línea no se aplican en esta versión offline: se muestra
 todo el catálogo con un aviso, para no aparentar que se cumplen condiciones ignoradas.
@@ -29,7 +29,7 @@ independiente sin pasar request: no incluye usuario, CSRF, sesión, formulario d
 solicitudes ni widget del asistente. Incluye únicamente información ya pública de
 Vehicle y los créditos de fotos. Las páginas normales conservan no-store, private.
 
-El worker v10 guarda esa respuesta identificada con una cabecera específica. La
+El worker v11 guarda esa respuesta identificada con una cabecera específica. La
 descarga del HTML y sus fotos omite credenciales. Las imágenes se restringen al mismo
 origen y a rutas públicas previstas; una URL externa del campo de imagen utiliza la
 ilustración de respaldo. No existe una caché genérica de media ni de páginas navegadas.
@@ -60,7 +60,7 @@ precios, aprobación de solicitudes ni reglas de disponibilidad.
 - 2/2 integraciones Playwright: PWA y chat existente, con SQLite y media temporales.
 - PWA: diez comprobaciones de descarga, seis fotografías no visitadas, ficha offline,
   actualización fallida, aviso de filtros, rutas privadas, POST sin red, reconexión y móvil.
-- Chat: 18 comprobaciones de regresión, incluida actualización a v10.
+- Chat: 18 comprobaciones de regresión, incluida actualización a v11.
 - Sin migraciones pendientes. Capturas y registros técnicos en TEMP, con prefijo
   `DriveSmart_offline_`; se publican solo dos capturas anónimas en docs/images.
 
@@ -76,7 +76,7 @@ $env:DRIVESMART_PLAYWRIGHT_MODULE="<ruta al módulo playwright/index.mjs>"
 Esta etapa no hace push ni modifica PythonAnywhere. Para reflejar el cambio en el
 sitio publicado, primero debe actualizarse su código y los estáticos mediante el
 procedimiento habitual (`collectstatic`, recarga WSGI y comprobación). Después abrir
-de nuevo o recargar la PWA y esperar el aviso de catálogo guardado. Los dispositivos
+de nuevo o recargar la PWA y dejar completar la descarga en segundo plano. Los dispositivos
 que solo tengan la versión anterior no adquieren esta función antes de conectarse
 y actualizar su Service Worker. Ver [guía de hosting](PYTHONANYWHERE.md).
 
