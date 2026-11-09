@@ -1,0 +1,74 @@
+[
+  {
+    "brand": "Nissan",
+    "model": "March",
+    "photo_year": 2021,
+    "author": "Bull-Doser",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/File:2021_Nissan_March.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2021_Nissan_March.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/2021_Nissan_March.jpg",
+    "filename": "nissan-march.jpg",
+    "local_variant": "Archivo de Wikimedia (original o miniatura de 1280 px), sin retoque local. Presentación proporcional con CSS."
+  },
+  {
+    "brand": "Suzuki",
+    "model": "Swift",
+    "photo_year": 2025,
+    "author": "RL GNZLZ",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Suzuki_Swift_1.2_GLX_2025.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Suzuki_Swift_1.2_GLX_2025.jpg",
+    "filename": "suzuki-swift.jpg",
+    "local_variant": "Archivo de Wikimedia (original o miniatura de 1280 px), sin retoque local. Presentación proporcional con CSS."
+  },
+  {
+    "brand": "Toyota",
+    "model": "Corolla",
+    "photo_year": 2023,
+    "author": "Just a Man",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2023_Toyota_Corolla_2.0_XEi_(Brazil).jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/2023_Toyota_Corolla_2.0_XEi_%28Brazil%29.jpg",
+    "filename": "toyota-corolla.jpg",
+    "local_variant": "Archivo de Wikimedia (original o miniatura de 1280 px), sin retoque local. Presentación proporcional con CSS."
+  },
+  {
+    "brand": "Kia",
+    "model": "Seltos",
+    "photo_year": 2024,
+    "author": "Elise240SX",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2024_Kia_Seltos_LX_in_Fusion_Black,_Front_Left,_05-23-2023.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/2024_Kia_Seltos_LX_in_Fusion_Black%2C_Front_Left%2C_05-23-2023.jpg",
+    "filename": "kia-seltos.jpg",
+    "local_variant": "Archivo de Wikimedia (original o miniatura de 1280 px), sin retoque local. Presentación proporcional con CSS."
+  },
+  {
+    "brand": "Mazda",
+    "model": "CX-5",
+    "photo_year": 2024,
+    "author": "Chanokchon",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2024_Mazda_CX-5_2.0_SP.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/2024_Mazda_CX-5_2.0_SP.jpg",
+    "filename": "mazda-cx-5.jpg",
+    "local_variant": "Archivo de Wikimedia (original o miniatura de 1280 px), sin retoque local. Presentación proporcional con CSS."
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "photo_year": 2025,
+    "author": "Kevauto",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2025_Volkswagen_Jetta_SEL,_front_3.28.25.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/2025_Volkswagen_Jetta_SEL%2C_front_3.28.25.jpg",
+    "filename": "volkswagen-jetta.jpg",
+    "local_variant": "Archivo de Wikimedia (original o miniatura de 1280 px), sin retoque local. Presentación proporcional con CSS."
+  }
+]

@@ -9,6 +9,7 @@
     --line: #d8ded4;
     --field-line: #81978e;
     --soft: #e7eee5;
+    --hero-surface: #dce7df;
     --danger: #9b251e;
     --warning-bg: #f4e4d4;
     --warning-ink: #713b16;
@@ -30,11 +31,16 @@
 }
 
 body {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     background: var(--paper);
     color: var(--ink);
     font: 16px/1.6 'Segoe UI', system-ui, sans-serif;
 }
+
+main { flex: 1; }
 
 a {
     color: var(--green);
@@ -118,6 +124,15 @@ nav a, .text-button {
 
 nav a {
     text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+    color: var(--ink);
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-color: var(--green);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
 }
 
 nav form {
@@ -210,6 +225,7 @@ h3 {
 }
 
 p {
+    text-wrap: pretty;
     margin-block: 0 var(--space-4);
 }
 
@@ -235,7 +251,10 @@ p {
     display: grid;
     gap: var(--space-6);
     align-items: center;
-    padding-block: var(--space-7);
+    padding: var(--space-5);
+    margin-top: var(--space-5);
+    background: var(--hero-surface);
+    border-radius: 28px;
 }
 
 .hero .actions {
@@ -252,8 +271,7 @@ p {
 
 .hero-vehicle {
     margin: 0;
-    background: var(--soft);
-    border-radius: var(--radius);
+    background: transparent;
     overflow: hidden;
 }
 
@@ -261,14 +279,14 @@ p {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 1.65;
+    aspect-ratio: 1.85;
+    border-radius: 20px;
     object-fit: contain;
 }
 
 .hero-vehicle figcaption {
-    border-top: 1px solid var(--line);
-    padding: var(--space-5);
-    font-size: 18px;
+    padding: var(--space-4) 0 0;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -340,7 +358,7 @@ p {
 footer {
     background: var(--ink);
     color: #d2ded7;
-    padding: var(--space-7) max(20px, calc((100% - 1200px) / 2)) 100px;
+    padding: var(--space-7) max(20px, calc((100% - 1200px) / 2)) var(--space-8);
 }
 
 footer .brand, footer .brand span {
@@ -383,7 +401,7 @@ footer small {
     margin-bottom: var(--space-2);
 }
 
-.auth input, .filters select, .assistant-form textarea {
+.auth input, .assistant-form textarea {
     width: 100%;
     min-width: 0;
     min-height: 48px;
@@ -394,7 +412,7 @@ footer small {
     color: var(--ink);
 }
 
-.auth input:hover, .filters select:hover, .assistant-form textarea:hover {
+.auth input:hover, .assistant-form textarea:hover {
     border-color: var(--green);
 }
 
@@ -439,9 +457,9 @@ footer small {
 
 @media (min-width: 700px) {
     .hero {
-        grid-template-columns: 1.05fr 1fr;
-        gap: var(--space-7);
-        padding-block: var(--space-8);
+        grid-template-columns: 1fr 1.25fr;
+        gap: var(--space-6);
+        padding: var(--space-7);
     }
 
     .features {
@@ -466,7 +484,7 @@ footer small {
     }
 
     .hero h1 {
-        font-size: clamp(40px, 8vw, 56px);
+        font-size: clamp(36px, 8vw, 56px);
     }
 
     .hero-vehicle figcaption {
@@ -483,4 +501,130 @@ footer small {
         width: 100%;
     }
 
+}
+
+.footer-link { color: var(--lime); font-size: 13px; }
+.home-search {
+    display: grid;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    margin-block: var(--space-5) var(--space-7);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+.home-search label {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: var(--space-2);
+}
+.home-search input, .home-search select {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: var(--space-3);
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--field-line);
+    border-radius: var(--control-radius);
+}
+@media (min-width: 800px) {
+    .home-search { grid-template-columns: 1fr 1fr auto; align-items: end; }
+    .hero h1 { font-size: clamp(42px, 4.4vw, 64px); }
+}
+
+/* Portada: buscador sobre fotografía y titular en los colores de DriveSmart. */
+.home-announcement {
+    padding: 5px 20px;
+    background: var(--lime);
+    color: var(--ink);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+.home-page .header {
+    width: 100%;
+    padding: 18px max(20px, calc((100% - 1200px) / 2));
+    background: var(--ink);
+    border: 0;
+}
+.home-page .header .brand, .home-page .header nav a,
+.home-page .header .text-button, .home-page .header .username { color: var(--paper); }
+.home-page .header .brand span { color: var(--lime); }
+.home-page .header nav a[aria-current="page"] { text-decoration-color: var(--lime); }
+.home-page .header .button { background: var(--lime); color: var(--ink); }
+.home-page .header .button:hover { background: var(--paper); }
+.home-page .header :focus-visible { outline-color: var(--lime); }
+.home-stage { position: relative; background: var(--ink); padding-top: 8px; }
+.home-stage .home-search {
+    position: relative;
+    z-index: 1;
+    margin-block: 0 -70px;
+    padding: 24px 28px;
+    gap: 16px 24px;
+    border: 0;
+    border-radius: 16px;
+}
+.home-search-heading { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; }
+.home-search-heading h2 { margin: 0; font-size: 24px; }
+.home-search-heading span, .home-search-note { color: var(--muted); font-size: 13px; }
+.home-search-note { grid-column: 1 / -1; margin: 0; }
+.home-stage .home-search label { color: var(--ink); font-weight: 600; }
+.home-stage .home-search input, .home-stage .home-search select { background: var(--surface); min-height: 52px; }
+.home-stage .home-search .button { min-height: 52px; padding-inline: 32px; }
+.home-panorama { position: relative; margin: 0; overflow: hidden; }
+.home-panorama img {
+    display: block;
+    width: 100%;
+    height: clamp(360px, 39vw, 650px);
+    object-fit: cover;
+    object-position: center 55%;
+}
+.home-panorama figcaption {
+    position: absolute;
+    bottom: 16px;
+    right: max(20px, calc((100% - 1200px) / 2));
+    padding: 6px 12px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 12px;
+}
+.home-panorama figcaption a { color: var(--lime); }
+.home-statement { background: var(--green); color: var(--paper); padding-block: 36px 40px; text-align: center; }
+.home-statement h1 { margin: 0; font-size: clamp(36px, 5.4vw, 76px); font-weight: 800; line-height: 1.05; letter-spacing: -.03em; text-wrap: balance; }
+.home-statement p { margin: 20px 0 0; color: var(--paper); }
+.home-page .featured { padding-top: 56px; }
+@media (max-width: 799px) {
+    .home-stage .home-search { margin-bottom: 0; padding: 20px; }
+    .home-panorama img { height: clamp(240px, 52vw, 390px); object-fit: cover; }
+    .home-stage { padding-bottom: 0; }
+    .home-panorama figcaption { bottom: 12px; }
+    .home-statement { padding-block: 32px; }
+}
+@media (max-width: 399px) {
+    .home-page .header { padding-block: 12px; }
+    .home-stage .home-search { width: calc(100% - 24px); padding: 16px; }
+    .home-search-heading h2 { font-size: 22px; }
+    .home-panorama img { height: 210px; object-fit: contain; }
+    .home-panorama figcaption { bottom: 4px; right: 12px; font-size: 11px; }
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 14px;
+    margin-bottom: var(--space-4);
+}
+.auth > p:last-child { margin-bottom: 0; }
+.auth .errorlist { line-height: 1.5; }
+
+.account-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    max-width: 100%;
+    min-width: 0;
 }

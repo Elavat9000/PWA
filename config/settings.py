@@ -29,7 +29,19 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '1') == '1'
 if not DEBUG and SECRET_KEY.startswith('django-insecure-'):
     raise ImproperlyConfigured('Configura DJANGO_SECRET_KEY antes de desactivar DEBUG.')
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = [host.strip() for host in
+                 os.environ.get('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+                 if host.strip()]
+if not DEBUG and not any(host not in {'127.0.0.1', 'localhost'} for host in ALLOWED_HOSTS):
+    raise ImproperlyConfigured('Configura DJANGO_ALLOWED_HOSTS con el dominio de producción.')
+
+if not DEBUG:
+    # Confirm the host forwards this header before enabling production mode.
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = int(os.environ.get('DJANGO_SECURE_HSTS_SECONDS', '0'))
 
 
 # Application definition

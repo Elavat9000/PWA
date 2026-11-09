@@ -1,37 +1,67 @@
-# DriveSmart — Beta 0.1
+# DriveSmart — Progreso
 
-- Fase 0: completada y auditada. Entorno Python 3.12, Git main y tres skills locales verificadas.
-- Fase 1: completada y auditada. Inicio, registro, login, logout, permisos y Admin. Cuatro pruebas correctas.
-- Fase 2: completada y auditada. Vehicle, CRUD en Admin, catálogo, filtros, detalle y seis demos sin duplicados.
-  Nueve pruebas Django correctas; Playwright convencional: 16 comprobaciones correctas.
-- Fase 3: completada y verificada. Solicitudes simuladas, cálculo en Python, Mis rentas,
-  disponibilidad y aprobación/rechazo en Admin. 33 pruebas Django y 1 prueba de navegador
-  con 15 grupos de comprobaciones correctos. Ver [resultados](FASE_3_RESULTADOS.md).
-- Fase 4: completada y verificada. Asistente textual local, catálogo por ORM,
-  preguntas pendientes y respuestas publicadas por Admin. 65 pruebas Django y 2 de navegador
-  correctas. Ver [resultados](FASE_4_RESULTADOS.md).
-- Fase 5: completada y verificada. PWA mínima sin datos privados en caché y entrega ZIP
-  reproducida en entorno aislado. 73 pruebas Django y 3 de navegador correctas.
-  Ver [resultados de entrega](FASE_5_RESULTADOS.md).
+Fases 0, 1 y 2 completadas y auditadas: entorno, cuentas, catálogo y administración.
+Fase 3 completada: solicitudes simuladas, fechas, costos e historial por usuario.
+Fase 4 completada: asistente textual local y conocimiento revisado en Admin.
+Fase 5 completada: PWA mínima, privacidad de caché y empaquetado limpio.
 
-Fecha objetivo: 10 de noviembre de 2026, 10:00, America/Mexico_City.
+Las mejoras visuales incorporan fotografías de referencia con créditos, filtros,
+portada y tarjetas consistentes, formularios de renta con pasos y un asistente compacto.
+Los criterios vigentes están en DESIGN.md. Se conservan SQLite y las imágenes locales.
 
-Verificación ejecutada el 6 de noviembre de 2026: check sin incidencias, migraciones
-aplicadas, carga demo ejecutada dos veces, CRUD probado con base temporal.
-Impeccable se ejecutó sin hooks ni Live. Playwright Interactive quedó instalado;
-se usó Playwright convencional para conservar las protecciones del entorno.
-Code Simplification revisó únicamente código terminado después de las pruebas.
-No se ha creado repositorio remoto ni ejecutado push.
+## Limpieza del proyecto — 8 de noviembre de 2026
 
-## Mejora visual — 8 de noviembre de 2026
+Se retiraron los ZIP, informes históricos, resultados y fuentes de QA de navegador
+al archivo externo DriveSmart_Archivo_20261108, junto al proyecto.
+Se eliminaron node_modules, la caché npm y los navegadores locales de Playwright.
+Se mantienen la aplicación, las migraciones, las pruebas Django, el entorno Python,
+las skills completas, Git, las instrucciones y las licencias de imágenes.
 
-Completada: portada con vehículos reales del catálogo y tres pasos, tarjetas compartidas,
-formularios y rentas con jerarquía unificada, chat adaptable y tokens CSS centralizados.
-Se conservaron la paleta, Auth, Admin, modelos, cálculos y motor del asistente.
-73 pruebas Django y 4 pruebas opcionales de navegador aprobadas; capturas a 1440, 768,
-390 y 320 px. Caché PWA v2, con la misma política de privacidad y aviso offline.
-ZIP visual independiente; el ZIP de fase 5 permanece intacto. Sin remoto ni push.
-Ver [informe y evidencias](MEJORA_VISUAL.md).
+La verificación habitual es manage.py check, makemigrations --check --dry-run y test.
+El conjunto Django contiene 79 pruebas y no requiere Node.
+No se creó commit ni se realizó push durante la limpieza.
+
+Las auditorías y capturas anteriores se conservan fuera de esta carpeta; no son
+requisitos de ejecución. El proyecto sigue destinado a uso local.
+
+Verificación posterior a la limpieza: check correcto, sin migraciones pendientes,
+79/79 pruebas Django aprobadas, SQLite íntegra e imágenes presentes.
+La carpeta test-results se retiró tras verificar por SHA256 sus 20.809 archivos copiados.
+
+## Base de conocimiento ampliada — 8 de noviembre de 2026
+
+Investigadas ocho fuentes oficiales del sector. Catálogo de 307 temas y 456
+formulaciones en 27 categorías: 245 publicadas sobre la beta y 211 pendientes de
+políticas comerciales. Carga idempotente y protección de respuestas humanas.
+88 pruebas Django aprobadas y siete consultas HTTP con CSRF verificadas.
+Sin cambios del esquema, motor del asistente ni dependencias.
+Ver [fuentes y mantenimiento](BASE_CONOCIMIENTO.md). SQLite continúa ignorada en Git.
+
+## Portada inspirada en la referencia — 8 de noviembre de 2026
+
+Nueva composición de inicio: aviso fino, cabecera oscura, buscador blanco sobre
+fotografía y titular en franja verde. Conserva la identidad verde, crema y lima,
+los filtros GET existentes y los créditos de imagen. Reglas adaptativas para móvil.
+Sin cambios en modelos, lógica de negocio ni dependencias. Caché pública PWA v6;
+se conserva la lista de estáticos permitidos y la exclusión de datos privados.
+Check correcto y 88/88 pruebas Django aprobadas. Portada y filtrado GET comprobados.
+La inspección visual en navegador queda pendiente: el host de acceso a navegadores
+y la conexión nativa de Computer Use no estaban disponibles en esta sesión.
+Sin commit ni push.
+
+## Tarjetas de vehículos — 8 de noviembre de 2026
+
+Tarjeta compartida de portada y catálogo con fondo verde tinta, modelo destacado,
+características con iconos, fotografía amplia, disponibilidad y precio diario en
+lima. Conserva los datos, las imágenes originales y el enlace a detalle. Caché
+pública PWA v7 sin ampliar su lista permitida. Check correcto y 88/88 pruebas
+Django aprobadas; renderizado Django de catálogo, portada y detalle comprobado.
+La revisión visual de escritorio y móvil sigue pendiente por indisponibilidad del
+host de navegador. Sin dependencias nuevas, commit ni push.
+
+Rollback solicitado: se restauró el diseño anterior de las tarjetas blancas en
+portada y catálogo. La nueva composición de la portada se conserva. Caché PWA v8
+para retirar los estilos de tarjetas descartados. Sin modificar el historial Git.
 
 ## Chat 2.0 — 8 de noviembre de 2026
 

@@ -1,17 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block body_class %}home-page{% endblock %}
+{% block announcement %}<div class="home-announcement">Tu próximo camino empieza con una buena elección.</div>{% endblock %}
 {% block content %}
-<section class="hero wrap">
-    <div class="hero-copy">
-        <h1>Más libertad.<br>Más kilómetros.<br><em>Más tú.</em></h1>
-        <p class="lead">Encuentra el vehículo que va contigo. Compara sus características, elige tus fechas y envía una solicitud de renta.</p>
-        <div class="actions"><a class="button" href="{% url 'vehicle_list' %}">Explorar vehículos</a><a href="{% url 'signup' %}">Crear mi cuenta</a></div>
-        <p class="muted">Catálogo de demostración · Solicitudes simuladas, sin pagos.</p>
-    </div>
-    <figure class="hero-vehicle"><img src="{% static 'images/sedan.svg' %}" width="720" height="400" alt="Ilustración de referencia de un sedán"><figcaption>Tu próximo camino empieza con una buena elección.<span>Ilustración de referencia</span></figcaption></figure>
+<section class="home-stage" aria-label="Encuentra un vehículo">
+<form class="wrap home-search" action="{% url 'vehicle_list' %}" method="get" aria-label="Buscar un vehículo">
+    <div class="home-search-heading"><h2>¿Qué vas a conducir?</h2><span>Compara modelos y precios por día.</span></div>
+    <div><label for="home-category">Tipo de vehículo</label><select id="home-category" name="categoria"><option value="">Todos los vehículos</option>{% for value,label in categories %}<option value="{{ value }}">{{ label }}</option>{% endfor %}</select></div>
+    <div><label for="home-price">Presupuesto por día · MXN</label><input id="home-price" name="precio_max" type="number" min="1" max="9999999.99" step="0.01" placeholder="Sin límite"></div>
+    <button class="button" type="submit">Buscar vehículos</button>
+    <p class="home-search-note">Solicitudes simuladas, sin pagos. Las fechas se eligen al solicitar cada vehículo.</p>
+</form>
+    <figure class="home-panorama">{% if hero_vehicle %}{% include 'vehicles/image.html' with vehicle=hero_vehicle %}{% else %}<img src="{% static 'images/sedan.svg' %}" width="720" height="400" alt="Ilustración de referencia de un sedán">{% endif %}<figcaption>Fotografía de referencia · <a href="{% url 'image_credits' %}">Créditos</a></figcaption></figure>
 </section>
+<section class="home-statement" aria-labelledby="home-heading"><div class="wrap"><h1 id="home-heading">Tu próximo camino.<br>Tu mejor elección.</h1><p>Compara, elige y solicita tu vehículo con DriveSmart.</p></div></section>
 <section class="wrap featured" aria-labelledby="featured-heading">
-    <div class="section-heading"><div><h2 id="featured-heading">Encuentra tu próximo compañero.</h2><p>Una primera mirada a nuestro catálogo de demostración.</p></div><a href="{% url 'vehicle_list' %}">Ver todos los vehículos</a></div>
+    <div class="section-heading"><div><h2 id="featured-heading">Explora el catálogo.</h2><p>Características y precios por día, a la vista.</p></div><a href="{% url 'vehicle_list' %}">Ver todos los vehículos</a></div>
     <div class="vehicle-grid">{% for vehicle in featured_vehicles %}{% include 'vehicles/card.html' %}{% empty %}<p>El catálogo estará disponible cuando se añadan vehículos.</p>{% endfor %}</div>
 </section>
 <section class="wrap steps" aria-labelledby="steps-heading">

@@ -1,99 +1,89 @@
-﻿DriveSmart Beta — instalación reproducible en Windows / PowerShell
+DRIVESMART — INSTALACION Y USO EN WINDOWS
+Python 3.12 · Django 5.2 LTS · SQLite
 
-REQUISITOS
-Python 3.12 y un navegador moderno. Internet solo para descargar dependencias.
-La aplicación funciona en localhost sin servicios de pago ni claves de IA.
-No es necesario activar scripts ni cambiar políticas de ejecución de PowerShell.
+1. ENTRAR A LA CARPETA DEL PROYECTO
+   Abrir PowerShell en la carpeta que contiene manage.py.
+   Para esta computadora:
+   cd C:\Users\Diana\Documents\PWA
 
-1. EXTRAER Y ABRIR EL PROYECTO
-   Extraer DriveSmart_Beta.zip. Dentro aparece la carpeta DriveSmart.
-   Abrir PowerShell en esa carpeta: debe contener manage.py y requirements.txt.
-   Ejemplo si el ZIP está en la carpeta actual:
-   Expand-Archive -LiteralPath .\DriveSmart_Beta.zip -DestinationPath .\DriveSmart_Entrega
-   cd .\DriveSmart_Entrega\DriveSmart
-
-2. CREAR EL ENTORNO VIRTUAL
-   python --version
-   Debe indicar Python 3.12.x. Si no es así, usar la ruta del Python 3.12 instalado.
-   python -m venv .venv
-
-3. INSTALAR DEPENDENCIAS
+2. ENTORNO PYTHON
+   El proyecto local ya conserva .venv y sus dependencias.
+   Solo en una instalación nueva, después de instalar Python 3.12:
+   py -3.12 -m venv .venv
    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
    .\.venv\Scripts\python.exe -m pip check
+   No requiere activar scripts ni modificar las políticas de Windows.
+   No instalar Node, navegadores ni servicios de IA: la aplicación no los utiliza.
 
-4. CONFIGURACIÓN LOCAL
-   No hacen falta variables ni archivo .env para probar en localhost.
-   .env.example es una referencia: Django NO carga archivos .env automáticamente.
-   Los valores locales predeterminados son DEBUG activo y hosts 127.0.0.1/localhost.
-   Si necesitas definir variables para esta terminal:
+3. CONFIGURACION LOCAL
+   .env.example documenta las variables; Django no carga ese archivo automáticamente.
+   Para mantener DEBUG local explícitamente en esta sesión de PowerShell:
    $env:DJANGO_DEBUG="1"
-   $env:DJANGO_ALLOWED_HOSTS="127.0.0.1,localhost"
-   No guardar secretos en Git. No se incluyen credenciales ni administrador inicial.
-   La clave de desarrollo del código NO es una clave privada para producción.
+   Estos pasos son únicamente para trabajar en la computadora local.
 
-5. MIGRAR Y CARGAR LAS DEMOSTRACIONES
+4. MIGRACIONES Y DATOS
    .\.venv\Scripts\python.exe manage.py migrate
+   En local, no borrar ni sustituir db.sqlite3 para actualizar el proyecto.
+   Solo si se desean datos de demostración:
    .\.venv\Scripts\python.exe manage.py load_demo
-   .\.venv\Scripts\python.exe manage.py load_faq
-   Se crean seis vehículos y ocho FAQ. Los comandos pueden repetirse sin duplicar
-   los ejemplos ni sobrescribir las ediciones existentes.
-   Las imágenes de referencia están en static/images; no usan URLs externas.
+   .\.venv\Scripts\python.exe manage.py load_knowledge_base
+   .\.venv\Scripts\python.exe manage.py load_vehicle_images
+   Los comandos conservan registros y fotos existentes y pueden repetirse.
+   Las fotografías son referencias: año y versión pueden diferir del catálogo.
+   Estos comandos afectan la base local, no la instalación online.
 
-6. CREAR TU ADMINISTRADOR
+5. ADMINISTRADOR
+   Solo si se necesita crear una cuenta administrativa:
    .\.venv\Scripts\python.exe manage.py createsuperuser
-   Elegir usuario, correo y contraseña al responder las preguntas.
-   No hay contraseñas predeterminadas ni datos personales en el ZIP.
+   Elegir credenciales propias; no existen contraseñas predeterminadas.
+   Gestionar vehículos, solicitudes y conocimiento en /admin/.
+   Cada vehículo admite una imagen principal desde el campo Imagen.
+   SQLite guarda la ruta; media/vehicles/ almacena el archivo.
 
-7. INICIAR DRIVESMART
+6. EJECUTAR
    .\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
    Inicio: http://127.0.0.1:8000/
-   Catálogo: http://127.0.0.1:8000/vehiculos/
-   Mis rentas: http://127.0.0.1:8000/mis-rentas/
-   Admin: http://127.0.0.1:8000/admin/
-   Conocimiento: http://127.0.0.1:8000/admin/assistant/knowledgeentry/
-   Asistente: botón flotante Asistente DriveSmart en las páginas públicas.
-   Detener con Ctrl+C. Reiniciar después de cambios si se usó --noreload.
-   Si el puerto está ocupado, detener el servidor anterior o usar 8001 y abrir ese puerto.
+   Catálogo: /vehiculos/ · Mis rentas: /mis-rentas/ · Admin: /admin/
+   Créditos de fotos: /creditos-imagenes/
+   El asistente se abre desde el botón con icono de conversación.
+   Detener con Ctrl+C. Si se usó --noreload, reiniciar después de modificar código.
 
-8. PROBAR LA PWA
-   Abrir primero el sitio con el servidor funcionando para registrar el Service Worker.
-   Chrome/Edge pueden ofrecer Instalar DriveSmart en su menú, según el navegador.
-   Manifiesto: /manifest.webmanifest. Worker: /service-worker.js.
-   Para simular falta de conexión usar DevTools > Network > Offline, o detener el
-   servidor después de la primera carga y navegar al inicio o al catálogo.
-   Aparece un aviso: NO hay catálogo, rentas ni chatbot operativos offline.
-   Desconectar Wi-Fi no necesariamente corta el acceso a un servidor en localhost.
-   Volver a Online y mantener Django ejecutándose para reanudar las operaciones.
-   Las páginas privadas y POST no se guardan en el Service Worker.
-   Al modificar estáticos, cambiar v1 en static/pwa/service-worker.js a una versión
-   nueva y recargar. No hace falta borrar datos de usuarios.
+7. PWA
+   Abrir primero el sitio con el servidor disponible para registrar el worker.
+   Chrome/Edge pueden ofrecer instalar la aplicación desde su menú.
+   Simular Offline desde DevTools > Network para verificar el aviso informativo.
+   Desconectar Wi-Fi no interrumpe necesariamente el acceso a localhost.
+   El catálogo, las rentas y el asistente requieren conexión al servidor.
+   No se guardan páginas privadas, sesiones, respuestas del chat ni POST en el worker.
+   Al cambiar CSS/JS cacheados, incrementar la versión en static/pwa/service-worker.js.
 
-9. PRUEBAS DJANGO (NO REQUIEREN NODE)
+8. COMPROBAR EL PROYECTO
    .\.venv\Scripts\python.exe manage.py check
    .\.venv\Scripts\python.exe manage.py makemigrations --check --dry-run
    .\.venv\Scripts\python.exe manage.py test
-   Las pruebas usan una base temporal, sin modificar la SQLite de uso.
+   Las pruebas Django no requieren Node y utilizan una base temporal.
+   El QA de navegador y sus resultados históricos están archivados fuera del proyecto;
+   no son requisitos para ejecutar DriveSmart.
 
-10. QA DE NAVEGADOR OPCIONAL
-   Requiere Node.js y las dependencias dev de package-lock.json. No son requisitos
-   de ejecución. Si se quieren instalar esas herramientas:
-   npm.cmd ci
-   $env:PLAYWRIGHT_BROWSERS_PATH="$PWD\.playwright"
-   npx.cmd playwright install chromium
-   .\.venv\Scripts\python.exe manage.py test assistant.browser_tests rentals.browser_tests core.browser_tests --verbosity 2
-   Los datos de QA son temporales; las evidencias quedan en test-results/.
-   Las skills no se incluyen ni son necesarias para instalar el ZIP.
+9. DATOS Y ARCHIVOS LOCALES
+   Respaldar db.sqlite3 y media/ juntos para conservar datos e imágenes propios.
+   No incluirlos en ZIPs de entrega. Las skills locales son opcionales para ejecutar
+   la aplicación.
 
-11. GENERAR UN ZIP LIMPIO
+10. PAQUETE LOCAL DE ENTREGA
    .\.venv\Scripts\python.exe scripts/package_beta.py
-   Genera DriveSmart_Beta.zip con código y recursos necesarios.
-   Excluye .git, .venv, .env, SQLite, media personal, node_modules, skills, logs y QA.
-   No borra esos archivos del proyecto original ni ejecuta Git o publicaciones.
+   El comando genera un ZIP de código y recursos sin bases, .env, entornos ni skills.
+   El ZIP no se necesita para ejecutar el proyecto localmente.
 
-IMPORTANTE PARA LA ENTREGA
-Las rentas son simuladas, sin pagos. El conocimiento nuevo necesita revisión del Admin.
-SQLite e imágenes subidas son locales: respaldar db.sqlite3 y media/ por separado si
-se desea conservar datos propios. No incorporarlos al ZIP de entrega.
-Runserver y esta configuración son para desarrollo local. Antes de publicar deben
-resolverse las advertencias de manage.py check --deploy; no forzar HTTPS de producción
-sobre localhost. Ver docs/ARQUITECTURA_Y_ESCALABILIDAD.md y docs/FASE_5_RESULTADOS.md.
+Las rentas son simuladas y no incluyen pagos. El asistente funciona localmente sin APIs.
+Runserver es únicamente el servidor de desarrollo local; no es una configuración productiva.
+Ver docs/ARQUITECTURA_Y_ESCALABILIDAD.md y docs/IMAGENES.md.
+Para preparar la publicación online en PythonAnywhere, consultar
+docs/PYTHONANYWHERE.md. No usar esa guía para cambiar el entorno local.
+
+BASE DE CONOCIMIENTO AMPLIA
+   load_knowledge_base carga respuestas comprobadas y preguntas comerciales pendientes.
+   Para revisar sin escribir: manage.py load_knowledge_base --dry-run
+   No reemplaza respuestas humanas ni publica políticas reales automáticamente.
+   Revisar pendientes desde Admin > Base de conocimiento. Ver docs/BASE_CONOCIMIENTO.md.
+   load_faq conserva su función anterior de ocho preguntas frecuentes.

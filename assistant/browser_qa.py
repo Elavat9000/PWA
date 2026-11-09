@@ -18,6 +18,7 @@ from django.core.management import call_command
 from django.utils import timezone
 
 from vehicles.models import Vehicle
+from rentals.models import RentalRequest
 from .models import KnowledgeEntry
 
 
@@ -45,3 +46,4 @@ class ChatBrowserTests(StaticLiveServerTestCase):
         print(result.stdout)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(KnowledgeEntry.objects.filter(question__icontains='cobertura').count(), 1)
+        self.assertFalse(RentalRequest.objects.exists())

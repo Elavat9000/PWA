@@ -13,6 +13,7 @@ from vehicles.models import Vehicle
 NUMBERS = dict(zip('uno una dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciseis diecisiete dieciocho diecinueve veinte treinta'.split(),
                    [1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30]))
 MONTHS = {name: index for index, name in enumerate('enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre'.split(), 1)}
+WEEKDAYS = {'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'}
 DATE_HELP = 'Indica inicio y devolución completos, por ejemplo: del 12/11/2027 al 15/11/2027.'
 
 
@@ -43,6 +44,9 @@ def read_dates(text):
         else:
             span = re.search(r'\b(?:del?\s+)?(\d{1,2})(?:\s+de\s+([a-z]+))?\s+al?\s+(\d{1,2})\s+de\s+([a-z]+)(?:\s+(?:de\s+)?(\d{4}))?\b', text)
             if not span:
+                weekday = next((day for day in WEEKDAYS if re.search(r'\b' + day + r'\b', text)), None)
+                if weekday:
+                    return None, text, f'¿Qué {weekday} y hasta qué fecha necesitas el vehículo? ' + DATE_HELP
                 if re.search(r'\b(?:fechas?|noviembre|diciembre|enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|hoy|manana)\b|\bdel?\s+\d+\s+al?\s+\d+', text):
                     return None, text, DATE_HELP
                 return None, text, None
@@ -105,7 +109,7 @@ def contextual_reply(question, context):
     transmissions = words & {'manual', 'automatico'}
     followup_terms = {'barato', 'grande', 'capacidad', 'otros', 'otro', 'estos', 'esas', 'rentarlo', 'rentarlos', 'ese', 'esa', 'compara', 'comparar', 'diferencia', 'conviene', 'automatico', 'manual', 'dias', 'personas', 'pasajeros', 'plazas', 'hasta', 'desde', 'minimo', 'maximo'}
     vehicle_intent = bool(names['brand'] or names['model'] or categories or transmissions or words & {'vehiculo', 'disponible', 'barato', 'catalogo'})
-    date_intent = bool(re.search(r'\d{4}-\d{2}-\d{2}|\d/|\bdel?\s+\d+\s', raw))
+    date_intent = bool(re.search(r'\d{4}-\d{2}-\d{2}|\d/|\bdel?\s+\d+\s', raw) or words & WEEKDAYS)
     duration_intent = bool(re.search(r'\b\d+\s+dias?\b', numeric))
     if not (vehicle_intent or words & followup_terms or date_intent or duration_intent):
         return None
@@ -135,7 +139,7 @@ def contextual_reply(question, context):
     allowed = COMMON_WORDS | name_words | set('vehiculo disponible barato precio mas menos automatico manual compacto sedan suv opciones catalogo mostrar muestra muestrame diario dia dias mxn pesos quiero conducir rentarlo rentarlos solicitar renta compara comparar comparacion diferencia estos dos tres esos esas entre otros otro uno algo grande capacidad conviene mejor recomendado presupuesto minimo maximo desde hasta del al fecha fechas el cual cuanto tienen tienes hay vez nueva busqueda ahora nuevo'.split())
     # Incluso con fechas erróneas, no convertir condiciones desconocidas en filtros válidos.
     checked_text = re.sub(r'\b\d+\b', ' ', normalize_text(cleaned)) if date_error else normalize_text(cleaned)
-    unknown = set(checked_text.split()) - allowed - (set(MONTHS) | {'hoy', 'manana'} if date_error else set())
+    unknown = set(checked_text.split()) - allowed - (set(MONTHS) | WEEKDAYS | {'hoy', 'manana', 'proximo', 'este'} if date_error else set())
     if unknown:
         return None
     if not context and not vehicle_intent and not date_intent and not duration_intent:

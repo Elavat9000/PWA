@@ -5,7 +5,9 @@ from vehicles.models import Vehicle
 
 
 def home(request):
-    return render(request, 'core/home.html', {'featured_vehicles': Vehicle.objects.order_by('pk')[:3]})
+    return render(request, 'core/home.html', {'featured_vehicles': Vehicle.objects.order_by('pk')[:3],
+        'hero_vehicle': Vehicle.objects.filter(brand='Toyota', model='Corolla').first(),
+        'categories': Vehicle.Category.choices})
 
 # Create your views here.
 

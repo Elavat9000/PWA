@@ -176,6 +176,7 @@ def vehicle_reply(question):
 def answer_question(question, user=None, context=None):
     """Único punto de entrada para las vistas; no genera respuestas ni cambia rentas."""
     from .conversation import contextual_reply
+    from .intents import informal_reply
 
     memory = context if isinstance(context, dict) else {}
     sensitive = plain_text(question)
@@ -184,7 +185,9 @@ def answer_question(question, user=None, context=None):
         memory.clear()
         return {'reply': 'Evita compartir contraseñas, documentos o datos de contacto. No registraré ese mensaje. Reformula tu consulta sin datos personales.',
                 'vehicles': [], 'source': 'privacy'}
-    inventory = contextual_reply(question, memory)
+    inventory = informal_reply(question, memory)
+    if inventory is None:
+        inventory = contextual_reply(question, memory)
     if inventory is not None:
         return inventory
     memory.clear()

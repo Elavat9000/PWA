@@ -50,6 +50,22 @@ try {
     const page = await context.newPage();
     page.on('pageerror', error => errors.push(error.message));
     await open(page);
+    for (const [message, expected] of [
+        ['Como puedo pedir un carrop', 'knowledge'],
+        ['como se renta esto ?', 'knowledge'],
+        ['cuantas personas caben en un sedan', 'vehicles'],
+        ['yo quiero tener un mejor resultado', 'clarification'],
+        ['crea una renta para el jueves', 'clarification'],
+    ]) {
+        const result = await ask(page, message);
+        assert.equal(result.source, expected, message);
+        if (message.includes('jueves')) assert.match(result.reply, /no crear solicitudes.*jueves/s);
+        if (message.includes('caben')) assert.equal(result.vehicles[0].passengers, 5);
+    }
+    await capture(page, 'lenguaje-cotidiano');
+    await page.getByRole('button', { name: 'Nueva conversación', exact: true }).click();
+    await page.waitForFunction(() => !document.querySelector('#assistant-reset').disabled);
+    record('Cinco preguntas originales reciben orientación, capacidad o aclaración sin inventar ni reservar');
     let data = await ask(page, 'Busco una camioneta automática para siete personas');
     assert.equal(data.vehicles.length, 1);
     assert.match(data.vehicles[0].name, /Mazda/);
@@ -61,6 +77,13 @@ try {
     data = await ask(page, '¿Cuánto cuesta rentarlo tres días?');
     assert.equal(data.estimate.total, '4200.00');
     record('Conversación de cuatro mensajes con fechas, filtros y cotización');
+    await ask(page, 'yo quiero tener un mejor resultado');
+    const criterionResponse = page.waitForResponse(r => r.url().endsWith('/asistente/consultar/'));
+    await page.getByRole('button', { name: 'Precio', exact: true }).click();
+    const criterion = await (await criterionResponse).json();
+    assert.match(criterion.vehicles[0].name, /Mazda/);
+    await page.waitForFunction(() => !document.querySelector('#assistant-form').hasAttribute('aria-busy'));
+    record('Elegir criterio desde sugerencias conserva SUV, transmisión, plazas y fechas');
     assert.ok(await page.getByRole('link', { name: 'Ver vehículo', exact: true }).last().getAttribute('href'));
     await capture(page, 'desktop');
     // Reinicio nativo, independiente de volver a cargar la página.

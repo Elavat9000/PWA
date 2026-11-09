@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Solicitud #{{ rental.pk }} · DriveSmart{% endblock %}
 {% block content %}
-<section class="auth rental-form">
-    <h1>Solicitud registrada.</h1>
-    <p>Tu solicitud #{{ rental.pk }} está registrada con estado <strong>{{ rental.get_status_display }}</strong>.</p>
-    <h2>{{ rental.vehicle }}</h2>
-    {% include 'rentals/summary.html' %}
-    <p class="rental-notice">Es una solicitud simulada, sin pagos. Puedes consultar su estado en Mis rentas.</p>
-    <a class="button" href="{% url 'rental_list' %}">Ver mis rentas</a>
+<section class="wrap rental-page">
+    <div class="confirmation-heading"><svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><h1>Solicitud registrada.</h1></div>
+    <p class="lead">Tu solicitud #{{ rental.pk }} está registrada con estado <strong>{{ rental.get_status_display }}</strong>.</p>
+    {% include 'rentals/steps.html' with stage='confirmation' %}
+    <div class="rental-layout">
+        <aside class="rental-vehicle" aria-label="Vehículo solicitado"><div class="rental-vehicle-image">{% include 'vehicles/image.html' with vehicle=rental.vehicle %}</div><div class="rental-vehicle-copy"><h2>{{ rental.vehicle }}</h2><p>{{ rental.vehicle.get_category_display }} · {{ rental.vehicle.get_transmission_display }}</p></div></aside>
+        <div class="auth rental-form confirmation-summary">
+            <h2>Tu solicitud, en detalle</h2>
+            {% include 'rentals/summary.html' %}
+            <p class="rental-notice">Es una solicitud simulada, sin pagos. Puedes consultar su estado en Mis rentas.</p>
+            <a class="button" href="{% url 'rental_list' %}">Ver mis rentas</a>
+        </div>
+    </div>
 </section>
 {% endblock %}

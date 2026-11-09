@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Créditos de imágenes · DriveSmart{% endblock %}
+{% block content %}<section class="wrap catalog">
+<h1>Fotografías del catálogo.</h1><p class="lead">Imágenes de referencia de cada modelo. El año, versión y color pueden diferir del vehículo de demostración; no acreditan una unidad real disponible.</p>
+<div class="vehicle-grid">{% for photo in photos %}<article class="vehicle-card"><div class="vehicle-image"><img src="{% static 'catalog/' %}{{ photo.filename }}" alt="{{ photo.brand }} {{ photo.model }}, fotografía de referencia" loading="lazy"></div><div class="card-body"><h2>{{ photo.brand }} {{ photo.model }}</h2><p>Foto: {{ photo.author }} · Vehículo fotografiado: {{ photo.photo_year }}</p><p><a href="{{ photo.source_url }}">Archivo original en Wikimedia Commons</a></p><p><a href="{{ photo.license_url }}">{{ photo.license }}</a></p><p class="muted">{{ photo.local_variant }}</p></div></article>{% endfor %}</div>
+<p>Las fotografías de esta colección conservan sus licencias. Las imágenes que suba el administrador requieren sus propios derechos de uso y atribución. Las marcas pertenecen a sus titulares; no se afirma patrocinio.</p>
+<a href="{% url 'vehicle_list' %}">Volver al catálogo</a></section>{% endblock %}

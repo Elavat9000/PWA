@@ -13,6 +13,123 @@ from .models import KnowledgeEntry
 from .services import UNKNOWN_REPLY, answer_question, normalize_text
 
 
+class KnowledgeCatalogTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        from .knowledge_catalog import read_catalog
+        cls.catalog = read_catalog()
+        call_command('load_knowledge_base', stdout=StringIO())
+
+    def test_complete_valid_catalog_loaded_with_policy_drafts(self):
+        from .services import question_key
+        topics = self.catalog['topics']
+        self.assertEqual(len(topics), 307)
+        self.assertEqual(len({t['category'] for t in topics}), 27)
+        self.assertEqual({t['level'] for t in topics}, {'basico', 'intermedio', 'avanzado'})
+        keys = [question_key(q) for t in topics for q in t['questions']]
+        self.assertEqual(len(keys), len(set(keys)))
+        self.assertEqual(KnowledgeEntry.objects.count(), 456)
+        self.assertEqual(KnowledgeEntry.objects.filter(status='PUBLICADA').count(), 245)
+        self.assertEqual(KnowledgeEntry.objects.filter(status='PENDIENTE').count(), 211)
+        self.assertFalse(KnowledgeEntry.objects.filter(status='PUBLICADA', answer__startswith='BORRADOR ADMINISTRATIVO').exists())
+
+    def test_every_published_question_is_retrievable(self):
+        from .services import matching_entry
+        published = list(KnowledgeEntry.objects.filter(status='PUBLICADA'))
+        for expected in published:
+            with self.subTest(question=expected.question):
+                result = matching_entry(expected.question, published)
+                self.assertIsNotNone(result)
+                self.assertEqual(result.pk, expected.pk)
+                self.assertEqual(result.answer, expected.answer)
+
+    def test_commercial_questions_do_not_match_public_answers(self):
+        from .services import matching_entry
+        published = list(KnowledgeEntry.objects.filter(status='PUBLICADA'))
+        for pending in KnowledgeEntry.objects.filter(status='PENDIENTE'):
+            with self.subTest(question=pending.question):
+                self.assertIsNone(matching_entry(pending.question, published))
+
+    def test_reload_preserves_human_answer_and_dates(self):
+        from .services import question_key
+        entry = KnowledgeEntry.objects.get(question_key=question_key(FAQ_QUESTION))
+        entry.answer = 'Respuesta revisada por una persona; conservar esta edición.'
+        entry.save()
+        before = list(KnowledgeEntry.objects.values().order_by('pk'))
+        call_command('load_knowledge_base', stdout=StringIO())
+        call_command('load_knowledge_base', stdout=StringIO())
+        call_command('load_faq', stdout=StringIO())
+        self.assertEqual(before, list(KnowledgeEntry.objects.values().order_by('pk')))
+
+    def test_dry_run_and_explicit_completion_never_replace_drafts(self):
+        greeting = KnowledgeEntry.objects.get(question='Hola')
+        greeting.status = 'PENDIENTE'
+        greeting.answer = ''
+        greeting.save()
+        custom = KnowledgeEntry.objects.get(question='¿Qué sabes?')
+        custom.status = 'PENDIENTE'
+        custom.answer = 'Borrador humano aún sin aprobar.'
+        custom.save()
+        before = list(KnowledgeEntry.objects.values().order_by('pk'))
+        call_command('load_knowledge_base', dry_run=True, complete_pending=True, stdout=StringIO())
+        self.assertEqual(before, list(KnowledgeEntry.objects.values().order_by('pk')))
+        call_command('load_knowledge_base', complete_pending=True, stdout=StringIO())
+        greeting.refresh_from_db()
+        custom.refresh_from_db()
+        self.assertEqual(greeting.status, 'PUBLICADA')
+        self.assertTrue(greeting.answer)
+        self.assertEqual(custom.status, 'PENDIENTE')
+        self.assertEqual(custom.answer, 'Borrador humano aún sin aprobar.')
+        self.assertEqual(KnowledgeEntry.objects.filter(status='PENDIENTE', answer='').count(), 211)
+
+    def test_seed_policy_needs_a_real_answer_before_publication(self):
+        entry = KnowledgeEntry.objects.filter(status='PENDIENTE').first()
+        entry.status = 'PUBLICADA'
+        with self.assertRaises(ValidationError):
+            entry.save()
+        entry.refresh_from_db()
+        self.assertEqual(entry.status, 'PENDIENTE')
+
+    def test_new_variants_inherit_a_human_answer_not_stale_seed(self):
+        from .services import question_key
+        canonical = KnowledgeEntry.objects.get(question_key=question_key(FAQ_QUESTION))
+        canonical.answer = 'Respuesta humana con instrucciones vigentes.'
+        canonical.save()
+        alias = KnowledgeEntry.objects.get(question='Quiero crear una cuenta')
+        alias.delete()
+        call_command('load_knowledge_base', stdout=StringIO())
+        self.assertEqual(KnowledgeEntry.objects.get(question='Quiero crear una cuenta').answer, canonical.answer)
+
+    def test_real_policy_stays_pending_and_live_vehicle_price_wins(self):
+        vehicle = Vehicle.objects.create(brand='Toyota', model='Corolla', year=2026,
+            category='sedan', daily_price=Decimal('812.30'), passengers=5,
+            transmission='automatica', description='Solo prueba temporal.')
+        result = answer_question('Precio del Toyota Corolla')
+        self.assertEqual(result['source'], 'vehicles')
+        self.assertEqual(result['vehicles'][0]['daily_price'], '812.30')
+        vehicle.daily_price = Decimal('899.90')
+        vehicle.save()
+        self.assertEqual(answer_question('Precio del Toyota Corolla')['vehicles'][0]['daily_price'], '899.90')
+        policy = KnowledgeEntry.objects.filter(status='PENDIENTE', question__icontains='edad mínima').first()
+        before = KnowledgeEntry.objects.count()
+        result = answer_question(policy.question)
+        self.assertEqual(result['source'], 'pending')
+        self.assertEqual(result['reply'], UNKNOWN_REPLY)
+        self.assertNotIn('BORRADOR', result['reply'])
+        self.assertEqual(KnowledgeEntry.objects.count(), before)
+
+    def test_original_faq_variants_still_work_with_full_catalog(self):
+        for question in ('¿Cómo me registro?', '¿Cómo puedo registarme?', '¿Cómo puedo alquilar un coche?'):
+            with self.subTest(question=question):
+                self.assertEqual(answer_question(question)['source'], 'knowledge')
+        response = self.client.post(reverse('assistant_chat'), json.dumps({'message': 'Hola'}), content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['source'], 'knowledge')
+
+
+FAQ_QUESTION = '¿Cómo puedo registrarme?'
+
+
 class AssistantTests(TestCase):
     @classmethod
     def setUpTestData(cls):

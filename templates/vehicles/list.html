@@ -1,3 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}<script src="{% static 'js/catalog.js' %}" defer></script>{% endblock %}
 {% block title %}Catálogo de vehículos · DriveSmart{% endblock %}
-{% block content %}<section class="wrap catalog"><div class="catalog-heading"><div><h1>Un vehículo.<br>Mil posibilidades.</h1><p class="lead">Elige el que va con tu próximo destino.</p></div><p class="catalog-note">Catálogo de demostración.<br>Solicitudes simuladas, sujetas a aprobación.</p></div><form class="filters" method="get"><label for="categoria">Categoría</label><select id="categoria" name="categoria"><option value="">Todas las categorías</option>{% for value,label in categories %}<option value="{{ value }}" {% if selected_category == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select><button class="button compact">Filtrar</button><a href="{% url 'vehicle_list' %}">Limpiar filtro</a></form><p class="muted">{{ vehicles|length }} vehículo{{ vehicles|length|pluralize }} en el catálogo · MXN por día</p><div class="vehicle-grid">{% for vehicle in vehicles %}{% include 'vehicles/card.html' %}{% empty %}<div class="empty"><h2>No hay vehículos en esta categoría.</h2><a href="{% url 'vehicle_list' %}">Ver todos los vehículos</a></div>{% endfor %}</div></section>{% endblock %}
+{% block content %}
+<section class="wrap catalog">
+    <div class="catalog-heading"><div><h1>Tu camino. Tu vehículo.</h1><p class="lead">Encuentra el que va contigo y compara a tu ritmo.</p></div><p class="catalog-note">Precios en MXN por día.<br>Solicitudes simuladas, sin pagos.</p></div>
+    <div class="catalog-layout">
+        <details class="filter-panel" open data-has-errors="{{ filter_form.errors|yesno:'true,false' }}">
+            <summary><span id="filters-heading">Filtros{% if filter_form.has_changed %} activos{% endif %}</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <div class="filter-heading"><a href="{% url 'vehicle_list' %}">Limpiar</a></div>
+            <form class="filters" method="get">
+                {% for field in filter_form %}
+                <div class="filter-field {% if field.name == 'disponibles' %}filter-check{% endif %}">
+                    {% if field.name == 'disponibles' %}{{ field }}{{ field.label_tag }}{% else %}{{ field.label_tag }}{{ field }}{% endif %}
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+                <button class="button" type="submit">Filtrar</button>
+            </form>
+            <p class="muted">La disponibilidad por fechas se revisa al solicitar la renta.</p>
+        </details>
+        <div class="catalog-results">
+            <div class="results-heading"><h2>{{ vehicles|length }} vehículo{{ vehicles|length|pluralize }} para explorar</h2><span class="muted">Catálogo de demostración</span></div>
+            <div class="vehicle-grid">{% for vehicle in vehicles %}{% include 'vehicles/card.html' %}{% empty %}<div class="empty"><h2>No hay vehículos que coincidan.</h2><p>Prueba con otros filtros o consulta el catálogo completo.</p><a class="button" href="{% url 'vehicle_list' %}">Ver todos los vehículos</a></div>{% endfor %}</div>
+            <p class="muted">Fotografías de referencia: el año, versión y color pueden variar. <a href="{% url 'image_credits' %}">Autores y licencias</a>.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

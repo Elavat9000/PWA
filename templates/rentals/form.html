@@ -1,36 +1,46 @@
 {% extends 'base.html' %}
 {% block title %}Solicitar renta · DriveSmart{% endblock %}
 {% block content %}
-<section class="auth rental-form">
-    <a href="{% url 'vehicle_detail' vehicle.pk %}">Volver al vehículo</a>
+<section class="wrap rental-page">
+    <a class="back-link" href="{% url 'vehicle_detail' vehicle.pk %}">Volver al vehículo</a>
     <h1>{% if quote %}Revisa tu solicitud.{% else %}Planea tu viaje.{% endif %}</h1>
-    <h2>{{ vehicle }}</h2>
-    <p class="lead">${{ vehicle.daily_price|floatformat:2 }} MXN por día</p>
-    <p>Solicitud simulada, sin pagos. El administrador revisará la disponibilidad antes de aprobarla.</p>
-    {% if not vehicle.available %}
-        <p class="rental-notice" role="alert">Este vehículo no está disponible para solicitar renta.</p>
-        <a href="{% url 'vehicle_list' %}">Explorar otros vehículos</a>
-    {% else %}
-        <form method="post">
-            {% csrf_token %}
-            {% if quote %}
-                {{ form.start_date.as_hidden }}
-                {{ form.end_date.as_hidden }}
-                <dl class="vehicle-specs">
-                    <div><dt>Inicio</dt><dd>{{ form.cleaned_data.start_date|date:'d/m/Y' }}</dd></div>
-                    <div><dt>Devolución</dt><dd>{{ form.cleaned_data.end_date|date:'d/m/Y' }}</dd></div>
-                    <div><dt>Días facturables</dt><dd>{{ quote.days }}</dd></div>
-                    <div><dt>Total</dt><dd>${{ quote.total|floatformat:2 }} MXN</dd></div>
-                </dl>
-                <p>La devolución no se cobra como un día adicional. Esta solicitud quedará pendiente de aprobación.</p>
-                <button class="button" name="action" value="confirm">Confirmar solicitud</button>
-                <p><a href="{% url 'rental_create' vehicle.pk %}">Cambiar fechas</a></p>
+    {% include 'rentals/steps.html' %}
+    <div class="rental-layout">
+        <aside class="rental-vehicle" aria-label="Vehículo seleccionado">
+            <div class="rental-vehicle-image">{% include 'vehicles/image.html' %}</div>
+            <div class="rental-vehicle-copy"><h2>{{ vehicle }}</h2><p>{{ vehicle.passengers }} pasajeros · {{ vehicle.get_transmission_display }}</p><p class="rental-rate">${{ vehicle.daily_price|floatformat:2 }} <small>MXN por día</small></p></div>
+            <p class="muted rental-disclaimer">Imagen de referencia. El año y versión pueden variar.</p>
+        </aside>
+        <div class="auth rental-form">
+            {% if not vehicle.available %}
+                <h2>Vehículo no disponible</h2>
+                <p class="rental-notice" role="alert">Este vehículo no está disponible para solicitar renta.</p>
+                <a href="{% url 'vehicle_list' %}">Explorar otros vehículos</a>
             {% else %}
-                {{ form.as_p }}
-                <p class="muted">Por ejemplo, del 10 al 13 de noviembre son 3 días facturables.</p>
-                <button class="button" name="action" value="preview">Calcular costo</button>
+                <h2>{% if quote %}Resumen de la solicitud{% else %}Selecciona tus fechas{% endif %}</h2>
+                <p class="muted">Solicitud simulada, sin pagos. El administrador revisará la disponibilidad antes de aprobarla.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {% if quote %}
+                        {{ form.start_date.as_hidden }}
+                        {{ form.end_date.as_hidden }}
+                        <dl class="vehicle-specs quote-summary">
+                            <div><dt>Inicio</dt><dd>{{ form.cleaned_data.start_date|date:'d/m/Y' }}</dd></div>
+                            <div><dt>Devolución</dt><dd>{{ form.cleaned_data.end_date|date:'d/m/Y' }}</dd></div>
+                            <div><dt>Días facturables</dt><dd>{{ quote.days }}</dd></div>
+                            <div class="quote-total"><dt>Total</dt><dd>${{ quote.total|floatformat:2 }} <small>MXN</small></dd></div>
+                        </dl>
+                        <p class="muted">La devolución no se cobra como un día adicional. Esta solicitud quedará pendiente de aprobación.</p>
+                        <button class="button" name="action" value="confirm">Confirmar solicitud</button>
+                        <p class="change-dates"><a href="{% url 'rental_create' vehicle.pk %}">Cambiar fechas</a></p>
+                    {% else %}
+                        <div class="date-fields">{{ form.as_p }}</div>
+                        <p class="muted">Por ejemplo, del 10 al 13 de noviembre son 3 días facturables.</p>
+                        <button class="button" name="action" value="preview">Calcular costo</button>
+                    {% endif %}
+                </form>
             {% endif %}
-        </form>
-    {% endif %}
+        </div>
+    </div>
 </section>
 {% endblock %}

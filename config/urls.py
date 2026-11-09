@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from core.views import home, manifest, service_worker, offline
 from accounts.views import signup
+from vehicles.views import image_credits
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -31,6 +32,7 @@ urlpatterns = [
     path('cuentas/entrar/', auth_views.LoginView.as_view(), name='login'),
     path('cuentas/salir/', auth_views.LogoutView.as_view(), name='logout'),
     path('vehiculos/', include('vehicles.urls')),
+    path('creditos-imagenes/', image_credits, name='image_credits'),
     path('', include('rentals.urls')),
     path('', include('assistant.urls')),
     path('admin/', admin.site.urls),

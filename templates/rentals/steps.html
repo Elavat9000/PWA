@@ -1,0 +1,5 @@
+<ol class="rental-steps" aria-label="Pasos de la solicitud">
+    <li {% if not quote and stage != 'confirmation' %}aria-current="step"{% endif %}>Fechas</li>
+    <li {% if quote %}aria-current="step"{% endif %}>Revisión</li>
+    <li {% if stage == 'confirmation' %}aria-current="step"{% endif %}>Solicitud</li>
+</ol>

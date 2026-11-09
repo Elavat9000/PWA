@@ -7,7 +7,7 @@
     {% for rental in rentals %}
         <article class="rental-item">
             <div class="rental-item-heading">
-                <h2><a href="{% url 'vehicle_detail' rental.vehicle_id %}">{{ rental.vehicle }}</a></h2>
+                <div class="rental-identity"><div class="rental-thumbnail">{% include 'vehicles/image.html' with vehicle=rental.vehicle lazy=True %}</div><h2><a href="{% url 'vehicle_detail' rental.vehicle_id %}">{{ rental.vehicle }}</a></h2></div>
                 <span class="badge inline status-{{ rental.status|lower }}">{{ rental.get_status_display }}</span>
             </div>
             <p class="muted">Solicitud #{{ rental.pk }}</p>

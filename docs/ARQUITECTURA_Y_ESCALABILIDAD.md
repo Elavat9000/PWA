@@ -29,7 +29,9 @@ accounts, vehicles, rentals y assistant comparten una aplicación y una base de 
 
 El asistente lee precios y características reales. No genera políticas por suposición.
 La revisión humana es responsable de mantener correctas las respuestas publicadas.
-Una base vectorial no se justificó para ocho FAQ y un catálogo pequeño. En el futuro,
+El conocimiento curado dispone de 456 formulaciones, con las políticas reales pendientes.
+Se conserva la comparación textual local: la muestra de consultas no justificó añadir
+servicios externos ni una base vectorial. No es una prueba de carga. En el futuro,
 matching_entry podría recuperar IDs desde un índice, conservando permisos, publicación,
 abstención, ORM de Vehicle y contrato de answer_question. No está implementado.
 
@@ -81,4 +83,4 @@ pública sin datos personales incluidos. **No está lista para producción.**
 Antes de publicar deben resolverse las advertencias de check --deploy: clave privada
 aleatoria, DEBUG desactivado, hosts reales y HTTPS, HSTS y cookies seguras; además de
 servidor apropiado, estáticos/media, respaldos y observabilidad. No se fuerzan esos
-ajustes HTTPS sobre localhost. Los resultados están en docs/FASE_5_RESULTADOS.md.
+ajustes HTTPS sobre localhost. Los resultados históricos se conservan en el archivo externo de la limpieza.

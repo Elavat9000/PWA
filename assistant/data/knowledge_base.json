@@ -1,0 +1,4701 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-11-08",
+  "business_mode": "demostracion_sin_pagos",
+  "policy": "Publicar funciones comprobadas; dejar condiciones comerciales pendientes. Nunca importar políticas ajenas como propias ni congelar datos de Vehicle.",
+  "sources": {
+    "enterprise": {
+      "title": "Enterprise México — Preguntas frecuentes",
+      "url": "https://enterprise.mx/preguntas-frecuentes",
+      "use": "Temas de reservas, requisitos, coberturas, accesorios, devolución e incidencias."
+    },
+    "hertz": {
+      "title": "Hertz México — Preguntas frecuentes",
+      "url": "https://www.hertzmexico.com/preguntas-frecuentes/",
+      "use": "Temas de reservas, cambios, disponibilidad, garantías y pagos."
+    },
+    "avis": {
+      "title": "Avis México — Preguntas frecuentes",
+      "url": "https://avis.mx/preguntas-frecuentes",
+      "use": "Temas de costo, protecciones, garantías, mostrador y cambios."
+    },
+    "sixt_mx": {
+      "title": "SIXT México — Condiciones de alquiler",
+      "url": "https://www.sixt.com.mx/shared/t-c/sixt_MX_es.pdf",
+      "use": "Temas de requisitos, recogida, pagos, extensiones y datos personales."
+    },
+    "alamo_mx": {
+      "title": "Alamo México — Preguntas frecuentes",
+      "url": "https://alamo.com.mx/es/preguntas",
+      "use": "Temas de requisitos, reservas, conductores, reembolsos e incidencias."
+    },
+    "alamo_politicas": {
+      "title": "Alamo México — Políticas de renta",
+      "url": "https://alamo.com.mx/es/preguntas/condiciones-y-politicas-de-renta",
+      "use": "Temas de coberturas, accesorios, combustible, entrega y devolución."
+    },
+    "alamo_faq": {
+      "title": "Alamo — Preguntas frecuentes en español",
+      "url": "https://www.alamo.com/es/atencion-al-cliente/preguntas-frecuentes.html",
+      "use": "Temas de conductores, mascotas, equipamiento, kilometraje y atención."
+    },
+    "europcar": {
+      "title": "Europcar México — Preguntas frecuentes",
+      "url": "https://www.europcar.com.mx/faq",
+      "use": "Temas de documentos, garantías, accesorios, fronteras y facturación."
+    }
+  },
+  "topics": [
+    {
+      "id": "funciones_basicas.001",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo puedo registrarme?",
+        "¿Cómo me registro?",
+        "Quiero crear una cuenta",
+        "Como crear mi usuario en DriveSmart",
+        "¿Cómo creo una cuenta?",
+        "Me quiero registrar",
+        "Necesito crear mi cuenta"
+      ],
+      "answer": "Usa Crear cuenta y completa el nombre de usuario y las dos contraseñas. Al terminar el registro se inicia tu sesión.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.002",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo solicito una renta?",
+        "¿Cómo puedo alquilar un coche?",
+        "Quiero solicitar un vehículo desde la página",
+        "Quiero rentar un carro",
+        "Quiero reservar un coche",
+        "¿Cómo reservo?",
+        "¿Cómo aparto un vehículo?",
+        "Necesito alquilar un auto"
+      ],
+      "answer": "Abre el catálogo y el detalle de un vehículo disponible. Pulsa Solicitar renta, inicia sesión, elige las fechas, calcula el costo y confirma. La solicitud queda Pendiente hasta la revisión del administrador.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.003",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dónde consulto mis rentas?",
+        "¿Dónde veo mis solicitudes?",
+        "Quiero consultar el estado de mis rentas",
+        "¿Dónde están mis reservas?",
+        "¿Cómo veo mis reservaciones?",
+        "Quiero revisar mi solicitud"
+      ],
+      "answer": "Inicia sesión y abre Mis rentas (/mis-rentas/). Allí solo aparecen tus propias solicitudes y sus estados.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.004",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo se calcula el precio?",
+        "¿Cómo se calcula el precio de una renta?",
+        "¿Cuál es la fórmula del total de mi solicitud?"
+      ],
+      "answer": "El precio diario vigente al confirmar se multiplica por los días entre inicio y devolución. Del 10 al 13 de noviembre son tres días. Ese precio y total se guardan en la solicitud.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.005",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo realizar pagos aquí?",
+        "¿Puedo pagar aquí?",
+        "¿La plataforma cobra la renta?",
+        "¿Puedo pagar?",
+        "¿Cómo pago?"
+      ],
+      "answer": "No. Las solicitudes son simuladas; DriveSmart no procesa pagos.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.006",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Quién aprueba mi solicitud de renta?",
+        "¿La aprobación de una renta es automática?",
+        "¿Quién decide si se acepta mi solicitud?",
+        "¿Quién revisa mi solicitud?"
+      ],
+      "answer": "El administrador autorizado revisa las solicitudes en Django Admin y puede aprobarlas o rechazarlas. Antes de aprobar se comprueba que no coincidan con otra renta aprobada del mismo vehículo.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.007",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo cancelar o editar mi solicitud?",
+        "¿Puedo cambiar las fechas de una solicitud ya confirmada?",
+        "¿Existe un botón para cancelar una solicitud?",
+        "¿Puedo cancelar mi solicitud?"
+      ],
+      "answer": "En esta fase no puedes editar ni cancelar solicitudes desde tu cuenta. Puedes consultar su estado en Mis rentas.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "funciones_basicas.008",
+      "category": "funciones_basicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo sé si un vehículo está disponible?",
+        "¿Disponible significa libre para cualquier fecha?"
+      ],
+      "answer": "El catálogo indica Disponible o No disponible. Al solicitar y al aprobar se comprueban también las fechas. Las solicitudes pendientes pueden coincidir; una aprobada reserva ese intervalo.",
+      "sources": [
+        "local:assistant/management/commands/load_faq.py"
+      ]
+    },
+    {
+      "id": "introduccion.001",
+      "category": "introduccion",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué es DriveSmart?",
+        "¿Para qué sirve esta plataforma?",
+        "¿Es una demostración o una arrendadora operando?"
+      ],
+      "answer": "DriveSmart es una demostración de catálogo y solicitudes de renta de vehículos. Permite comparar registros, elegir fechas, calcular un costo simulado y consultar solicitudes. No procesa pagos ni formaliza la entrega de un automóvil real.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.002",
+      "category": "introduccion",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "Hola",
+        "Buenos días",
+        "Buenas tardes",
+        "Buenas noches",
+        "Hola, necesito ayuda"
+      ],
+      "answer": "Hola. Puedo ayudarte a usar DriveSmart, explorar el catálogo y entender las solicitudes simuladas. Pregúntame cómo registrarte, cómo solicitar una renta o por vehículos con un presupuesto diario.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.003",
+      "category": "introduccion",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué sabes?",
+        "¿Qué puedes hacer?",
+        "¿En qué me ayudas?",
+        "Ayuda"
+      ],
+      "answer": "Puedo explicar cuentas, catálogo, filtros, fechas, cálculo de costos, estados y uso de la PWA. También consulto vehículos registrados. No contrato seguros, no cobro, no apruebo solicitudes y no conozco políticas comerciales que el administrador no haya publicado.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.004",
+      "category": "introduccion",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por dónde empiezo si nunca he usado DriveSmart?",
+        "Es mi primera vez, ¿qué pasos sigo?"
+      ],
+      "answer": "Abre Catálogo, revisa las características y entra en Ver detalles. Para enviar una solicitud necesitarás iniciar sesión o crear una cuenta. Después eliges fechas, calculas el costo y confirmas; inicialmente quedará Pendiente.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.005",
+      "category": "introduccion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cuál es la diferencia entre explorar, calcular y confirmar?"
+      ],
+      "answer": "Explorar solo consulta vehículos. Calcular muestra un resumen sin guardar una solicitud. Confirmar guarda una solicitud pendiente con tu usuario, vehículo, fechas, tarifa y total. Ninguna de esas acciones realiza un pago.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.006",
+      "category": "introduccion",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Necesito descargar una aplicación de una tienda?"
+      ],
+      "answer": "No. DriveSmart funciona en el navegador mientras el servidor esté disponible. Algunos navegadores permiten instalarla como PWA desde su menú, pero la instalación no es necesaria para consultar el sitio.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.007",
+      "category": "introduccion",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo utilizar DriveSmart desde un teléfono?"
+      ],
+      "answer": "Sí. La interfaz se adapta a pantallas pequeñas. El catálogo, los formularios y el asistente requieren conexión al servidor, aunque hayas instalado la PWA. También puedes utilizarla en computadora o tablet.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "introduccion.008",
+      "category": "introduccion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo contratar una renta real con esta beta?"
+      ],
+      "answer": "No. Los vehículos, tarifas y solicitudes demuestran el funcionamiento. Una solicitud aprobada en esta beta no equivale por sí sola a un contrato comercial, un pago o la entrega de una unidad real.",
+      "sources": [
+        "local:README.md"
+      ]
+    },
+    {
+      "id": "cuentas.001",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué datos pide el registro de una cuenta?"
+      ],
+      "answer": "El formulario público solicita un nombre de usuario y la contraseña escrita dos veces. No pide tarjeta bancaria, licencia ni documentos para crear la cuenta de demostración. Eso no define requisitos de una renta comercial futura.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.002",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Es obligatorio proporcionar correo electrónico al registrarme?"
+      ],
+      "answer": "El registro público actual no solicita correo. Para iniciar sesión utiliza tu nombre de usuario y contraseña. No hay recuperación pública de contraseña por correo.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.003",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué debo escribir dos veces la contraseña?"
+      ],
+      "answer": "Las dos entradas comprueban que escribiste la misma contraseña. Si no coinciden, el registro muestra un error y debes corregirlas antes de crear la cuenta. No compartas tu contraseña en el asistente.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.004",
+      "category": "cuentas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué significa que mi contraseña es demasiado común o parecida al usuario?"
+      ],
+      "answer": "Django valida longitud mínima, contraseñas comunes, contraseñas formadas solo por números y similitud con datos del usuario. Sigue las indicaciones y elige una contraseña distinta y difícil de adivinar.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.005",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si el nombre de usuario ya está ocupado?",
+        "Ese usuario ya existe",
+        "No puedo usar mi nombre de usuario"
+      ],
+      "answer": "Elige otro nombre y vuelve a enviar el registro con ambas contraseñas. El sistema no crea una segunda cuenta con el mismo nombre. No utilices la cuenta de otra persona.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.006",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Se inicia la sesión cuando termino el registro?"
+      ],
+      "answer": "Sí. Cuando el registro termina correctamente, DriveSmart inicia tu sesión y te lleva al inicio. Desde allí puedes abrir el catálogo o Mis rentas.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.007",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo inicio sesión con una cuenta existente?",
+        "¿Cómo inicio sesión?",
+        "¿Cómo entro a mi cuenta?",
+        "Quiero entrar"
+      ],
+      "answer": "Pulsa Iniciar sesión, escribe tu nombre de usuario y contraseña y envía el formulario. Si intentabas solicitar un vehículo sin sesión, el acceso conserva el destino para continuar con ese formulario.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.008",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo cierro mi sesión?",
+        "Quiero salir de mi cuenta",
+        "¿Cómo salgo?",
+        "Quiero cerrar sesión"
+      ],
+      "answer": "Usa Cerrar sesión en la navegación. Después necesitarás iniciar sesión nuevamente para consultar tus solicitudes o confirmar otra renta.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.009",
+      "category": "cuentas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué veo un error de usuario o contraseña al entrar?"
+      ],
+      "answer": "Comprueba el nombre de usuario, la contraseña, el teclado y las mayúsculas. No hay una función pública para mostrar la contraseña anterior. Si no recuperas el acceso, pide ayuda al administrador por un canal que conozcas.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.010",
+      "category": "cuentas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si olvidé mi contraseña?",
+        "No recuerdo mi clave de acceso",
+        "Olvidé la contraseña de mi cuenta",
+        "Perdí mi contraseña",
+        "¿Cómo recupero mi cuenta?"
+      ],
+      "answer": "La beta no incluye recuperación pública por correo. Solicita ayuda al administrador autorizado mediante un canal previamente conocido. No envíes contraseñas, documentos ni códigos de acceso por el chat.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.011",
+      "category": "cuentas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo editar mi perfil o cambiar mi contraseña desde una página de usuario?"
+      ],
+      "answer": "La beta no dispone de una página pública de perfil ni de cambio de contraseña. Evita crear cuentas duplicadas para resolver errores; pide ayuda al administrador cuando necesites corregir datos de acceso.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.012",
+      "category": "cuentas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Tengo que crear una cuenta para explorar vehículos?"
+      ],
+      "answer": "No. Inicio, catálogo, detalles y asistente pueden consultarse sin sesión. Sí necesitas una cuenta para enviar solicitudes y consultar Mis rentas.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.013",
+      "category": "cuentas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo crear una cuenta de administrador desde el registro público?"
+      ],
+      "answer": "No. El registro público crea usuarios normales. Los permisos administrativos no se obtienen mediante el chat ni modificando campos del formulario. Solo un administrador autorizado puede gestionarlos.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.014",
+      "category": "cuentas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué otra cuenta no ve mis solicitudes?"
+      ],
+      "answer": "Mis rentas muestra solo las solicitudes de la cuenta autenticada. Revisa el nombre que aparece en la navegación. No compartas una cuenta si necesitas separar historiales.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "cuentas.015",
+      "category": "cuentas",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué ocurre si dejo abierta mi cuenta en una computadora compartida?"
+      ],
+      "answer": "Cierra sesión al terminar y verifica que las páginas privadas vuelvan a pedir acceso. La protección de caché no sustituye el cuidado al usar equipos compartidos. No guardes contraseñas en equipos ajenos.",
+      "sources": [
+        "local:accounts/views.py"
+      ]
+    },
+    {
+      "id": "catalogo.001",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo entro al catálogo?"
+      ],
+      "answer": "Pulsa Catálogo en la navegación o Explorar vehículos desde el inicio. Cada tarjeta muestra un registro con su tarifa diaria, características y estado; Ver detalles abre la ficha.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.002",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué información muestra una tarjeta del catálogo?"
+      ],
+      "answer": "Presenta imagen, marca, modelo, categoría, año, pasajeros, transmisión, precio diario en MXN y disponibilidad. Abre Ver detalles para consultar descripción y solicitud.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.003",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo veo la ficha completa de un vehículo?"
+      ],
+      "answer": "Pulsa su nombre o Ver detalles. La ficha muestra características, descripción, tarifa diaria y disponibilidad. Si está disponible encontrarás Solicitar renta.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.004",
+      "category": "catalogo",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué cambió la lista de vehículos desde mi última visita?"
+      ],
+      "answer": "El catálogo consulta los registros actuales. El administrador puede modificar vehículos, tarifas, imágenes y disponibilidad. Una captura antigua no garantiza inventario ni precio vigente.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.005",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué significa el año junto al modelo?"
+      ],
+      "answer": "Es el año registrado en el catálogo. La fotografía puede ser una referencia de otro año o versión; consulta los datos de la ficha y los créditos de imágenes.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.006",
+      "category": "catalogo",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿La fotografía garantiza el color y la versión exactos?"
+      ],
+      "answer": "No. Las fotos de demostración son referencias y pueden mostrar otro año, color o versión. La beta no garantiza una unidad física por su apariencia. Los datos registrados se consultan en la ficha.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.007",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dónde están los autores y las licencias de las fotografías?"
+      ],
+      "answer": "Abre Créditos de fotografías desde el pie, catálogo o detalle. La página identifica colección, autores, fuentes y licencias. Las fotos subidas después por Admin tienen sus propios requisitos de uso.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.008",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué no veo ningún vehículo después de filtrar?"
+      ],
+      "answer": "Puede que no existan registros que cumplan todas las condiciones. Reduce restricciones o pulsa Limpiar. Un resultado vacío no confirma inventario fuera de la plataforma.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.009",
+      "category": "catalogo",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El catálogo garantiza una unidad física de una marca concreta?"
+      ],
+      "answer": "Identifica registros específicos para la demostración, pero no garantiza entrega física. Los requisitos y compromisos de una operación comercial futura deben ser definidos y publicados por el administrador.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "catalogo.010",
+      "category": "catalogo",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo comparo dos vehículos sin reservarlos?"
+      ],
+      "answer": "Abre sus fichas y compara pasajeros, transmisión, categoría, año y tarifa diaria. Consultar fichas o filtros no crea solicitudes. Revisa el costo por tus fechas antes de confirmar.",
+      "sources": [
+        "local:templates/vehicles/list.html"
+      ]
+    },
+    {
+      "id": "filtros.001",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo funcionan los filtros del catálogo?",
+        "¿Cómo filtro el catálogo?",
+        "Quiero filtrar opciones"
+      ],
+      "answer": "Combina categoría, marca, transmisión, mínimo de pasajeros, máximo diario y disponibilidad. Pulsa Filtrar para aplicar todas las condiciones. Limpiar restaura el catálogo completo.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.002",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dónde están los filtros cuando uso un celular?"
+      ],
+      "answer": "Pulsa Filtros para desplegar los campos. En pantallas pequeñas están cerrados inicialmente para mostrar antes los vehículos. Si hay errores se mantienen abiertos para corregirlos.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.003",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo busco una marca determinada?"
+      ],
+      "answer": "Abre los filtros, elige Marca y pulsa Filtrar. Sus opciones proceden del catálogo. Puedes combinarlas con categoría, transmisión o presupuesto.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.004",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo limito el presupuesto por día?"
+      ],
+      "answer": "Escribe un importe positivo en Precio máximo por día (MXN) y pulsa Filtrar. Ese límite compara tarifa diaria, no el total de tus fechas. El total se calcula en Solicitar renta.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.005",
+      "category": "filtros",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El filtro de pasajeros busca exactamente ese número de asientos?"
+      ],
+      "answer": "Es un mínimo: con 5 pueden aparecer registros con cinco o más plazas. No comprueba espacio para maletas, sillas infantiles ni adaptaciones.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.006",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo elijo transmisión manual o automática?"
+      ],
+      "answer": "En Transmisión selecciona Manual o Automática y pulsa Filtrar. Se utiliza el dato registrado de cada vehículo; la foto no confirma equipamiento adicional.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.007",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo ordeno los resultados por precio?",
+        "¿Cómo ordeno los carros por precio?"
+      ],
+      "answer": "Selecciona Menor precio o Mayor precio en Ordenar por y pulsa Filtrar. El orden usa la tarifa diaria vigente de los resultados. Quita restricciones para comparar todo el catálogo.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.008",
+      "category": "filtros",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hace Solo disponibles en catálogo?"
+      ],
+      "answer": "Oculta registros marcados como no disponibles. No consulta un calendario: el intervalo se valida al enviar una solicitud y al intentar aprobarla.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.009",
+      "category": "filtros",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo combinar marca, transmisión, pasajeros y precio?"
+      ],
+      "answer": "Sí. Se aplican todas las condiciones elegidas. Si no hay resultados, prueba a quitar una condición; no significa que se hayan ignorado filtros o que exista un vehículo no registrado que cumpla todo.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.010",
+      "category": "filtros",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo busco desde la portada?"
+      ],
+      "answer": "Elige Tipo de vehículo y, si quieres, Presupuesto por día en el inicio. Buscar vehículos abre el catálogo con esas condiciones. Allí puedes ajustar los demás filtros.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.011",
+      "category": "filtros",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué un importe negativo o una capacidad imposible muestra un error?"
+      ],
+      "answer": "Utiliza un precio positivo y un mínimo de pasajeros entre 1 y 20. Corrige los mensajes del formulario; introducir otro número no modifica las características de los vehículos.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "filtros.012",
+      "category": "filtros",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo filtrar por color, combustible, maletero o silla infantil?"
+      ],
+      "answer": "La beta no incluye esos filtros ni confirma esos atributos. Sí permite categoría, marca, transmisión, pasajeros, tarifa y disponibilidad. Lo no registrado requiere revisión administrativa.",
+      "sources": [
+        "local:vehicles/forms.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.001",
+      "category": "caracteristicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué diferencia hay entre Compacto, Sedán y SUV dentro del sitio?"
+      ],
+      "answer": "Son categorías de los registros. Úsalas para reducir el catálogo, pero revisa cada ficha: la categoría no garantiza plazas, maletero, consumo o equipamiento.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.002",
+      "category": "caracteristicas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El número de pasajeros incluye al conductor?"
+      ],
+      "answer": "La ficha muestra una capacidad registrada, pero la beta no documenta separadamente la convención de cómputo ni distribución de asientos de una unidad física. Para una renta real debe confirmarse con el administrador; no deduzcas plazas adicionales.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.003",
+      "category": "caracteristicas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿La descripción confirma accesorios especiales?"
+      ],
+      "answer": "Es texto registrado por el administrador. No existe contratación de accesorios ni campos verificados para sillas infantiles, GPS o adaptaciones. No des por incluido un servicio que no esté definido expresamente.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.004",
+      "category": "caracteristicas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo sé si un vehículo admite mis maletas?"
+      ],
+      "answer": "La beta no registra volumen de cajuela ni número de maletas. No se puede garantizar espacio por categoría o foto. Esa información debe confirmarse y publicarse por el administrador.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.005",
+      "category": "caracteristicas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Una SUV siempre tiene tracción en las cuatro ruedas?"
+      ],
+      "answer": "No. El catálogo no registra tracción. La categoría SUV no confirma tracción integral ni autorización para caminos especiales. Se necesita información específica aprobada del vehículo y del servicio.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.006",
+      "category": "caracteristicas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Se puede comprobar consumo o autonomía en la ficha?"
+      ],
+      "answer": "No hay campos de consumo, combustible, batería o autonomía. El asistente no debe deducirlos por marca, modelo o foto. Consulta información validada antes de decidir sobre una unidad real.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "caracteristicas.007",
+      "category": "caracteristicas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo saber por la foto si el auto es automático?"
+      ],
+      "answer": "La foto es una referencia y no confirma la transmisión del registro. Lee Transmisión en la ficha o usa el filtro. El equipamiento físico adicional necesita confirmación específica.",
+      "sources": [
+        "local:vehicles/models.py"
+      ]
+    },
+    {
+      "id": "costos.001",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿En qué moneda están los precios?"
+      ],
+      "answer": "Las tarifas y totales simulados se muestran en pesos mexicanos (MXN). No hay conversión de divisas ni cobros. Si ves $, revisa también la indicación MXN.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.002",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dónde veo el precio por día?"
+      ],
+      "answer": "Está en la tarjeta y la ficha del vehículo. También puedes preguntarme Precio del Toyota Corolla u otra marca y modelo registrados. Una respuesta antigua no garantiza la tarifa vigente.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.003",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo obtengo un total antes de enviar una solicitud?"
+      ],
+      "answer": "En la ficha pulsa Solicitar renta, inicia sesión, elige fechas y pulsa Calcular costo. Revisa días y total. Solo Confirmar solicitud guarda el registro pendiente.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.004",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El presupuesto de búsqueda es el total de todo el viaje?"
+      ],
+      "answer": "No. El presupuesto del inicio y el filtro de máximo se refieren a MXN por día. El total depende de las fechas y se calcula en el formulario del vehículo.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.005",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Calcular costo me obliga a pagar o guarda una solicitud?"
+      ],
+      "answer": "No. Solo presenta una vista previa. No hay pago ni registro guardado hasta Confirmar solicitud, que sigue sujeto a revisión administrativa.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.006",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿La tarifa queda congelada al ver la vista previa?",
+        "¿Calcular me garantiza el precio?",
+        "¿Se respeta el precio de la vista previa?"
+      ],
+      "answer": "No hay bloqueo garantizado de tarifa en la vista previa. Al confirmar se usa la vigente del registro en ese momento. Revisa el importe guardado en Mis rentas, especialmente si pasó tiempo.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.007",
+      "category": "costos",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué pasa si cambia el precio después de confirmar mi solicitud?"
+      ],
+      "answer": "La solicitud conserva tarifa diaria y total guardados al confirmar. Cambiar después el catálogo no reescribe ese costo histórico; por eso el precio actual puede diferir.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.008",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué una solicitud anterior tiene otro precio que el catálogo?"
+      ],
+      "answer": "Cada solicitud conserva su tarifa y total. Puede haberse modificado el catálogo después. Compara el precio diario al solicitar y sus fechas, no solo la tarifa de hoy.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.009",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo se tratan los centavos del total?"
+      ],
+      "answer": "Las cantidades se manejan como decimales. El total simulado multiplica la tarifa diaria por días facturables; no añade cálculo por horas, extras ni descuentos automáticos.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.010",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Hay un cobro al confirmar o al aprobar?"
+      ],
+      "answer": "No. Confirmar guarda una solicitud y aprobar cambia su estado si las validaciones lo permiten. No se realiza una transacción bancaria. No envíes tarjeta para completar la demo.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.011",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Hay descuentos automáticos por semana o mes?"
+      ],
+      "answer": "El cálculo no incluye descuentos por duración: tarifa diaria multiplicada por días. Una política futura debe definirla el administrador; no puedo prometer otra tarifa semanal o mensual.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.012",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Se puede dividir un pago o dar un anticipo?"
+      ],
+      "answer": "La beta no procesa pagos, anticipos o saldos. No ofrece pagos parciales ni división de cargos. Las condiciones comerciales futuras requieren revisión antes de publicarse.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.013",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo descargar factura fiscal de la simulación?"
+      ],
+      "answer": "No se cobra ni se emiten facturas fiscales o recibos de pago. La confirmación y Mis rentas muestran un registro con importes simulados; no son una factura ni prueba de pago.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.014",
+      "category": "costos",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿La cotización es un contrato comercial garantizado?"
+      ],
+      "answer": "No. Vista previa e importes pertenecen a una demostración. No sustituyen contrato, condiciones comerciales, comprobante de pago ni garantía de entrega física.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.015",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "cual es tu carro mas barato",
+        "cual es tu opcion mas barato"
+      ],
+      "answer": "Para ver la menor tarifa vigente abre Catálogo, elige Menor precio en Ordenar por y pulsa Filtrar. También puedes preguntar Busco autos baratos. Las opciones y precios se consultan en los registros actuales.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "costos.016",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "Cual carro es mas caro"
+      ],
+      "answer": "Para ver la mayor tarifa diaria abre Catálogo, elige Mayor precio en Ordenar por y pulsa Filtrar. Revisa ficha y fechas. No almaceno un precio fijo como respuesta de conocimiento.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.001",
+      "category": "fechas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo selecciono las fechas para solicitar un vehículo?"
+      ],
+      "answer": "Completa Fecha de inicio y Fecha de devolución con el calendario o una fecha válida. La devolución debe ser posterior al inicio. Pulsa Calcular costo para revisar el resumen.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.002",
+      "category": "fechas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo comenzar una solicitud hoy?"
+      ],
+      "answer": "Sí, según la fecha local del sistema, siempre que vehículo e intervalo cumplan las validaciones. Eso no garantiza entrega física inmediata ni aprobación automática.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.003",
+      "category": "fechas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué no puedo elegir una fecha de inicio pasada?"
+      ],
+      "answer": "Las solicitudes nuevas no permiten inicio anterior a la fecha local actual. Elige hoy o una fecha futura. Esta validación no establece condiciones de un contrato comercial retroactivo.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.004",
+      "category": "fechas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo devolver el mismo día del inicio?",
+        "¿Puedo rentar por unas horas?",
+        "¿Puedo rentar solo por un día y devolverlo ese mismo día?"
+      ],
+      "answer": "No en el cálculo actual: la devolución debe ser posterior al inicio. La beta trabaja por fechas y no calcula unas horas dentro del mismo día.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.005",
+      "category": "fechas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Se cobra la fecha de devolución como un día extra?"
+      ],
+      "answer": "No. Se calcula la diferencia entre fechas: del 10 al 13 son tres días facturables, no cuatro. La devolución es el fin exclusivo del intervalo.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.006",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cuántos días representa una solicitud del 10 al 11?"
+      ],
+      "answer": "Un día facturable y una tarifa diaria. Esto no define horarios de recogida ni tolerancias de una operación real. Revisa siempre las fechas e importe antes de confirmar.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.007",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo se cuentan los días al cruzar de mes o de año?"
+      ],
+      "answer": "Se utiliza la diferencia real entre fechas, incluidos los cambios de mes, año y días del calendario. No se asumen meses de treinta días. Revisa el número que aparece en el resumen.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.008",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿La tarifa cambia automáticamente en fines de semana o festivos?"
+      ],
+      "answer": "No existe una tarifa automática por festivos o fines de semana. Se usa la tarifa vigente del registro y el número de días. Tampoco se confirman horarios de atención en festivos.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.009",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo elegir horas de recogida y devolución?"
+      ],
+      "answer": "El formulario registra fechas, no horas. No calcula minutos, horas extra ni medias jornadas. Una operación real deberá definir y publicar sus horarios y condiciones.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.010",
+      "category": "fechas",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si intercambié inicio y devolución?"
+      ],
+      "answer": "Corrige las fechas: devolución debe ser posterior al inicio. Si son iguales o están invertidas aparece un error. Calcula de nuevo y revisa el resumen antes de confirmar.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.011",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué el calendario presenta día, mes y año en otro orden?"
+      ],
+      "answer": "Su aspecto puede depender del idioma del navegador. Revisa la fecha seleccionada y el resumen. El sistema utiliza fechas válidas; el formato visual no define un horario ni una tarifa.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.012",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo probar varias fechas sin guardar solicitudes?"
+      ],
+      "answer": "Sí. Puedes cambiar fechas y calcular vistas previas. Solo Confirmar crea un registro. La disponibilidad y tarifa se verifican de nuevo al procesar esa confirmación.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.013",
+      "category": "fechas",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puede otra solicitud comenzar justo el día de devolución de una aprobada?"
+      ],
+      "answer": "Sí. El inicio se incluye y la devolución se excluye del intervalo. Una renta que termina el 13 permite comenzar otra el 13, si el vehículo sigue disponible y no existe otro cruce.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.014",
+      "category": "fechas",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué pasa si mis fechas contienen completamente otra renta aprobada?"
+      ],
+      "answer": "Es un cruce para el mismo vehículo y se bloquea la nueva solicitud o su aprobación. Se detectan coincidencias completas y cruces parciales, no solo fechas iniciales iguales.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "fechas.015",
+      "category": "fechas",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo elegir varias semanas o meses?"
+      ],
+      "answer": "El formulario valida las fechas, el intervalo y el costo resultante. No existe un producto comercial de renta prolongada ni descuentos mensuales. Una simulación larga no autoriza una renta real.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.001",
+      "category": "disponibilidad",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué aparece No disponible en un vehículo?"
+      ],
+      "answer": "El administrador marcó el registro como no disponible. La ficha puede consultarse pero no ofrece Solicitar renta. El asistente no modifica ese estado.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.002",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué un auto Disponible no acepta mis fechas?"
+      ],
+      "answer": "Disponible es un estado general. Una renta aprobada puede cruzarse con tus fechas. Prueba otro intervalo o vehículo; el indicador general no es un calendario.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.003",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Una solicitud pendiente bloquea el vehículo para todos?"
+      ],
+      "answer": "No. Las pendientes pueden coincidir. El bloqueo del intervalo lo genera una aprobada. Por eso estar pendiente no garantiza disponibilidad futura ni prioridad automática.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.004",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Una solicitud rechazada ocupa fechas?"
+      ],
+      "answer": "No bloquea por sí misma: se consideran las aprobadas. Otros registros aprobados o el estado general del vehículo aún pueden impedir otra solicitud.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.005",
+      "category": "disponibilidad",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué ocurre si dos personas piden el mismo auto para las mismas fechas?"
+      ],
+      "answer": "Ambas pueden tener solicitudes pendientes. Al aprobar se comprueba que no exista otra aprobada incompatible. No se aprueba automáticamente por orden de llegada y el chat no decide a quién autorizar.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.006",
+      "category": "disponibilidad",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puede aprobarse dos veces el mismo auto en fechas cruzadas?"
+      ],
+      "answer": "La validación rechaza la aprobación incompatible con otra renta aprobada del mismo registro. El administrador debe revisar los intervalos y estados mediante la gestión autorizada.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.007",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dos vehículos distintos pueden tener solicitudes en las mismas fechas?"
+      ],
+      "answer": "Sí. Los cruces se validan por vehículo, no para todo el catálogo a la vez. Cada registro tiene sus propias solicitudes y estado general de disponibilidad.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.008",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El asistente puede apartar un auto mientras decido?"
+      ],
+      "answer": "No. El chat, una consulta o una vista previa no bloquean inventario. El asistente tampoco aprueba solicitudes ni garantiza prioridad. Utiliza el formulario y consulta el estado en Mis rentas.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.009",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Existe un calendario público de las rentas de otras cuentas?"
+      ],
+      "answer": "No se muestra un calendario público ni datos de otros usuarios. El sistema valida internamente el intervalo y Mis rentas muestra únicamente tus registros.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "disponibilidad.010",
+      "category": "disponibilidad",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué pasa si desactivan un vehículo mientras elijo fechas?"
+      ],
+      "answer": "Al procesar la solicitud se valida otra vez. Si el registro dejó de estar disponible, no se guarda una solicitud nueva válida. Una página abierta no reserva inventario; consulta otra vez o cambia de opción.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    },
+    {
+      "id": "solicitudes.001",
+      "category": "solicitudes",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dónde está el botón Solicitar renta?"
+      ],
+      "answer": "En la ficha de un registro disponible. Entra por Ver detalles desde el catálogo. Si no tienes sesión, se pedirá acceso antes de mostrar el formulario.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.002",
+      "category": "solicitudes",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué se guarda al confirmar una solicitud?"
+      ],
+      "answer": "Usuario, vehículo, fechas, tarifa vigente al confirmar, total, estado Pendiente y fecha de creación. No se guarda un pago ni se genera un contrato de entrega física.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.003",
+      "category": "solicitudes",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo sé si mi solicitud quedó guardada?",
+        "¿Se guardó mi solicitud?",
+        "¿Cómo sé si terminé de confirmar?"
+      ],
+      "answer": "Tras confirmar correctamente aparece Solicitud registrada con un número. También puedes revisar Mis rentas. Si hubo error de conexión, comprueba la lista antes de enviar otra vez.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.004",
+      "category": "solicitudes",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué debo revisar antes de confirmar?"
+      ],
+      "answer": "Cuenta, vehículo, inicio, devolución, días y total. La devolución no suma un día extra y el registro comenzará Pendiente. Si necesitas corregir fechas usa Cambiar fechas antes de confirmar.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.005",
+      "category": "solicitudes",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo modificar fechas en la vista previa?"
+      ],
+      "answer": "Sí: usa Cambiar fechas antes de confirmar y vuelve a calcular. Una vez confirmada no existe edición pública de esa solicitud.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.006",
+      "category": "solicitudes",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Enviar significa tener una reserva aprobada?"
+      ],
+      "answer": "No. El registro comienza Pendiente y el administrador puede aprobar o rechazar. Todo sigue siendo una demostración, sin pago ni entrega física garantizada.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.007",
+      "category": "solicitudes",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puede el chat crear una solicitud en mi nombre?"
+      ],
+      "answer": "No. Puede explicar pasos y enlazar vehículos. Envía la solicitud desde el formulario con tu sesión. El chat no cambia fechas, estados, precios ni registros de renta.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.008",
+      "category": "solicitudes",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo enviar otra solicitud si ya tengo una?"
+      ],
+      "answer": "No hay un máximo por usuario implementado. Cada nueva solicitud se valida por vehículo y fechas. Revisa tus registros para no repetir confirmaciones y crear pendientes innecesarias.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.009",
+      "category": "solicitudes",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si confirmé dos veces y aparecen dos solicitudes iguales?"
+      ],
+      "answer": "Cada confirmación válida puede crear un registro pendiente. Revisa los números y comunica el caso al administrador por un canal conocido. No hay un botón público para borrar duplicados ni cancelarlos.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.010",
+      "category": "solicitudes",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si se interrumpe la conexión justo después de confirmar?",
+        "Se cortó internet al confirmar",
+        "No vi la confirmación por un error de red"
+      ],
+      "answer": "No asumas que falló o se guardó. Cuando vuelva la conexión, revisa Mis rentas con tu cuenta antes de reenviar. Si ya aparece el registro con esas fechas, evita confirmarlo otra vez.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "solicitudes.011",
+      "category": "solicitudes",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo poner a otra persona como titular desde el formulario?"
+      ],
+      "answer": "El registro se vincula al usuario autenticado. No existe selector de otro titular ni conductores adicionales. No compartas contraseñas para representar a otra persona.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "asistente.001",
+      "category": "asistente",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo abro y cierro el asistente?"
+      ],
+      "answer": "Pulsa el icono de conversación, escribe y pulsa Enviar. Cierra con Cerrar o Escape. Enter envía y Shift+Enter añade una línea.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.002",
+      "category": "asistente",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Tengo que iniciar sesión para usar el chat?"
+      ],
+      "answer": "No para preguntar sobre el sitio o el catálogo. Si se registra una duda desconocida y estás autenticado puede asociarse a tu usuario. Las solicitudes privadas sí necesitan sesión.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.003",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El asistente utiliza un modelo generativo o una IA externa?"
+      ],
+      "answer": "No. Usa reglas locales, comparación de textos, registros de vehículos y respuestas publicadas. No consulta servicios externos de IA ni redacta nuevas políticas por su cuenta.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.004",
+      "category": "asistente",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo formulo una búsqueda útil de vehículo?"
+      ],
+      "answer": "Indica condiciones completas: por ejemplo, Busco una camioneta para 5 personas hasta 1500 pesos. También puedes usar los filtros del catálogo. No se confirman servicios o equipamiento no registrados.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.005",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué el chat solo presenta tres opciones?"
+      ],
+      "answer": "Devuelve hasta tres registros que cumplen las condiciones, ordenados por tarifa diaria e identificador. Para explorar más opciones y ordenar toda la lista utiliza el catálogo.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.006",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El asistente recuerda mi pregunta anterior?",
+        "¿Recuerdas mi conversación?",
+        "¿Tienes memoria del chat?"
+      ],
+      "answer": "Cada mensaje se procesa independientemente. Repite marca, modelo y condiciones; una frase como Y uno más barato puede no interpretarse como continuación de otra búsqueda.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.007",
+      "category": "asistente",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué registra mi pregunta en vez de responder?"
+      ],
+      "answer": "No halló información o una coincidencia suficientemente clara. Prefiere revisión humana a inventar. Las políticas comerciales no definidas no se convierten automáticamente en respuestas válidas.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.008",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué ocurre después de registrar una duda en el chat?"
+      ],
+      "answer": "Queda Pendiente. El administrador debe revisarla, escribir o corregir la respuesta y publicarla. No hay avisos automáticos de llegada ni un plazo de revisión.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.009",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo recibo una respuesta publicada después por el administrador?",
+        "¿Cómo consulto una respuesta que ya revisaron?"
+      ],
+      "answer": "Vuelve a preguntar. Se podrá reutilizar si la consulta coincide suficientemente. No hay seguimiento por correo ni aviso al usuario al resolver una duda pendiente.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.010",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Los borradores del administrador aparecen como respuestas?",
+        "¿Una respuesta pendiente ya se puede consultar?"
+      ],
+      "answer": "No. Solo se utilizan respuestas publicadas y no vacías. Una entrada Pendiente necesita publicación aunque ya contenga un borrador.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.011",
+      "category": "asistente",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué datos debo evitar en el chat?",
+        "¿Puedo enviar mi tarjeta por el chat?",
+        "¿Te doy mi contraseña?"
+      ],
+      "answer": "No envíes contraseñas, códigos, números de tarjeta, documentos ni datos sensibles. El chat no verifica documentos ni procesa pagos. Explica la duda sin información personal innecesaria.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.012",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cuánto puede medir una pregunta?"
+      ],
+      "answer": "De 2 a 400 caracteres. Divide consultas largas en preguntas completas sobre un tema. También se rechazan formatos inválidos y determinados caracteres de control.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.013",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿El chat entiende todos los sinónimos y errores ortográficos?"
+      ],
+      "answer": "No. Reconoce un diccionario limitado y algunas variantes similares, y normaliza acentos y puntuación. Si falla, reformula con términos concretos o usa el catálogo.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.014",
+      "category": "asistente",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo pedir varias marcas con condiciones contradictorias en un mensaje?"
+      ],
+      "answer": "Las consultas ambiguas pueden no reconocerse. Prueba una marca o modelo y condiciones compatibles por mensaje. No se elige al azar ni se ignoran restricciones desconocidas.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.015",
+      "category": "asistente",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué no se debe guardar una tarifa fija como respuesta de conocimiento?"
+      ],
+      "answer": "La tarifa puede cambiar. Se consulta el registro del vehículo antes del conocimiento cuando se reconoce esa intención. Un texto estático puede quedar obsoleto: usa la ficha o una consulta de vehículo reconocida.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "asistente.016",
+      "category": "asistente",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "Gracias",
+        "Muchas gracias",
+        "Gracias por la ayuda"
+      ],
+      "answer": "De nada. Puedes preguntar sobre cuentas, fechas, costos y solicitudes simuladas o explorar el catálogo. Para comparar vehículos escribe las condiciones completas.",
+      "sources": [
+        "local:assistant/services.py"
+      ]
+    },
+    {
+      "id": "pwa_soporte.001",
+      "category": "pwa_soporte",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué significa instalar DriveSmart como PWA?"
+      ],
+      "answer": "Si el navegador ofrece Instalar, puedes abrir el sitio con un acceso similar al de una aplicación. No es obligatorio y no convierte las consultas, rentas o chat en funciones sin conexión.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.002",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué aparece un aviso cuando navego sin conexión?"
+      ],
+      "answer": "El worker conserva un aviso estático para ciertas páginas públicas sin servidor. No guarda un catálogo offline ni permite crear rentas o consultar el chat. Reconecta y recarga.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.003",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Mis solicitudes se envían automáticamente cuando regresa internet?"
+      ],
+      "answer": "No. El worker no almacena ni reenvía formularios, preguntas o solicitudes. Al reconectar revisa Mis rentas antes de confirmar otra vez.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.004",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo consultar Mis rentas sin conexión?"
+      ],
+      "answer": "No. Las páginas privadas necesitan conexión y sesión. No se guardan copias offline del historial ni confirmaciones para evitar mostrar datos privados de otra sesión.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.005",
+      "category": "pwa_soporte",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué el asistente no responde sin conexión?",
+        "El chat no funciona sin internet"
+      ],
+      "answer": "Sus consultas necesitan llegar al servidor. No hay un motor dentro del navegador ni una cola offline. Comprueba la conexión y reenvía una pregunta completa cuando regrese.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.006",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué desconectar Wi-Fi no siempre desconecta localhost?"
+      ],
+      "answer": "Un servidor en tu propia computadora puede seguir accesible por localhost sin Wi-Fi. Django debe estar ejecutándose. El modo Offline de las herramientas del navegador permite simular un corte.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.007",
+      "category": "pwa_soporte",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si una página no carga?"
+      ],
+      "answer": "Comprueba dirección, conexión y disponibilidad del servidor. En uso local Django debe estar ejecutándose. No borres cuentas, solicitudes o la base para resolver un fallo de conexión.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.008",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago si el chat pide recargar por seguridad?"
+      ],
+      "answer": "Recarga para renovar los datos de sesión del formulario; si hace falta, vuelve a iniciar sesión y reintenta. No desactives protecciones ni compartas códigos para evitar el mensaje.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.009",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué faltan fotos al estar sin conexión?"
+      ],
+      "answer": "Las fotografías no están en la lista cerrada del worker. Tener estilos disponibles no garantiza fotos o datos del catálogo. Reconecta para consultar la ficha actual.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.010",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Mis páginas privadas se guardan en la caché PWA?"
+      ],
+      "answer": "No. Se limita a recursos públicos seleccionados y aviso offline, excluyendo páginas privadas, sesiones, respuestas del chat y envíos POST. Aun así, cierra sesión en equipos compartidos.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "pwa_soporte.011",
+      "category": "pwa_soporte",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué hago cuando un formulario muestra errores y no avanza?"
+      ],
+      "answer": "Lee y corrige los mensajes. En fechas revisa inicio no pasado y devolución posterior; en acceso, usuario y contraseña. Antes de repetir una confirmación revisa Mis rentas.",
+      "sources": [
+        "local:static/pwa/service-worker.js"
+      ]
+    },
+    {
+      "id": "administracion.001",
+      "category": "administracion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo entra el administrador al panel?"
+      ],
+      "answer": "Abre /admin/ e inicia sesión con una cuenta autorizada y permisos adecuados. Una cuenta normal no obtiene permisos por pedírselos al chat. No hay una contraseña predeterminada que compartir.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.002",
+      "category": "administracion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Dónde se añaden o editan vehículos?"
+      ],
+      "answer": "Un administrador con permisos utiliza Vehículos en Django Admin. Características, tarifa, imagen y disponibilidad se reflejan en el catálogo. El chat no realiza esos cambios.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.003",
+      "category": "administracion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo cambio la fotografía de un vehículo?"
+      ],
+      "answer": "Desde Admin abre el registro, selecciona Imagen y guarda. Existe una imagen principal por registro. Respeta sus derechos de uso; una foto subida no se añade automáticamente a la colección pública de referencia.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.004",
+      "category": "administracion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo se publican respuestas del asistente?",
+        "¿Dónde responde el administrador las preguntas nuevas?"
+      ],
+      "answer": "En Base de conocimiento de Admin revisa pregunta y respuesta comprobada, selecciona Publicada y guarda. No se permite publicar una respuesta vacía. Las políticas comerciales requieren aprobación previa.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.005",
+      "category": "administracion",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué se rechazan una respuesta vacía o una pregunta equivalente duplicada?"
+      ],
+      "answer": "La publicación necesita texto y las preguntas tienen una clave normalizada única. Revisa la entrada existente en lugar de duplicarla. No borres conocimiento útil para repetir el registro.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.006",
+      "category": "administracion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo revisa el administrador solo las dudas pendientes?"
+      ],
+      "answer": "Usa el filtro Estado en Base de conocimiento y la búsqueda por pregunta o respuesta. Hay fechas y, cuando corresponde, usuario de origen. No se envían avisos automáticos de llegada.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.007",
+      "category": "administracion",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cómo aprueba o rechaza una renta el administrador?"
+      ],
+      "answer": "En Solicitudes de renta de Admin revisa el registro y modifica Estado con permisos adecuados. Aprobar vuelve a validar disponibilidad. El chat no concede permisos ni aprueba.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.008",
+      "category": "administracion",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puede Admin cambiar fechas, propietario o precio histórico de una solicitud?"
+      ],
+      "answer": "El formulario administrativo los presenta como solo lectura. La gestión prevista revisa y cambia el estado; no rehace costos históricos ni reasigna usuarios mediante ese formulario.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.009",
+      "category": "administracion",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué no puedo eliminar un vehículo que tiene solicitudes?"
+      ],
+      "answer": "Las relaciones protegen el historial de usuario y vehículo. Un registro asociado no se borra ignorando ese historial. Para evitar nuevas solicitudes, el administrador puede revisar su disponibilidad.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "administracion.010",
+      "category": "administracion",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Recargar ejemplos borra las ediciones de Admin?"
+      ],
+      "answer": "Los comandos conservan registros: load_demo no sustituye ediciones; load_faq conserva conocimiento existente y load_vehicle_images no reemplaza fotos asignadas. Mantén respaldos de datos como operador.",
+      "sources": [
+        "local:assistant/admin.py"
+      ]
+    },
+    {
+      "id": "requisitos_reales.001",
+      "category": "requisitos_reales",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué documentos necesitaré para una renta real?",
+        "¿Qué requisitos piden para rentar?",
+        "¿Qué papeles necesito?",
+        "¿Necesito licencia para rentar?",
+        "¿Qué documentos debo presentar?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.002",
+      "category": "requisitos_reales",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuál será la edad mínima para alquilar un auto real con DriveSmart?",
+        "¿A partir de qué edad se podrá contratar una renta comercial?",
+        "¿Cuántos años debo tener para rentar?",
+        "¿Puedo rentar con 18 años?",
+        "¿Puedo rentar con 20 años?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.003",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá una edad máxima para conducir una unidad rentada?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.004",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se aceptarán licencias provisionales o digitales en la operación comercial?",
+        "¿Aceptan licencia digital?",
+        "¿Aceptan licencia provisional?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.005",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuánta antigüedad deberá tener mi licencia?",
+        "¿Aceptan una licencia recién expedida?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.006",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué requisitos se aplicarán a conductores extranjeros?",
+        "¿Aceptan extranjeros?",
+        "¿Puedo rentar como turista?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.007",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se pedirá un permiso internacional además de la licencia extranjera?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.008",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué identificación y documentos migratorios se aceptarán a visitantes?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.009",
+      "category": "requisitos_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué sucede si no coinciden los nombres de licencia, identificación y tarjeta?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.010",
+      "category": "requisitos_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Podrá una empresa ser titular del contrato y otra persona conducir?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.011",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se aceptarán documentos en otro idioma y requerirán traducción?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.012",
+      "category": "requisitos_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué ocurrirá si un documento vence durante la renta?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.013",
+      "category": "requisitos_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué pasa si falta un documento al recoger la unidad?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "requisitos_reales.014",
+      "category": "requisitos_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se comprobará identidad sin conservar originales innecesariamente?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir documentos aceptados, vigencia, comprobación y excepciones antes de responder. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.001",
+      "category": "garantias_pagos",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué tarjetas de crédito se aceptarán para rentas reales?",
+        "¿Qué tarjetas aceptan?",
+        "¿Necesito tarjeta de crédito?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.002",
+      "category": "garantias_pagos",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se admitirá tarjeta de débito como garantía comercial?",
+        "¿Puedo dejar una tarjeta de débito como garantía?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.003",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrá pagar en efectivo o transferencia en la operación real?",
+        "¿Aceptan efectivo?",
+        "¿Puedo pagar por transferencia?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.004",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se aceptarán tarjetas virtuales o prepagadas?",
+        "¿Aceptan tarjetas virtuales?",
+        "¿Aceptan tarjetas prepagadas?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.005",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Podré pagar la renta comercial con la tarjeta de otra persona?",
+        "¿Puedo pagar con la tarjeta de un familiar?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.006",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿El titular de la tarjeta deberá estar presente en la sucursal?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.007",
+      "category": "garantias_pagos",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuál será el depósito de garantía por categoría de vehículo?",
+        "¿Cuánto piden de depósito?",
+        "¿Cuánto dinero retienen?",
+        "¿De cuánto es la garantía?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.008",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿La garantía será una retención o un cargo definitivo?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.009",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuánto tardará en liberarse el depósito después de devolver?",
+        "¿Cuándo liberan el depósito?",
+        "¿Cuándo me devuelven la garantía?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.010",
+      "category": "garantias_pagos",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué pasa si el banco demora la liberación más que la arrendadora?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.011",
+      "category": "garantias_pagos",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué alternativas habrá si la tarjeta no tiene crédito para la garantía?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.012",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se exigirá anticipo o se podrá pagar al recoger?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.013",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿En qué moneda se cobrarán contratos a turistas extranjeros?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.014",
+      "category": "garantias_pagos",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué comprobantes y procedimiento se utilizarán para disputar un cargo?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "garantias_pagos.015",
+      "category": "garantias_pagos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se retendrá el total más el depósito o solo uno de esos conceptos?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "hertz",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir medios de pago, garantías por categoría, titularidad, liberación, plazos y aclaraciones; no inventar importes. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.001",
+      "category": "seguros_coberturas",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué seguro incluirá una renta comercial de DriveSmart?",
+        "¿Qué seguro incluye?",
+        "¿El carro tiene seguro?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.002",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué diferencia tendrán las coberturas básica y ampliada?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.003",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué deducible se aplicará por daño o robo de una unidad real?",
+        "¿Cuál es el deducible?",
+        "¿Cuánto pagaría por un daño?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.004",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Existirá una protección sin deducible y con qué exclusiones?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.005",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se aceptará la cobertura de una tarjeta bancaria del cliente?",
+        "¿Puedo usar el seguro de mi tarjeta?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.006",
+      "category": "seguros_coberturas",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué documentos permitirán evaluar el seguro de una tarjeta bancaria?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.007",
+      "category": "seguros_coberturas",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Quién responderá mientras el banco o aseguradora revisa un siniestro?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.008",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se cubrirán cristales, neumáticos, rines y bajos?",
+        "¿Cubren llantas y cristales?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.009",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se cubrirá robo parcial de accesorios o pertenencias?",
+        "¿Cubren mis pertenencias?",
+        "¿El seguro cubre equipaje?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.010",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué límites habrá en responsabilidad frente a terceros?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.011",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá protección de gastos médicos de ocupantes?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.012",
+      "category": "seguros_coberturas",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué usos, rutas o conductores excluirán una cobertura?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.013",
+      "category": "seguros_coberturas",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se resolverá una controversia sobre daños previos?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.014",
+      "category": "seguros_coberturas",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Seguirá vigente la cobertura fuera de la zona autorizada?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.015",
+      "category": "seguros_coberturas",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué incluirá una asistencia vial contratada?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "seguros_coberturas.016",
+      "category": "seguros_coberturas",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué reportes de autoridad y aseguradora serán necesarios para un incidente?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "avis",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir productos, inclusiones, exclusiones, deducibles y documentación con el proveedor. No prometer cobertura ni interpretar pólizas ajenas. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "estados_historial.001",
+      "category": "estados_historial",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué significa Pendiente?",
+        "Mi solicitud está pendiente",
+        "¿Qué significa que mi renta siga pendiente?"
+      ],
+      "answer": "El registro existe pero aún no tiene aprobación administrativa. Puede coincidir con otras pendientes y no bloquea fechas por sí solo. Consulta más adelante el estado en Mis rentas.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.002",
+      "category": "estados_historial",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué significa Aprobada?",
+        "Mi solicitud fue aprobada"
+      ],
+      "answer": "El administrador autorizó el registro tras validarlo. En la simulación bloquea intervalos aprobados incompatibles del mismo vehículo. No es comprobante de pago ni contrato de entrega real.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.003",
+      "category": "estados_historial",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Qué significa Rechazada?",
+        "Mi solicitud fue rechazada"
+      ],
+      "answer": "El administrador no aprobó el registro. No bloquea fechas por sí mismo. La beta no guarda un motivo estructurado de rechazo; no puedo inventarlo ni prometer una alternativa.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.004",
+      "category": "estados_historial",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué rechazaron mi solicitud?"
+      ],
+      "answer": "El estado no incluye una causa específica. No puedo atribuirla a documentos, precio o fechas. Solicita aclaración al administrador por un canal conocido; el chat no decide ni cambia el rechazo.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.005",
+      "category": "estados_historial",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cuánto tarda el administrador en aprobar?",
+        "¿Cuánto tarda la aprobación?",
+        "¿Cuándo me aprueban?"
+      ],
+      "answer": "No hay plazo definido ni aviso automático en la beta. Consulta Mis rentas. No se promete aprobación inmediata, turno de atención o tiempo máximo.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.006",
+      "category": "estados_historial",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Me llega un correo si aprueban o rechazan?"
+      ],
+      "answer": "No hay correos ni notificaciones de cambio de estado. Entra en Mis rentas con la cuenta que creó el registro para revisar su estado actual.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.007",
+      "category": "estados_historial",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Para qué sirve el número de solicitud?"
+      ],
+      "answer": "Identifica un registro en Mis rentas y Admin. Conocer un número no da permiso para abrir solicitudes ajenas ni prueba que hubo un pago.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.008",
+      "category": "estados_historial",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué Mis rentas está vacío?",
+        "No aparecen mis solicitudes",
+        "No encuentro mi renta"
+      ],
+      "answer": "Comprueba que confirmaste y utilizas la cuenta correcta. Una vista previa no crea registros. Si crees que terminó la confirmación, revisa la conexión y pide ayuda antes de repetir.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.009",
+      "category": "estados_historial",
+      "level": "avanzado",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Por qué no abre un enlace de confirmación de otra cuenta?"
+      ],
+      "answer": "Las confirmaciones están protegidas por propietario. Un enlace ajeno no da acceso. Usa la cuenta de tu propia solicitud; no cambies números para intentar consultar datos de otras personas.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "estados_historial.010",
+      "category": "estados_historial",
+      "level": "intermedio",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Puedo borrar mi historial desde mi cuenta?"
+      ],
+      "answer": "No hay esa función pública y el chat no elimina solicitudes. Para gestionar tus datos pide ayuda al administrador mediante un canal seguro y conocido.",
+      "sources": [
+        "local:rentals/views.py"
+      ]
+    },
+    {
+      "id": "entrega_devolucion.001",
+      "category": "entrega_devolucion",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Dónde estarán las sucursales de entrega de DriveSmart?",
+        "¿Dónde están ubicados?",
+        "¿Tienen sucursales?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.002",
+      "category": "entrega_devolucion",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué horarios habrá para recoger y devolver una unidad real?",
+        "¿A qué hora abren?",
+        "¿Cuál es el horario de entrega?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.003",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrá recoger el auto en un aeropuerto o terminal?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.004",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá entrega a domicilio y qué zonas cubrirá?",
+        "¿Entregan a domicilio?",
+        "¿Pueden llevar el carro al hotel?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.005",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrá devolver en otra ciudad o sucursal?",
+        "¿Puedo devolver en otra ciudad?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.006",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se cobrará el traslado por devolver en otra ubicación?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.007",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se coordinará la recogida si mi vuelo se retrasa?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.008",
+      "category": "entrega_devolucion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuánto se conservará una reserva física si el cliente llega tarde?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.009",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá devolución fuera de horario?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.010",
+      "category": "entrega_devolucion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Quién tendrá la custodia en una devolución sin personal presente?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.011",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué inspección y fotografías se harán antes de entregar la unidad?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.012",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué comprobante se entregará al finalizar la devolución física?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.013",
+      "category": "entrega_devolucion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué pasa si el modelo reservado no está físicamente disponible?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.014",
+      "category": "entrega_devolucion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué condiciones se aplicarán para sustituir por otra categoría?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "entrega_devolucion.015",
+      "category": "entrega_devolucion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se resolverá que un cliente rechace la unidad por su estado?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "hertz",
+        "alamo_politicas"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir sucursales, horarios, logística, identificación, evidencias y cargos aprobados. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.001",
+      "category": "combustible_kilometraje",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿La renta real incluirá kilometraje limitado o ilimitado?",
+        "¿Tienen kilometraje ilimitado?",
+        "¿Cuántos kilómetros incluye?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.002",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se cobrará cada kilómetro excedente?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.003",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá límites de kilometraje según ciudad, categoría o duración?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.004",
+      "category": "combustible_kilometraje",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Con qué nivel de combustible se entregará y devolverá la unidad?",
+        "¿Debo devolver con tanque lleno?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.005",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se cobrará el combustible faltante al devolver?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.006",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Existirá compra anticipada de tanque y reembolso de sobrantes?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.007",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué combustible utilizará cada unidad real de la flota?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.008",
+      "category": "combustible_kilometraje",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué se hará si se carga un combustible equivocado?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.009",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Quién pagará peajes y estacionamientos del viaje?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.010",
+      "category": "combustible_kilometraje",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se atribuirán multas o peajes posteriores al cierre del contrato?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.011",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué dispositivo de telepeaje se podrá contratar y cómo se desglosará?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "combustible_kilometraje.012",
+      "category": "combustible_kilometraje",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se autorizarán caminos de terracería o no pavimentados?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_politicas",
+        "alamo_faq",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir combustible correcto, niveles, kilometraje y tarifas transparentes. No inferir atributos por categoría. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.001",
+      "category": "cambios_cancelaciones",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué política de cancelación tendrá una reserva comercial pagada?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.002",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá cancelación gratuita y hasta cuándo?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.003",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué pasará con un anticipo si no recojo la unidad?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.004",
+      "category": "cambios_cancelaciones",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Podrá cambiarse el titular de un contrato comercial confirmado?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.005",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se solicitará una extensión de una renta real en curso?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.006",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué tarifa se aplicará a días adicionales con la unidad en uso?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.007",
+      "category": "cambios_cancelaciones",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué sucederá si una extensión se cruza con otra reserva física?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.008",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá reembolso por devolver anticipadamente una unidad real?",
+        "¿Me devuelven dinero si entrego antes?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.009",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá tolerancia de devolución tardía?",
+        "¿Qué pasa si devuelvo tarde?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.010",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se cobrarán horas extra o retrasos en una operación real?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.011",
+      "category": "cambios_cancelaciones",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué procedimiento existirá si la arrendadora cancela por falta de unidades?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.012",
+      "category": "cambios_cancelaciones",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se modificarán reservas hechas mediante intermediarios?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "cambios_cancelaciones.013",
+      "category": "cambios_cancelaciones",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué plazos y documentos se necesitarán para un reembolso comercial?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "avis",
+        "alamo_mx",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir ventanas de cambio, cancelación, ausencia, extensión y devolución anticipada con cargos y consentimiento claros. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.001",
+      "category": "incidencias_reales",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué número de asistencia de DriveSmart se usará por una avería real?",
+        "¿A quién llamo si se descompone el auto?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.002",
+      "category": "incidencias_reales",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué protocolo de la arrendadora seguirá el cliente por un accidente real?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.003",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se reportará robo de una unidad y a quién se avisará?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.004",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué se hará si se pierde la llave o queda dentro del vehículo?",
+        "Perdí las llaves del carro rentado"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.005",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá ayuda por batería descargada o falta de combustible?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.006",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué servicio se ofrecerá por una llanta ponchada?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.007",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué condiciones tendrá la grúa y hasta dónde trasladará el auto?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.008",
+      "category": "incidencias_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrán autorizar reparaciones en carretera y quién las aprobará?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.009",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿En qué casos se dará una unidad de reemplazo?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.010",
+      "category": "incidencias_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Quién cubrirá traslados por una falla mecánica de la unidad?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.011",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se recuperarán objetos olvidados después de devolver el auto?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.012",
+      "category": "incidencias_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se registrará y resolverá una reclamación por daños?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.013",
+      "category": "incidencias_reales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá atención nocturna y en días festivos para incidencias?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "incidencias_reales.014",
+      "category": "incidencias_reales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué se hará si una autoridad retiene la unidad o se extravía su documentación?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "alamo_mx",
+        "alamo_politicas",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales verificados, responsables, protocolo y documentación con el proveedor. No inventar teléfonos, tiempos ni cobertura. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.001",
+      "category": "conductores_usos",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrán registrar conductores adicionales en un contrato comercial?",
+        "¿Puede manejar otra persona?",
+        "¿Puedo agregar otro conductor?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.002",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué documentos presentará un conductor adicional?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.003",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuántos conductores adicionales se aceptarán y cuánto costarán?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.004",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Un cónyuge o familiar quedará autorizado automáticamente?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.005",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué condiciones tendrán los conductores jóvenes de unidades reales?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.006",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrá conducir una unidad rentada a otro estado de México?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.007",
+      "category": "conductores_usos",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se permitirá cruzar una frontera internacional con un auto de DriveSmart?",
+        "¿Puedo salir del país con el carro?",
+        "¿Puedo cruzar a Estados Unidos?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.008",
+      "category": "conductores_usos",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué documentos, permisos y cobertura se exigirán para cruzar a otro país?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.009",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrá usar la unidad en plataformas de transporte o reparto?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.010",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se autorizarán traslados empresariales y visitas laborales?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.011",
+      "category": "conductores_usos",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se permitirá remolcar, cargar mercancía o realizar pruebas de conducción?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.012",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué reglas se definirán para mascotas y animales de asistencia?",
+        "¿Puedo llevar mascotas?",
+        "¿Aceptan animales de asistencia?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.013",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se permitirá fumar o vapear dentro del vehículo?",
+        "¿Se puede fumar en el carro?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "conductores_usos.014",
+      "category": "conductores_usos",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué limpieza y cargos existirán por suciedad extraordinaria?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "enterprise",
+        "europcar",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir conductores autorizados, zonas y usos permitidos, permisos y restricciones contractuales. El chat no autoriza usos reales. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.001",
+      "category": "accesorios_accesibilidad",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrán reservar sillas infantiles y asientos elevadores?",
+        "¿Tienen silla para bebé?",
+        "¿Tienen asiento elevador?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.002",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Quién instalará y verificará la compatibilidad de una silla infantil?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.003",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrán contratar GPS, Wi-Fi móvil y otros accesorios?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.004",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá unidades adaptadas para personas con movilidad reducida?",
+        "¿Tienen autos adaptados para discapacidad?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.005",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se confirmará espacio para una silla de ruedas plegada y equipaje concreto?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.006",
+      "category": "accesorios_accesibilidad",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se verificará una necesidad de accesibilidad sin pedir datos médicos innecesarios?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.007",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se podrán contratar portaequipajes, cadenas y otros accesorios para rutas especiales?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.008",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué pasará si falta un accesorio reservado al recoger el auto?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "accesorios_accesibilidad.009",
+      "category": "accesorios_accesibilidad",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se gestionará daño o pérdida de un accesorio contratado?"
+      ],
+      "answer": "",
+      "sources": [
+        "enterprise",
+        "europcar",
+        "alamo_faq"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir disponibilidad, reserva, instalación, seguridad, tarifas y compatibilidad por unidad; no garantizar con base en una fotografía. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.001",
+      "category": "empresas_facturacion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá cuentas empresariales o convenios corporativos para rentas reales?",
+        "¿Tienen convenios para empresas?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.002",
+      "category": "empresas_facturacion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se ofrecerán tarifas comerciales por semana, mes o varias unidades?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.003",
+      "category": "empresas_facturacion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué documentos acreditarán autorización para firmar por una empresa?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.004",
+      "category": "empresas_facturacion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Una empresa podrá pagar y designar a un empleado conductor?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.005",
+      "category": "empresas_facturacion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se emitirán facturas de rentas comerciales y qué datos fiscales se pedirán?",
+        "¿Facturan una renta comercial?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.006",
+      "category": "empresas_facturacion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se corregirán datos de una factura real emitida?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.007",
+      "category": "empresas_facturacion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué impuestos y cargos de aeropuerto incluirá una tarifa comercial?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.008",
+      "category": "empresas_facturacion",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá crédito empresarial, conciliación de cargos o facturación agrupada?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "empresas_facturacion.009",
+      "category": "empresas_facturacion",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se ofrecerán cupones, promociones o programas de lealtad y con qué condiciones?"
+      ],
+      "answer": "",
+      "sources": [
+        "avis",
+        "enterprise",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir alta empresarial, representación, facturación, cobro y contratos. No ofrecer descuentos ni crédito sin aprobación. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.001",
+      "category": "electricos_especiales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Habrá vehículos eléctricos o híbridos para contratar realmente?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.002",
+      "category": "electricos_especiales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Con cuánta batería se entregará y devolverá un eléctrico?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.003",
+      "category": "electricos_especiales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se proporcionarán cables, adaptadores y acceso a redes de carga?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.004",
+      "category": "electricos_especiales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se resolverá una devolución con batería baja y qué costo tendrá?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.005",
+      "category": "electricos_especiales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué asistencia habrá si un eléctrico se queda sin carga?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.006",
+      "category": "electricos_especiales",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se garantizará autonomía y compatibilidad de carga para una ruta concreta?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.007",
+      "category": "electricos_especiales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se gestionará una renta prolongada que necesite mantenimiento durante el contrato?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "electricos_especiales.008",
+      "category": "electricos_especiales",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué protocolo habrá ante una alerta de seguridad o retiro del fabricante?"
+      ],
+      "answer": "",
+      "sources": [
+        "alamo_faq",
+        "sixt_mx"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Confirmar inventario y servicio compatibles antes de definir operación y cargos. No inferir autonomía ni equipamiento. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "privacidad_comercial.001",
+      "category": "privacidad_comercial",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuál será el aviso de privacidad de la operación comercial?"
+      ],
+      "answer": "",
+      "sources": [
+        "sixt_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir aviso de privacidad, finalidades, conservación, accesos y canal verificado con el responsable correspondiente. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "privacidad_comercial.002",
+      "category": "privacidad_comercial",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuánto se conservarán las copias de licencias e identificaciones de clientes reales?"
+      ],
+      "answer": "",
+      "sources": [
+        "sixt_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir aviso de privacidad, finalidades, conservación, accesos y canal verificado con el responsable correspondiente. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "privacidad_comercial.003",
+      "category": "privacidad_comercial",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Se usará geolocalización de las unidades y cómo se informará a los conductores?"
+      ],
+      "answer": "",
+      "sources": [
+        "sixt_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir aviso de privacidad, finalidades, conservación, accesos y canal verificado con el responsable correspondiente. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "privacidad_comercial.004",
+      "category": "privacidad_comercial",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué canal atenderá solicitudes sobre datos personales de clientes comerciales?"
+      ],
+      "answer": "",
+      "sources": [
+        "sixt_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir aviso de privacidad, finalidades, conservación, accesos y canal verificado con el responsable correspondiente. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "privacidad_comercial.005",
+      "category": "privacidad_comercial",
+      "level": "intermedio",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué datos se compartirán con aseguradoras y proveedores?"
+      ],
+      "answer": "",
+      "sources": [
+        "sixt_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir aviso de privacidad, finalidades, conservación, accesos y canal verificado con el responsable correspondiente. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "privacidad_comercial.006",
+      "category": "privacidad_comercial",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cómo se verificará una petición de datos sin revelar información de otro titular?"
+      ],
+      "answer": "",
+      "sources": [
+        "sixt_mx",
+        "europcar"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir aviso de privacidad, finalidades, conservación, accesos y canal verificado con el responsable correspondiente. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "atencion_comercial.001",
+      "category": "atencion_comercial",
+      "level": "basico",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Cuál será el canal oficial de atención al cliente de DriveSmart?",
+        "¿Tienen WhatsApp?",
+        "¿Cuál es su teléfono?",
+        "¿Cuál es su correo de atención?",
+        "¿Cómo contacto a una persona?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "alamo_mx",
+        "avis"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales oficiales, horarios, responsables y seguimiento. Verificar cada teléfono, dirección o correo antes de publicarlo. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "atencion_comercial.002",
+      "category": "atencion_comercial",
+      "level": "avanzado",
+      "status": "PENDIENTE",
+      "questions": [
+        "¿Qué procedimiento comercial y folio se utilizarán para atender quejas y aclaraciones?"
+      ],
+      "answer": "",
+      "sources": [
+        "hertz",
+        "alamo_mx",
+        "avis"
+      ],
+      "review_notes": "BORRADOR ADMINISTRATIVO, NO PUBLICAR SIN VALIDAR. Definir canales oficiales, horarios, responsables y seguimiento. Verificar cada teléfono, dirección o correo antes de publicarlo. Esta beta no procesa pagos ni formaliza rentas reales. No trasladar condiciones de otra empresa a DriveSmart."
+    },
+    {
+      "id": "costos.017",
+      "category": "costos",
+      "level": "basico",
+      "status": "PUBLICADA",
+      "questions": [
+        "¿Cuánto cuesta rentar un auto?",
+        "¿Cuánto cuesta la renta?",
+        "¿Qué precio tiene alquilar un carro?"
+      ],
+      "answer": "Depende del vehículo elegido y de tus fechas. Consulta la tarifa por día en el catálogo y usa Solicitar renta para calcular días y total antes de confirmar. No hay una tarifa única para todo el catálogo y esta beta no procesa pagos.",
+      "sources": [
+        "local:rentals/models.py"
+      ]
+    }
+  ]
+}
