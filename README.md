@@ -71,7 +71,7 @@ las páginas y JavaScript añade interacción al chat, filtros y registro de la 
 
 ![Arquitectura local de DriveSmart: navegador, aplicación Django, SQLite y archivos](docs/images/arquitectura.svg)
 
-Diagrama generado con **Archify**, validado contra el código de la revisión
+
 `f8b6f22`. [Descargar SVG](docs/images/arquitectura.svg) ·
 [Ver PNG](docs/images/arquitectura.png).
 
