@@ -98,6 +98,8 @@ transacciones y pruebas de carga. [Decisiones y evolución](docs/ARQUITECTURA_Y_
 El chat utiliza Python estándar, normalización, sinónimos, expresiones regulares y
 difflib. No depende de un LLM, una API generativa ni una base vectorial.
 
+![Arquitectura local de DriveSmart: navegador, aplicación Django, SQLite y archivos](docs/images/asistente.svg)
+
 - Recuerda filtros, fechas e IDs durante una conversación breve en la sesión.
 - Consulta precios y disponibilidad actuales y compara hasta tres vehículos.
 - Calcula estimaciones; la confirmación definitiva ocurre en el formulario de renta.
