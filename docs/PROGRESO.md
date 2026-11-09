@@ -74,3 +74,19 @@ sin ampliar la lista de recursos permitidos. 124/124 pruebas Django aprobadas,
 incluidas las 88 anteriores; integración Playwright adicional 1/1 con 15 comprobaciones.
 Bases temporales y evidencias externas; sin cambios en la SQLite de uso ni ZIP.
 Ver [resultados, ejemplos y limitaciones](CHAT_2_0_RESULTADOS.md).
+
+## Catálogo PWA sin conexión — 8 de noviembre de 2026
+
+Ampliación solicitada: copia pública aislada del catálogo completo, fotos y fichas,
+sin guardar HTML con sesión. Aviso visible de copia lista, fecha de guardado y
+verificación online de precios, fechas deseadas y disponibilidad. Actualización
+manual, reutilización automática de 30 minutos y conservación de la última copia
+completa ante fallos. Worker v10. Se preservan CSRF, no-store en páginas normales,
+permisos y reglas de rentas. No se cachean sesiones, POST ni JSON del chat.
+
+156/156 pruebas Django; dos integraciones Playwright aprobadas con diez comprobaciones
+PWA y 18 del chat. Se usaron bases y fotografías temporales; no se modificó SQLite
+de uso. Sin migraciones pendientes. README, instrucciones, arquitectura y entregable
+actualizados. Capturas públicas offline en docs/images y evidencia técnica en TEMP.
+Implementado localmente; no se ha publicado en PythonAnywhere ni hecho push.
+Ver [alcance y comprobaciones](PWA_CATALOGO_OFFLINE.md).

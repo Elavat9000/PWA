@@ -24,8 +24,9 @@ accounts, vehicles, rentals y assistant comparten una aplicación y una base de 
   Normaliza acentos, puntuación, espacios y sinónimos; usa difflib conservadoramente.
   Lo desconocido queda pendiente. Admin responde y publica; una respuesta vacía se
   rechaza. No hay entrenamiento automático ni historial persistente de conversaciones.
-- PWA: manifiesto, iconos y worker raíz. Solo precarga CSS, JS estático, iconos y el
-  aviso estático offline. Datos dinámicos, privados y POST no se guardan en el worker.
+- PWA: manifiesto, iconos y worker raíz. Precarga estáticos y una copia pública
+  aislada del catálogo completo con fotos y fichas. No guarda páginas con sesión,
+  datos privados, JSON del chat ni POST. Las fechas y disponibilidad se verifican en línea.
 
 El asistente lee precios y características reales. No genera políticas por suposición.
 La revisión humana es responsable de mantener correctas las respuestas publicadas.
@@ -38,10 +39,14 @@ abstención, ORM de Vehicle y contrato de answer_question. No está implementado
 ## Caché y privacidad
 
 El worker usa lista cerrada y caché versionada; limpia solo versiones anteriores de
-DriveSmart. Las páginas públicas sin red reciben un aviso, no datos antiguos. Las
-privadas y POST fallan sin recuperar información personal. Las respuestas dinámicas
+DriveSmart. Las páginas públicas sin red muestran el catálogo guardado, con fecha,
+precios históricos y aviso de verificación online. Las privadas reciben un aviso
+genérico sin información personal y los POST fallan. Las respuestas dinámicas normales
 envían Cache-Control: no-store y el historial vuelve a consultar la sesión al restaurarse.
 No hay sincronización ni cola de envíos para simular rentas o chat offline.
+La actualización del catálogo es independiente de las sesiones, omite credenciales
+y solo sustituye la copia anterior cuando se descargaron el HTML público y sus fotos.
+Ver [PWA de consulta offline](PWA_CATALOGO_OFFLINE.md).
 
 Referencias técnicas: [Service Workers y localhost](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 y [caché de historial y no-store en Chrome](https://developer.chrome.com/docs/web-platform/bfcache-ccns).
@@ -66,7 +71,8 @@ No se inventan importes sin volumen, proveedor, mediciones y requisitos reales.
 
 Límites: SQLite puede bloquear escrituras concurrentes; búsqueda conservadora; chat
 sin limitador de frecuencia; respuestas dependientes de revisión humana. No hay pagos,
-edición/cancelación por usuario, calendario avanzado, notificaciones ni datos offline.
+edición/cancelación por usuario, calendario avanzado ni notificaciones. Solo el catálogo
+público tiene copia offline; el acceso y las operaciones privadas requieren conexión.
 No se certifican WCAG, carga o instalación física en todos los navegadores.
 
 Problemas resueltos: rutas de herramientas y permisos específicos sin quitar sandbox;

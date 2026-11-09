@@ -6,7 +6,7 @@ class NoStoreDynamicPagesMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        public_files = {'/offline/', '/manifest.webmanifest', '/service-worker.js'}
+        public_files = {'/offline/', '/manifest.webmanifest', '/service-worker.js', '/catalogo-sin-conexion/'}
         if not request.path.startswith('/static/') and request.path not in public_files:
             response['Cache-Control'] = 'no-store, private'
         return response

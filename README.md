@@ -4,7 +4,7 @@
 
 Beta construida con Python 3.12, Django 5.2 LTS, SQLite y tecnologías web nativas.
 Permite explorar vehículos, comparar opciones y enviar solicitudes simuladas.
-Interfaz en español, precios en MXN y PWA con aviso sin conexión.
+Interfaz en español, precios en MXN y PWA con catálogo público sin conexión.
 
 > Las rentas son de demostración y no procesan pagos. Las políticas comerciales
 > reales siguen pendientes de definición y aprobación.
@@ -149,12 +149,26 @@ políticas de Windows. La aplicación no requiere Node ni Playwright para ejecut
 
 ## PWA y privacidad
 
-El manifiesto permite instalar la aplicación en navegadores compatibles. El Service
-Worker guarda únicamente estáticos seleccionados y un aviso offline. No almacena
-páginas privadas, sesiones, POST, solicitudes ni JSON del asistente.
+El manifiesto permite instalar la aplicación en navegadores compatibles. Al entrar
+con conexión, la PWA descarga una copia pública del catálogo completo y sus fotos.
+Cuando aparece **Catálogo listo sin conexión**, puede consultarse el catálogo y sus
+fichas incluso sin haber abierto cada vehículo antes. **Actualizar catálogo guardado**
+permite renovar la copia; las descargas automáticas reutilizan la copia durante 30 minutos.
 
-El catálogo, las rentas y el chat necesitan conexión al servidor. La PWA no permite
-procesar solicitudes sin conexión. El servidor de desarrollo no es un despliegue
+Sin red, inicio y catálogo muestran esa copia, con fecha de guardado y precios
+históricos identificados. **Verificar fechas en línea** informa que se necesita
+internet para asegurar las fechas deseadas, precios actuales y disponibilidad.
+No se aplican los filtros de la página en línea a la copia offline; se avisa de ello.
+
+![Catálogo completo de demostración consultado sin conexión](docs/images/catalogo-sin-conexion.png)
+
+No se guarda el HTML normal con sesión: se genera una copia aislada, sin nombre,
+CSRF, cuentas, rentas ni chat. Una actualización fallida conserva la última copia
+completa. Se necesita una primera descarga y espacio en el navegador; si este borra
+sus datos, hay que descargarla otra vez. [Funcionamiento y pruebas](docs/PWA_CATALOGO_OFFLINE.md).
+
+Las solicitudes, el acceso a cuentas y el chat requieren conexión. No se encolan
+envíos ni se promete disponibilidad desde datos guardados. El servidor de desarrollo no es un despliegue
 productivo; la configuración online requiere HTTPS, secretos y endurecimiento.
 [Guía de publicación](docs/PYTHONANYWHERE.md).
 
@@ -167,7 +181,7 @@ productivo; la configuración online requiere HTTPS, secretos y endurecimiento.
 ```
 
 Las pruebas Django usan datos temporales, sin modificar la SQLite de uso.
-La última verificación completa de la revisión `f8b6f22` aprobó **148 pruebas**.
+La última verificación local, con catálogo offline, aprobó **156 pruebas Django**.
 La generación de estas capturas es una integración opcional independiente:
 comprueba páginas, filtros, estimación, imágenes y conversación en Chrome.
 

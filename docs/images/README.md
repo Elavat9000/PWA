@@ -31,6 +31,8 @@ No se confirma ninguna solicitud ni se modifica la base de uso.
 | administracion-escritorio.png | Vehículos con administrador temporal | 1440 × 1000 |
 | inicio-movil.png | Portada móvil | 390 × 1000 |
 | catalogo-movil.png | Catálogo y filtros plegados | 390 × 1120 |
+| catalogo-sin-conexion.png | Catálogo público completo sin red | 1440 × 1000 |
+| catalogo-sin-conexion-movil.png | Copia pública en móvil sin red | 390 × 844 |
 
 Las capturas móviles emulan viewport y entrada táctil; no son pruebas en teléfono físico.
 

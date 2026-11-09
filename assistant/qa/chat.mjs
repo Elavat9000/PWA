@@ -119,7 +119,7 @@ try {
     await page.evaluate(() => navigator.serviceWorker.ready);
     await page.reload();
     await page.waitForFunction(() => Boolean(navigator.serviceWorker.controller));
-    // Simular una caché anterior, comprobar que la activación v9 la retira.
+    // Simular una caché anterior, comprobar que la activación v10 la retira.
     await page.evaluate(async () => {
         await caches.open('drivesmart-public-chat2-old');
         const registration = await navigator.serviceWorker.ready;
@@ -136,14 +136,15 @@ try {
         for (const name of await caches.keys()) result[name] = (await (await caches.open(name)).keys()).map(r => new URL(r.url).pathname);
         return result;
     });
-    assert.ok(cached['drivesmart-public-v9']);
-    for (const paths of Object.values(cached)) assert.ok(paths.every(path => path === '/offline/' || path.startsWith('/static/')));
-    record('Activación PWA v9, retiro de caché anterior y chat operativo sin datos privados en CacheStorage');
+    assert.ok(cached['drivesmart-public-v10']);
+    for (const paths of Object.values(cached)) assert.ok(paths.every(path => path === '/offline/' || path === '/catalogo-sin-conexion/' || path.startsWith('/static/') || path.startsWith('/media/vehicles/')));
+    record('Activación PWA v10, retiro de caché anterior y chat operativo sin datos privados en CacheStorage');
+    await page.waitForFunction(() => document.querySelector('.pwa-status')?.textContent.includes('Catálogo listo sin conexión'));
     await context.setOffline(true);
     await page.goto(base + '/vehiculos/');
-    assert.match(await page.locator('body').innerText(), /necesita conexión/);
+    assert.match(await page.locator('body').innerText(), /Necesitas conexión a internet/);
     await context.setOffline(false);
-    record('Aviso offline sin almacenar catálogo ni conversación');
+    record('Catálogo público offline, sin almacenar conversación ni páginas privadas');
     await context.close();
     for (const [width, height] of [[768, 900], [390, 844], [320, 568], [844, 390]]) {
         const mobile = await browser.newContext({ viewport: { width, height } });

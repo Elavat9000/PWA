@@ -60,7 +60,7 @@ class PwaTests(TestCase):
         response = self.client.get(reverse('pwa_offline'))
         self.assertEqual(response.status_code, 200)
         html = b''.join(response.streaming_content).decode()
-        self.assertIn('DriveSmart necesita conexión a internet para consultar vehículos, gestionar rentas y utilizar el asistente.', html)
+        self.assertIn('Necesitas conexión a internet para verificar fechas y disponibilidad', html)
         self.assertNotIn('csrfmiddlewaretoken', html)
         self.assertNotIn('assistant-panel', html)
         self.assertNotIn('sessionid', response.cookies)

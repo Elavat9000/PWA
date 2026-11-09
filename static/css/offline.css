@@ -1,0 +1,11 @@
+.offline-catalog { padding-block: 32px 64px; }
+.offline-catalog h1 { font-size: clamp(32px, 4.4vw, 54px); }
+.offline-notice { background: var(--soft); color: var(--ink); padding: 16px 20px; border-radius: var(--control-radius); margin-bottom: 24px; }
+.offline-notice p { margin: 8px 0 0; }
+.offline-notice time { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.offline-details { margin-bottom: 20px; }
+.offline-details summary { min-height: 44px; cursor: pointer; font-weight: 600; }
+.offline-catalog .card-body > .button { margin-top: 16px; }
+.offline-catalog .vehicle-card[hidden] { display: none; }
+.offline-catalog .vehicle-grid:has(.offline-selected) { grid-template-columns: minmax(0, 680px); }
+.offline-catalog #creditos { padding-top: 32px; border-top: 1px solid var(--line); font-size: 14px; }

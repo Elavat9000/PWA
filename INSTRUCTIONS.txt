@@ -1,34 +1,83 @@
 DRIVESMART — INSTALACION Y USO EN WINDOWS
 Python 3.12 · Django 5.2 LTS · SQLite
 
+0. REQUISITOS E INSTALACION DE PYTHON
+   Usar Windows 10/11, PowerShell y un navegador actualizado (Chrome o Edge).
+   Se necesita internet para descargar Python y las dependencias; después,
+   la ejecución local no depende de APIs externas.
+
+   Si todavía no hay Python 3.12:
+   a) Abrir https://www.python.org/downloads/ e instalar Python Install Manager
+      desde la fuente oficial. Cerrar y volver a abrir PowerShell.
+   b) Con ese administrador instalado, ejecutar:
+      py install 3.12
+   c) Comprobar:
+      py -3.12 --version
+   Si ya se dispone de Python 3.12 y el lanzador py, basta con comprobar la versión.
+   El comando py install pertenece al nuevo administrador; no es un comando pip.
+   Si un lanzador antiguo no lo reconoce, usar el administrador oficial o el
+   instalador de Python 3.12, sin desinstalar versiones de otros proyectos.
+   Guía oficial: https://docs.python.org/3/using/windows.html
+
+   No instalar Django de forma global: el paso 2 instala Django y Pillow
+   dentro del entorno del proyecto, con las versiones de requirements.txt.
+   SQLite y venv están incluidos en Python; no requieren un servidor adicional.
+   Node.js, npm, Git, Visual Studio Code, Playwright y Archify no son requisitos
+   para ejecutar la aplicación. Git solo es necesario si se elige clonar el repositorio.
+
 1. ENTRAR A LA CARPETA DEL PROYECTO
+   Extraer primero el ZIP en una carpeta propia; no ejecutar desde el ZIP abierto.
+   También se puede descargar el código desde:
+   https://github.com/Elavat9000/PWA > Code > Download ZIP.
    Abrir PowerShell en la carpeta que contiene manage.py.
-   Para esta computadora:
-   cd C:\Users\Diana\Documents\PWA
+   Ejemplo de ruta (sustituir por la carpeta real):
+   cd "C:\Proyectos\DriveSmart"
+   Comprobar que existen manage.py y requirements.txt:
+   Test-Path .\manage.py
+   Test-Path .\requirements.txt
+   Ambos comandos deben devolver True. Si no, entrar en la subcarpeta correcta.
 
 2. ENTORNO PYTHON
-   El proyecto local ya conserva .venv y sus dependencias.
-   Solo en una instalación nueva, después de instalar Python 3.12:
+   En una instalación nueva, después de instalar Python 3.12:
    py -3.12 -m venv .venv
    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
    .\.venv\Scripts\python.exe -m pip check
+   .\.venv\Scripts\python.exe -m django --version
+   requirements.txt fija Django==5.2.19 y Pillow==12.3.0.
+   pip resuelve sus dependencias transitivas automáticamente.
+   No copiar el entorno .venv de otra PC ni instalar una versión distinta de Django.
+   Si ya existe un entorno preparado, conservarlo y comprobar sus dependencias.
    No requiere activar scripts ni modificar las políticas de Windows.
-   No instalar Node, navegadores ni servicios de IA: la aplicación no los utiliza.
+   No se utiliza Node ni un proceso de compilación JavaScript para iniciar DriveSmart.
 
 3. CONFIGURACION LOCAL
    .env.example documenta las variables; Django no carga ese archivo automáticamente.
    Para mantener DEBUG local explícitamente en esta sesión de PowerShell:
    $env:DJANGO_DEBUG="1"
+   $env:DJANGO_ALLOWED_HOSTS="127.0.0.1,localhost"
    Estos pasos son únicamente para trabajar en la computadora local.
+   La clave de desarrollo incluida en settings.py es pública y solo sirve en local.
+   Para usar una clave local propia sin guardarla en un archivo, es opcional:
+   $env:DJANGO_SECRET_KEY = & .\.venv\Scripts\python.exe -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+   La variable existe solo en esa sesión de PowerShell. No publicar su valor.
+   No activar DEBUG en el sitio publicado ni copiar su configuración privada.
 
 4. MIGRACIONES Y DATOS
+   Comprobar la configuración antes de inicializar la base:
+   .\.venv\Scripts\python.exe manage.py check
    .\.venv\Scripts\python.exe manage.py migrate
+   Si no existe db.sqlite3, migrate crea la base y sus tablas automáticamente.
+   Las migraciones incluidas describen el esquema; no ejecutar makemigrations
+   para instalar el proyecto ni generar migraciones nuevas sin cambiar modelos.
    En local, no borrar ni sustituir db.sqlite3 para actualizar el proyecto.
    Solo si se desean datos de demostración:
    .\.venv\Scripts\python.exe manage.py load_demo
    .\.venv\Scripts\python.exe manage.py load_knowledge_base
    .\.venv\Scripts\python.exe manage.py load_vehicle_images
    Los comandos conservan registros y fotos existentes y pueden repetirse.
+   load_demo crea seis vehículos ficticios; load_knowledge_base carga las preguntas
+   de partida; load_vehicle_images copia las fotos incluidas a media/ y las asocia.
+   No se incluyen cuentas predeterminadas ni contraseñas en los datos de demostración.
    Las fotografías son referencias: año y versión pueden diferir del catálogo.
    Estos comandos afectan la base local, no la instalación online.
 
@@ -37,6 +86,8 @@ Python 3.12 · Django 5.2 LTS · SQLite
    .\.venv\Scripts\python.exe manage.py createsuperuser
    Elegir credenciales propias; no existen contraseñas predeterminadas.
    Gestionar vehículos, solicitudes y conocimiento en /admin/.
+   Durante la creación, la contraseña no se muestra mientras se escribe: es normal.
+   Para probar una cuenta normal, usar Crear cuenta en la página principal.
    Cada vehículo admite una imagen principal desde el campo Imagen.
    SQLite guarda la ruta; media/vehicles/ almacena el archivo.
 
@@ -47,13 +98,26 @@ Python 3.12 · Django 5.2 LTS · SQLite
    Créditos de fotos: /creditos-imagenes/
    El asistente se abre desde el botón con icono de conversación.
    Detener con Ctrl+C. Si se usó --noreload, reiniciar después de modificar código.
+   Si el puerto 8000 ya está ocupado, elegir otro sin detener procesos ajenos:
+   .\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8001
+   Abrir entonces http://127.0.0.1:8001/.
 
 7. PWA
    Abrir primero el sitio con el servidor disponible para registrar el worker.
    Chrome/Edge pueden ofrecer instalar la aplicación desde su menú.
-   Simular Offline desde DevTools > Network para verificar el aviso informativo.
+   Esperar el mensaje "Catálogo listo sin conexión": se descarga todo el catálogo
+   público y sus fotos, sin necesidad de visitar cada ficha antes.
+   Simular Offline desde DevTools > Network y abrir /vehiculos/ para consultar la copia.
    Desconectar Wi-Fi no interrumpe necesariamente el acceso a localhost.
-   El catálogo, las rentas y el asistente requieren conexión al servidor.
+   La copia tiene fecha de guardado y precios históricos. Usar "Verificar fechas
+   en línea" para comprobar precios actuales, fechas deseadas y disponibilidad.
+   Sin conexión, ese botón explica que necesitas internet; no crea solicitudes.
+   Los filtros del catálogo en línea no se aplican en esta copia y se indica claramente.
+   Usar "Actualizar catálogo guardado" con conexión para renovar la copia.
+   La descarga automática se reutiliza durante 30 minutos. Si una actualización
+   falla, se conserva la última copia completa. Requiere espacio en el navegador;
+   si se borran sus datos, es necesario descargar de nuevo.
+   Las cuentas, rentas y el asistente requieren conexión al servidor.
    No se guardan páginas privadas, sesiones, respuestas del chat ni POST en el worker.
    Al cambiar CSS/JS cacheados, incrementar la versión en static/pwa/service-worker.js.
 
@@ -62,18 +126,44 @@ Python 3.12 · Django 5.2 LTS · SQLite
    .\.venv\Scripts\python.exe manage.py makemigrations --check --dry-run
    .\.venv\Scripts\python.exe manage.py test
    Las pruebas Django no requieren Node y utilizan una base temporal.
-   El QA de navegador y sus resultados históricos están archivados fuera del proyecto;
-   no son requisitos para ejecutar DriveSmart.
+   El QA de navegador es opcional y requiere herramientas de desarrollo separadas;
+   las capturas públicas están en docs/images/. No es necesario instalar Playwright
+   o Archify para ejecutar las pruebas Django habituales ni para ver las imágenes.
 
 9. DATOS Y ARCHIVOS LOCALES
    Respaldar db.sqlite3 y media/ juntos para conservar datos e imágenes propios.
    No incluirlos en ZIPs de entrega. Las skills locales son opcionales para ejecutar
    la aplicación.
+   Para la entrega estándar basta con migraciones, comandos de carga y fotografías
+   de static/catalog/: el evaluador puede recrear los datos sin recibir la SQLite de uso.
 
 10. PAQUETE LOCAL DE ENTREGA
    .\.venv\Scripts\python.exe scripts/package_beta.py
    El comando genera un ZIP de código y recursos sin bases, .env, entornos ni skills.
    El ZIP no se necesita para ejecutar el proyecto localmente.
+   En esta entrega el responsable del proyecto preparará y subirá el ZIP.
+
+11. PROBLEMAS FRECUENTES
+   - "py no se reconoce": comprobar la instalación de Python/Install Manager y
+     abrir una nueva terminal. No cambiar las políticas de ejecución de Windows.
+   - "No module named django": instalar requirements.txt usando el Python de .venv.
+   - "no such table": ejecutar manage.py migrate en la carpeta de manage.py.
+   - Imágenes vacías: ejecutar load_demo y luego load_vehicle_images; verificar
+     que existan static/catalog/ y media/. No borrar imágenes propias.
+   - Datos del chat pendientes: se revisan y publican desde Admin > Base de conocimiento.
+     No se aprueban respuestas ni políticas comerciales automáticamente.
+   - Catálogo sin conexión vacío: abrir con internet y esperar "Catálogo listo sin
+     conexión". Si falla, comprobar las fotos, espacio del navegador y volver a actualizar.
+   - Cuentas, rentas y chat sin conexión: esas funciones necesitan el servidor.
+   - Si pip no puede descargar: comprobar conexión, proxy o certificados del equipo;
+     no desactivar TLS ni las protecciones del sistema.
+
+12. ENLACES DE CONSULTA
+   Código: https://github.com/Elavat9000/PWA
+   Demo: https://franciscocervantes9000.pythonanywhere.com/
+   La demo online y la instalación local tienen bases y cuentas independientes.
+   No se necesitan credenciales del hosting para instalar el proyecto local.
+   Memoria de entrega para revisión: ENTREGABLE.md.
 
 Las rentas son simuladas y no incluyen pagos. El asistente funciona localmente sin APIs.
 Runserver es únicamente el servidor de desarrollo local; no es una configuración productiva.

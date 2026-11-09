@@ -41,6 +41,10 @@ body {
 }
 
 main { flex: 1; }
+.pwa-status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 10px 16px; margin-block: 16px; background: var(--soft); border-radius: var(--control-radius); font-size: 13px; }
+.pwa-status[hidden] { display: none; }
+.pwa-status a, .pwa-status button { min-height: 44px; display: inline-flex; align-items: center; }
+.pwa-status button { background: none; border: 0; padding: 0; color: var(--green); cursor: pointer; text-decoration: underline; }
 
 a {
     color: var(--green);

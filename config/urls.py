@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import home, manifest, service_worker, offline
+from core.views import home, manifest, service_worker, offline, offline_catalog
 from accounts.views import signup
 from vehicles.views import image_credits
 from django.contrib.auth import views as auth_views
@@ -28,6 +28,7 @@ urlpatterns = [
     path('manifest.webmanifest', manifest, name='pwa_manifest'),
     path('service-worker.js', service_worker, name='pwa_service_worker'),
     path('offline/', offline, name='pwa_offline'),
+    path('catalogo-sin-conexion/', offline_catalog, name='offline_catalog'),
     path('cuentas/registro/', signup, name='signup'),
     path('cuentas/entrar/', auth_views.LoginView.as_view(), name='login'),
     path('cuentas/salir/', auth_views.LogoutView.as_view(), name='logout'),

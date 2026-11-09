@@ -129,8 +129,12 @@ las imágenes cargadas con Admin se escriben en `media/`. Mantener ambos tipos s
 - Ejecutar `python manage.py check --deploy` con el entorno de producción.
 - Revisar los logs de error de PythonAnywhere y resolver errores antes de continuar.
 
-El service worker de DriveSmart almacena solo recursos seleccionados y el aviso offline.
-Catálogo dinámico, cuentas, rentas simuladas y chat necesitan conexión al servidor.
+El service worker puede guardar una copia pública aislada del catálogo completo y
+sus fotografías. No guarda el HTML normal de usuarios conectados. Las cuentas,
+rentas, chat y comprobación de disponibilidad requieren conexión al servidor.
+Tras actualizar esta función, ejecutar collectstatic, recargar la web app y comprobar
+la descarga hasta que aparezca "Catálogo listo sin conexión". No se modifica la
+instalación online automáticamente desde las pruebas locales.
 
 ## 6. Cargar contenido demo después de aprobar las pruebas
 

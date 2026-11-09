@@ -7,7 +7,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 SOURCE_DIRS = ('config', 'core', 'accounts', 'vehicles', 'rentals', 'assistant',
                'templates', 'static', 'docs', 'scripts')
-ROOT_FILES = ('manage.py', 'requirements.txt', 'INSTRUCTIONS.txt', 'README.md',
+ROOT_FILES = ('manage.py', 'requirements.txt', 'INSTRUCTIONS.txt', 'README.md', 'ENTREGABLE.md',
               '.env.example', 'AGENTS.md', 'DESIGN.md', '.gitignore')
 EXCLUDED_DIRS = {'.git', '.agents', '.venv', 'node_modules', 'test-results',
                  '__pycache__', 'media', 'staticfiles'}
